@@ -1,0 +1,6 @@
+avenv/
+build/
+__pycache__/
+*.so
+*.egg-info/
+coverage/

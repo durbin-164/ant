@@ -1,0 +1,69 @@
+name: Python build
+
+on:
+  push:
+    branches: [master, dev]
+  pull_request:
+    branches: ['**' ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout repo
+      - uses: actions/checkout@v2
+      #miniconda install
+      - uses: goanpeca/setup-miniconda@v1
+        with:
+          activate-environment: svenv
+          python-version: 3.8
+          channels: conda-forge
+          allow-softlinks: true
+          channel-priority: flexible
+          show-channel-urls: true
+          use-only-tar-bz2: true
+
+      # Dependencies
+      - name: Install dependencies
+        run: |
+          which python
+          sudo apt-get install -y python3-setuptools
+          conda install pybind11
+          pip install gcovr
+      
+      #array fire
+      - name: Cache ArrayFire
+        uses: actions/cache@v2
+        id: arrayfire
+        with:
+            path: afbin
+            key: ${{ runner.os }}-af-${{ env.AF_VER }}
+
+      - name: Download ArrayFire
+        # Only download and cache arrayfire if already not found
+        if: steps.arrayfire.outputs.cache-hit != 'true'
+        run: |
+            wget --quiet http://arrayfire.s3.amazonaws.com/${AF_VER}/ArrayFire-v${AF_VER}_Linux_x86_64.sh
+            chmod +x ./ArrayFire-v${AF_VER}_Linux_x86_64.sh
+            mkdir afbin
+            ./ArrayFire-v${AF_VER}_Linux_x86_64.sh --skip-license --exclude-subdir --prefix=./afbin
+            rm ./afbin/lib64/libcu*.so*
+            rm ./afbin/lib64/libafcuda*.so*
+            rm ./ArrayFire-v${AF_VER}_Linux_x86_64.sh
+
+      # Test
+      - name: Test with setup
+        run: | 
+          export AF_PATH=${GITHUB_WORKSPACE}/afbin
+          export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${AF_PATH}/lib64
+
+          python3 setup.py test 
+          bash script/coverage.sh
+
+      # Sonar Cloud
+      - name: SonarCloud Scan
+        uses: sonarsource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
