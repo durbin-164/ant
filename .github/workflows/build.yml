@@ -18,13 +18,10 @@ jobs:
       #miniconda install
       - uses: goanpeca/setup-miniconda@v1
         with:
-          activate-environment: svenv
+          activate-environment: foo
           python-version: 3.8
           channels: conda-forge
-          allow-softlinks: true
-          channel-priority: flexible
-          show-channel-urls: true
-          use-only-tar-bz2: true
+         
 
       # Dependencies
       - name: Install dependencies
