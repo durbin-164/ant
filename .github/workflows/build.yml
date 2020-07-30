@@ -22,7 +22,7 @@ jobs:
         uses: actions/cache@v2
         id: arrayfire
         with:
-            path: afbin
+            path: /opt
             key: ${{ runner.os }}-af-${{ env.AF_VER }}
 
       - name: Download ArrayFire
@@ -32,10 +32,10 @@ jobs:
             wget --quiet http://arrayfire.s3.amazonaws.com/${AF_VER}/ArrayFire-v${AF_VER}_Linux_x86_64.sh
             chmod +x ./ArrayFire-v${AF_VER}_Linux_x86_64.sh
             mkdir afbin
-            ./ArrayFire-v${AF_VER}_Linux_x86_64.sh --skip-license --exclude-subdir --prefix=./afbin
-            rm ./afbin/lib64/libcu*.so*
-            rm ./afbin/lib64/libafcuda*.so*
-            rm ./ArrayFire-v${AF_VER}_Linux_x86_64.sh
+            ./ArrayFire-v${AF_VER}_Linux_x86_64.sh --skip-license --exclude-subdir --prefix=/opt
+            # rm ./afbin/lib64/libcu*.so*
+            # rm ./afbin/lib64/libafcuda*.so*
+            # rm ./ArrayFire-v${AF_VER}_Linux_x86_64.sh
 
 
       #miniconda install
@@ -77,8 +77,8 @@ jobs:
           which python3
           python3 --version
 
-          export AF_PATH=${GITHUB_WORKSPACE}/afbin
-          sudo sh -c "echo ${AF_PATH}/arrayfire/lib64 >> /etc/ld.so.conf.d/arrayfire.conf"
+          # export AF_PATH=${GITHUB_WORKSPACE}/afbin
+          sudo sh -c "echo /opt/arrayfire/lib64 >> /etc/ld.so.conf.d/arrayfire.conf"
           sudo ldconfig
 
         
