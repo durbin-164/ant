@@ -21,10 +21,7 @@ jobs:
         with:
           args: git submodule update --init --recursive
         
-        run: |
-            ls -l
-            cd googletest
-            ls -l
+        
        #array fire
       # https://arrayfire.s3.amazonaws.com/3.7.2/ArrayFire-v3.7.2_Linux_x86_64.sh
 
@@ -56,6 +53,10 @@ jobs:
           channels: conda-forge
       - shell: bash -l {0}
         run: |
+          ls -l
+          cd googletest
+          ls -l
+          cd ..
           conda activate foo
           conda info
           conda list 
