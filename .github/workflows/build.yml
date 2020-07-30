@@ -20,6 +20,11 @@ jobs:
         uses: srt32/git-actions@v0.0.3
         with:
           args: git submodule update --init --recursive
+        
+        run: |
+            ls -l
+            cd googletest
+            ls -l
        #array fire
       # https://arrayfire.s3.amazonaws.com/3.7.2/ArrayFire-v3.7.2_Linux_x86_64.sh
 
