@@ -53,10 +53,6 @@ jobs:
           channels: conda-forge
       - shell: bash -l {0}
         run: |
-          ls -l
-          cd googletest
-          ls -l
-          cd ..
           conda activate foo
           conda info
           conda list 
@@ -74,8 +70,6 @@ jobs:
           conda install pybind11
           pip install gcovr
 
-          conda info
-          conda list
           
 
       # Test
@@ -91,7 +85,11 @@ jobs:
           # export AF_PATH=${GITHUB_WORKSPACE}/afbin
           sudo sh -c "echo /opt/arrayfire/lib64 >> /etc/ld.so.conf.d/arrayfire.conf"
           sudo ldconfig
-
+          
+          ls -l
+          cd googletest
+          ls -l
+          cd ..
         
           python3 setup.py test 
           bash script/coverage.sh
