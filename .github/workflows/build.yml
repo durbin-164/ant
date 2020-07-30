@@ -15,8 +15,11 @@ jobs:
     steps:
       # Checkout repo
       - uses: actions/checkout@v2
+      
+      - name: Checkout submodules
+        uses: srt32/git-actions@v0.0.3
         with:
-          submodules: true
+          args: git submodule update --init --recursive
        #array fire
       # https://arrayfire.s3.amazonaws.com/3.7.2/ArrayFire-v3.7.2_Linux_x86_64.sh
 
