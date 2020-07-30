@@ -27,6 +27,7 @@ jobs:
           sudo apt-get update
             sudo apt-get install build-essential
             gcc --version
+            sudo apt-get install libgtest-dev
 
        #array fire
       # https://arrayfire.s3.amazonaws.com/3.7.2/ArrayFire-v3.7.2_Linux_x86_64.sh
