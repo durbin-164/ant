@@ -16,17 +16,16 @@ jobs:
       # Checkout repo
       
       - uses: actions/checkout@v2
-      
-      - name: Checkout submodules
-        uses: srt32/git-actions@v0.0.3
         with:
-          args: git submodule update --init --recursive
+            submodules: true
+      
+      # - name: Checkout submodules
+      #   uses: srt32/git-actions@v0.0.3
+      #   with:
+      #     args: git submodule update --init --recursive
         
       - name: Install gnu 
         run: |
-          sudo apt-get update
-            sudo apt-get install build-essential
-            gcc --version
             sudo apt-get install libgtest-dev
 
        #array fire
