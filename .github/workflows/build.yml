@@ -26,6 +26,7 @@ jobs:
       # Dependencies
       - name: Install dependencies
         run: |
+          conda activate foo
           which python
           sudo apt-get install -y python3-setuptools
           conda install pybind11
@@ -60,7 +61,7 @@ jobs:
         run: | 
           export AF_PATH=${GITHUB_WORKSPACE}/afbin
           export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${AF_PATH}/lib64
-
+          which python
           python3 setup.py test 
           bash script/coverage.sh
 
