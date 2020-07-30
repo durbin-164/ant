@@ -78,7 +78,7 @@ jobs:
           python3 --version
 
           export AF_PATH=${GITHUB_WORKSPACE}/afbin
-          sudo echo ${AF_PATH}/arrayfire/lib64 > /etc/ld.so.conf.d/arrayfire.conf
+          sudo sh -c "echo ${AF_PATH}/arrayfire/lib64 >> /etc/ld.so.conf.d/arrayfire.conf"
           sudo ldconfig
 
         
