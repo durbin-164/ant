@@ -32,7 +32,7 @@ MESSAGE( [Main] " ArrayFire_LIBRARIES = ${ArrayFire_LIBRARIES}")
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0 -fprofile-arcs -ftest-coverage")
 
 enable_testing()
-add_subdirectory(external/googletest)
+add_subdirectory(googletest)
 ###################################
 
 #include header file
