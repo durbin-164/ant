@@ -78,7 +78,9 @@ jobs:
           python3 --version
 
           export AF_PATH=${GITHUB_WORKSPACE}/afbin
-          export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${AF_PATH}/lib64
+          echo ${AF_PATH}/arrayfire/lib64 > /etc/ld.so.conf.d/arrayfire.conf
+          sudo ldconfig
+
         
           python3 setup.py test 
           bash script/coverage.sh
