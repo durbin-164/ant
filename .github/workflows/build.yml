@@ -19,14 +19,12 @@ jobs:
         with:
             submodules: true
       
-      # - name: Checkout submodules
-      #   uses: srt32/git-actions@v0.0.3
-      #   with:
-      #     args: git submodule update --init --recursive
         
-      - name: Install gnu 
+      - name: Install linux dependencies
         run: |
             sudo apt-get install libgtest-dev
+            sudo apt-get install -y python3-setuptools
+            sudo apt-get install python-dev
 
        #array fire
       # https://arrayfire.s3.amazonaws.com/3.7.2/ArrayFire-v3.7.2_Linux_x86_64.sh
@@ -54,28 +52,22 @@ jobs:
       #miniconda install
       - uses: goanpeca/setup-miniconda@v1
         with:
-          activate-environment: foo
+          activate-environment: avenv
           python-version: 3.8
           channels: conda-forge
       - shell: bash -l {0}
         run: |
-          conda activate foo
-          conda info
-          conda list 
+          conda activate avenv
+          bash script/requirements.sh
 
-      # Dependencies
-      - name: Install dependencies
-        uses: goanpeca/setup-miniconda@v1
-      - shell: bash -l {0}
-        run: |
-          conda activate foo
-          conda info
-          which python3
-          python3 --version
-          sudo apt-get install -y python3-setuptools
-          sudo apt-get install python-dev
-          conda install pybind11
-          pip install gcovr
+      # # Dependencies
+      # - name: Install dependencies
+      #   uses: goanpeca/setup-miniconda@v1
+      # - shell: bash -l {0}
+      #   run: |
+      #     conda activate avenv
+      #     conda install pybind11
+      #     pip install gcovr
 
           
 
@@ -85,19 +77,10 @@ jobs:
       - shell: bash -l {0}
         run: | 
           conda activate foo
-          conda info
-          which python3
-          python3 --version
-
-          # export AF_PATH=${GITHUB_WORKSPACE}/afbin
+        
           sudo sh -c "echo /opt/arrayfire/lib64 >> /etc/ld.so.conf.d/arrayfire.conf"
           sudo ldconfig
           
-          ls -l
-          cd googletest
-          ls -l
-          cd ..
-        
           python3 setup.py test 
           bash script/coverage.sh
 
