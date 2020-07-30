@@ -50,7 +50,8 @@ jobs:
 
 
       #miniconda install
-      - uses: goanpeca/setup-miniconda@v1
+      - name: Miniconda with dependencies and run test
+        uses: goanpeca/setup-miniconda@v1
         with:
           activate-environment: avenv
           python-version: 3.8
@@ -59,6 +60,12 @@ jobs:
         run: |
           conda activate avenv
           bash script/requirements.sh
+
+          sudo sh -c "echo /opt/arrayfire/lib64 >> /etc/ld.so.conf.d/arrayfire.conf"
+          sudo ldconfig
+          
+          python3 setup.py test 
+          bash script/coverage.sh
 
       # # Dependencies
       # - name: Install dependencies
@@ -71,18 +78,18 @@ jobs:
 
           
 
-      # Test
-      - name: Test with setup
-        uses: goanpeca/setup-miniconda@v1
-      - shell: bash -l {0}
-        run: | 
-          conda activate foo
+      # # Test
+      # - name: Test with setup
+      #   uses: goanpeca/setup-miniconda@v1
+      # - shell: bash -l {0}
+      #   run: | 
+      #     conda activate avenv
         
-          sudo sh -c "echo /opt/arrayfire/lib64 >> /etc/ld.so.conf.d/arrayfire.conf"
-          sudo ldconfig
+      #     sudo sh -c "echo /opt/arrayfire/lib64 >> /etc/ld.so.conf.d/arrayfire.conf"
+      #     sudo ldconfig
           
-          python3 setup.py test 
-          bash script/coverage.sh
+      #     python3 setup.py test 
+      #     bash script/coverage.sh
 
       # Sonar Cloud
       - name: SonarCloud Scan
