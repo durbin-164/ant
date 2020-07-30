@@ -9,6 +9,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      AF_VER: 3.7.2
 
     steps:
       # Checkout repo
@@ -31,7 +33,7 @@ jobs:
           sudo apt-get install -y python3-setuptools
           conda install pybind11
           pip install gcovr
-          export AF_VER=3.7.2
+          
           
       
       #array fire
@@ -42,7 +44,7 @@ jobs:
         id: arrayfire
         with:
             path: afbin
-            key: ${{ runner.os }}-af-${{ AF_VER }}
+            key: ${{ runner.os }}-af-${{ env.AF_VER }}
 
       - name: Download ArrayFire
         # Only download and cache arrayfire if already not found
