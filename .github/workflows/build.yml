@@ -14,6 +14,7 @@ jobs:
 
     steps:
       # Checkout repo
+      
       - uses: actions/checkout@v2
       
       - name: Checkout submodules
@@ -21,7 +22,11 @@ jobs:
         with:
           args: git submodule update --init --recursive
         
-        
+      - name: Install gnu 
+        run: |
+            sudo apt install build-essential
+            gcc --version
+
        #array fire
       # https://arrayfire.s3.amazonaws.com/3.7.2/ArrayFire-v3.7.2_Linux_x86_64.sh
 
