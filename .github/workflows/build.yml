@@ -44,8 +44,8 @@ jobs:
             chmod +x ./ArrayFire-v${AF_VER}_Linux_x86_64.sh
             mkdir afbin
             ./ArrayFire-v${AF_VER}_Linux_x86_64.sh --skip-license --exclude-subdir --prefix=/opt
-            rm /opt/lib64/libcu*.so*
-            rm /opt/lib64/libafcuda*.so*
+            # rm /opt/lib64/libcu*.so*
+            # rm /opt/lib64/libafcuda*.so*
             rm ./ArrayFire-v${AF_VER}_Linux_x86_64.sh
 
 
