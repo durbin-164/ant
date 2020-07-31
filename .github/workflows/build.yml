@@ -65,7 +65,7 @@ jobs:
           sudo ldconfig
 
           bash script/sonar_build_wrapper.sh
-          bash script/coverage.sh
+          # bash script/coverage.sh
 
       # # Dependencies
       # - name: Install dependencies
