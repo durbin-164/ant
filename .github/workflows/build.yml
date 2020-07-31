@@ -67,6 +67,8 @@ jobs:
           python3 setup.py test 
           bash script/coverage.sh
 
+          build-wrapper-linux-x86-64 --out-dir bw-output cmake --build build/
+
       # # Dependencies
       # - name: Install dependencies
       #   uses: goanpeca/setup-miniconda@v1
