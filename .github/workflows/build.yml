@@ -44,9 +44,9 @@ jobs:
             chmod +x ./ArrayFire-v${AF_VER}_Linux_x86_64.sh
             mkdir afbin
             ./ArrayFire-v${AF_VER}_Linux_x86_64.sh --skip-license --exclude-subdir --prefix=/opt
-            # rm ./afbin/lib64/libcu*.so*
-            # rm ./afbin/lib64/libafcuda*.so*
-            # rm ./ArrayFire-v${AF_VER}_Linux_x86_64.sh
+            rm /opt/lib64/libcu*.so*
+            rm /opt/lib64/libafcuda*.so*
+            rm /ArrayFire-v${AF_VER}_Linux_x86_64.sh
 
 
       #miniconda install
@@ -67,7 +67,7 @@ jobs:
           python3 setup.py test 
           bash script/coverage.sh
 
-          build-wrapper-linux-x86-64 --out-dir bw-output cmake --build build/
+          bash script/sonar_build_wrapper.sh
 
       # # Dependencies
       # - name: Install dependencies
