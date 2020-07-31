@@ -5,3 +5,4 @@ __pycache__/
 *.egg-info/
 coverage/
 bw-output/
+build-wrapper-linux-x86/

@@ -63,11 +63,9 @@ jobs:
 
           sudo sh -c "echo /opt/arrayfire/lib64 >> /etc/ld.so.conf.d/arrayfire.conf"
           sudo ldconfig
-          
-          python3 setup.py test 
-          bash script/coverage.sh
 
           bash script/sonar_build_wrapper.sh
+          bash script/coverage.sh
 
       # # Dependencies
       # - name: Install dependencies
