@@ -41,15 +41,15 @@ script:
   # Replace dep1 dep2 ... with your dependencies
   - conda create -q -n avenv python
   - conda activate avenv
-  - script/requirements.sh
+  - bash scripts/requirements.sh
 
 
-  - make clean
+  # - make clean
   # Wraps the compilation with the Build Wrapper to generate configuration (used
   # later by the SonarQube Scanner) into the "bw-output" folder
-  - build-wrapper-linux-x86-64 --out-dir bw-output make all
+  - build-wrapper-linux-x86-64 --out-dir bw-output python3 setup.py test
   # Execute some tests
-  - make test
+  # - make test
   # And finally run the SonarQube analysis - read the "sonar-project.properties"
   # file to see the specific configuration
   - sonar-scanner
