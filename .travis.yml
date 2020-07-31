@@ -1,0 +1,59 @@
+sudo: false
+
+addons:
+  sonarcloud:
+    organization: "durbin-164"
+    token: ${SONAR_TOKEN}
+
+env:
+  - AF_VER=3.7.2
+
+script:
+
+  - sudo apt-get install libgtest-dev
+  - sudo apt-get install -y python3-setuptools
+  - sudo apt-get install python-dev
+
+
+  #############################3
+  - wget --quiet http://arrayfire.s3.amazonaws.com/3.7.2/ArrayFire-v3.7.2_Linux_x86_64.sh
+  - chmod +x ./ArrayFire-v3.7.2_Linux_x86_64.sh
+
+  - ./ArrayFire-v3.7.2_Linux_x86_64.sh --skip-license --exclude-subdir --prefix=/opt
+            # rm /opt/lib64/libcu*.so*
+            # rm /opt/lib64/libafcuda*.so*
+  - rm ./ArrayFire-v3.7.2_Linux_x86_64.sh
+
+
+  ###############333333333333
+  # We do this conditionally because it saves us some downloading if the
+  # version is the same.
+  
+  - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;  
+  - bash miniconda.sh -b -p $HOME/miniconda
+  - source "$HOME/miniconda/etc/profile.d/conda.sh"
+  - hash -r
+  - conda config --set always_yes yes --set changeps1 no
+  - conda update -q conda
+  # Useful for debugging any issues with conda
+  - conda info -a
+
+  # Replace dep1 dep2 ... with your dependencies
+  - conda create -q -n avenv python
+  - conda activate avenv
+  - script/requirements.sh
+
+
+  - make clean
+  # Wraps the compilation with the Build Wrapper to generate configuration (used
+  # later by the SonarQube Scanner) into the "bw-output" folder
+  - build-wrapper-linux-x86-64 --out-dir bw-output make all
+  # Execute some tests
+  - make test
+  # And finally run the SonarQube analysis - read the "sonar-project.properties"
+  # file to see the specific configuration
+  - sonar-scanner
+
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
