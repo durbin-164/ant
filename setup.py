@@ -32,6 +32,7 @@ class CMakeBuild(build_ext):
                 raise RuntimeError("CMake >= 3.1.0 is required on Windows")
 
         for ext in self.extensions:
+            print("EXT:    ",ext)
             self.build_extension(ext)
 
     def build_extension(self, ext):
@@ -40,7 +41,7 @@ class CMakeBuild(build_ext):
         cmake_args = ['-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=' + extdir,
                       '-DPYTHON_EXECUTABLE=' + sys.executable]
 
-        cfg = 'Debug' if self.debug else 'Release'
+        cfg = 'Debug' if not self.debug else 'Release'
         build_args = ['--config', cfg]
 
         if platform.system() == "Windows":
@@ -53,6 +54,7 @@ class CMakeBuild(build_ext):
         else:
             cmake_args += ['-DCMAKE_BUILD_TYPE=' + cfg]
             cmake_args+= ['-DENABLE_COVERAGE=On']
+            cmake_args+= ['-DBUILD_COVERAGE=ON']
             build_args += ['--', '-j2']
             
 
@@ -62,6 +64,8 @@ class CMakeBuild(build_ext):
             self.distribution.get_version())
         if not os.path.exists(self.build_temp):
             os.makedirs(self.build_temp)
+        print("cmake args:  ",cmake_args)
+        print("build args:   ",build_args)
         subprocess.check_call(['cmake', ext.sourcedir] + cmake_args,
                               cwd=self.build_temp, env=env)
         subprocess.check_call(['cmake', '--build', '.'] + build_args,
@@ -103,7 +107,7 @@ setup(
     description='A python wrapper deep learning mini framework.',
     long_description='',
     # add extension module
-    ext_modules=[CMakeExtension('strawberry')],
+    ext_modules=[CMakeExtension('ant')],
     # add custom build_ext command
     # add custom test command
     cmdclass=dict(build_ext=CMakeBuild, test=CatchTestCommand),

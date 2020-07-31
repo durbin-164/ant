@@ -4,5 +4,5 @@ __pycache__/
 *.so
 *.egg-info/
 coverage/
-bw-output/
+bw-*/
 build-wrapper-linux-x86/
