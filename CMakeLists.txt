@@ -29,7 +29,11 @@ MESSAGE( [Main] " ArrayFire_LIBRARIES = ${ArrayFire_LIBRARIES}")
 
 ##########################################
 # Testing enable
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0 -fprofile-arcs -ftest-coverage")
+# SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0 -fprofile-arcs -ftest-coverage")
+# set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE ON)
+
+set(CMAKE_CXX_FLAGS "-g -O0 -Wall -fprofile-arcs -ftest-coverage")
+set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE ON)
 
 enable_testing()
 add_subdirectory("googletest")
