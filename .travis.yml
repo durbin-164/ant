@@ -47,11 +47,9 @@ script:
   # - make clean
   # Wraps the compilation with the Build Wrapper to generate configuration (used
   # later by the SonarQube Scanner) into the "bw-output" folder
+  - bash scripts/gcov_coverage.sh
   - build-wrapper-linux-x86-64 --out-dir bw-output python3 setup.py test
-  - pwd
-  - cd build 
-  - cmake ..
-  - make gcov
+  
   # Execute some tests
   # - make test
   # And finally run the SonarQube analysis - read the "sonar-project.properties"
