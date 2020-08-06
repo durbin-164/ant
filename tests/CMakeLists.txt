@@ -11,7 +11,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
   gtest
   gtest_main
   core
-  ArrayFire::afcpu
+  ArrayFire::afcuda
 )
 
 
