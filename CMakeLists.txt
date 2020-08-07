@@ -39,10 +39,19 @@ enable_testing()
 add_subdirectory("googletest")
 ###################################
 
+set(INCLUDE_DIR
+    "${CMAKE_SOURCE_DIR}/src"
+    "${CMAKE_SOURCE_DIR}/src/ops"
+)
+
+
+MESSAGE( [Main] " Include dir = ${INCLUDE_DIR}")
+
 #include header file
-include_directories("${CMAKE_SOURCE_DIR}/src")
+include_directories(${INCLUDE_DIR})
+# include_directories("${CMAKE_SOURCE_DIR}/src/ops")
+
 
 #include subderectory
 add_subdirectory("src")
 add_subdirectory("tests")
-

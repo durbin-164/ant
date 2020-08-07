@@ -5,6 +5,11 @@ set(TESTS
   math_test.cpp
 )
 
+add_subdirectory("ops")
+
+
+MESSAGE( [Main] " Test sources = ${TESTS}")
+
 add_executable(${PROJECT_NAME} ${TESTS})
 add_library(core_test ${TESTS})
 target_link_libraries(${PROJECT_NAME} PRIVATE
@@ -17,7 +22,9 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
 
 #################For test coverage
 
-set(OBJECT_DIR ${CMAKE_BINARY_DIR}/src/CMakeFiles/core.dir)
+set(OBJECT_DIR 
+    ${CMAKE_BINARY_DIR}/src/CMakeFiles/core.dir
+)
 message("-- Object files will be output to: ${OBJECT_DIR}")
 
 # Create the gcov target. Run coverage tests with 'make gcov'
@@ -27,9 +34,16 @@ add_custom_target(gcov
     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
 )
 
+set(GCOV_DIR
+  ${CMAKE_SOURCE_DIR}/src/*.cpp
+)
+
+message("---GCOV DIR : ${GCOV_DIR}")
+
 add_custom_command(TARGET gcov
     COMMAND echo "=================== GCOV ===================="
-    COMMAND gcov -b ${CMAKE_SOURCE_DIR}/src/*.cpp -o ${OBJECT_DIR} 
+    COMMAND gcov -b ${GCOV_DIR} -o ${OBJECT_DIR} 
+    COMMAND gcov -b ${CMAKE_SOURCE_DIR}/src/ops/*.cpp  -o ${CMAKE_BINARY_DIR}/src/CMakeFiles/core.dir/ops
     #     | grep -A 5 "Adder.cpp" > CoverageSummary.tmp
     # COMMAND cat CoverageSummary.tmp
     # COMMAND echo "-- Coverage files have been output to ${CMAKE_BINARY_DIR}/coverage"

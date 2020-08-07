@@ -4,6 +4,13 @@ set(SOURCES
     math.cpp
 ) 
 
+# set(INCLUDE_DIR
+#     ${CMAKE_CURRENT_SOURCE_DIR}
+#     PARENT_SCOPE
+# )
+
+add_subdirectory("ops")
+
 add_library(core ${SOURCES})
 
 pybind11_add_module(${PROJECT_NAME} ${SOURCES} bindings.cpp)
