@@ -37,6 +37,9 @@ set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE ON)
 
 enable_testing()
 add_subdirectory("googletest")
+
+find_package(CUDA REQUIRED)
+set(USING_CUDA_LANG_SUPPORT False)
 ###################################
 
 set(INCLUDE_DIR
