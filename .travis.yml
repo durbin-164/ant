@@ -1,6 +1,10 @@
+language: cpp
 #dist: bionic
 sudo: enabled
 
+compiler:
+  - gcc
+  
 addons:
   sonarcloud:
     organization: "durbin-164"
