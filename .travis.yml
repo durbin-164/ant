@@ -10,7 +10,7 @@ env:
   - AF_VER=3.7.2
 
 script:
-  - bash scripts/cuda_install.sh
+  # - bash scripts/cuda_install.sh
   - sudo apt-get install libgtest-dev
   - sudo apt-get install -y python3-setuptools
   - sudo apt-get install python-dev
