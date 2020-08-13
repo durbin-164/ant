@@ -76,15 +76,13 @@ jobs:
 
 
 orbs:
-  sonarcloud: sonarsource/sonarcloud@1.0.2
-
+  sonarcloud: sonarsource/sonarcloud@1.0.1
 
 workflows:
   main:
     jobs:
       - build-cuda:
-          context: sonarcloud
-          
+          context: SonarCloud
           
 
 
