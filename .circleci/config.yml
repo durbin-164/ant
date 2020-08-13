@@ -85,10 +85,10 @@ workflows:
   build_and_install:
     jobs:
       - build:
-          context: SonarCloud
-          filters:
-            branches:
-              only: dev
+          context: sonarcloud
+        filters:
+          branches:
+            only: dev
           
 
 
