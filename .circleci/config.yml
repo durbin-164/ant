@@ -6,6 +6,11 @@
 
 version: 2.1
 
+orbs:
+  sonarcloud: sonarsource/sonarcloud@1.0.2
+
+
+
 gpu: &gpu
   machine:
     image: ubuntu-1604:201903-01
@@ -74,19 +79,17 @@ jobs:
 
 
 
-orbs:
-  sonarcloud: sonarsource/sonarcloud@1.0.2
-
 
 workflows:
   version: 2
   build_and_install:
     jobs:
       - build-cuda:
+          context: SonarCloud
           filters:
             branches:
               only: dev
-          context: SonarCloud
+          
 
 
 
