@@ -14,6 +14,9 @@ gpu: &gpu
 jobs:
   build-cuda:
     <<: *gpu
+    branches:
+        only:
+          dev
     steps:
       - checkout
       - run:
