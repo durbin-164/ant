@@ -7,3 +7,4 @@ coverage/
 bw-*/
 build-wrapper-linux-x86/
 .coverage
+.pytest_cache/
