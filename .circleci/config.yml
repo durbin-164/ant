@@ -1,0 +1,84 @@
+ # Copyright (c) Facebook, Inc. and its affiliates.
+ # All rights reserved.
+ #
+ # This source code is licensed under the BSD-style license found in the
+ # LICENSE file in the root directory of this source tree.
+
+version: 2.0
+
+gpu: &gpu
+  machine:
+    image: ubuntu-1604:201903-01
+  resource_class: gpu.small
+
+jobs:
+  build-cuda:
+    <<: *gpu
+    steps:
+      - checkout
+      - run:
+          name: Setup Docker and nvidia-docker
+          command: |
+            # Install CUDA 10.0
+            wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_10.0.130-1_amd64.deb
+            sudo dpkg -i cuda-repo-ubuntu1604_10.0.130-1_amd64.deb
+            sudo apt-get update || true
+            sudo apt-get --yes --force-yes install cuda
+            nvidia-smi
+            # Install Docker
+
+            sudo apt-get install libgtest-dev
+            sudo apt-get install -y python3-setuptools
+            sudo apt-get install python-dev
+
+
+            #############################3
+            wget --quiet http://arrayfire.s3.amazonaws.com/3.7.2/ArrayFire-v3.7.2_Linux_x86_64.sh
+            chmod +x ./ArrayFire-v3.7.2_Linux_x86_64.sh
+
+            ./ArrayFire-v3.7.2_Linux_x86_64.sh --skip-license --exclude-subdir --prefix=/opt
+                    # rm /opt/lib64/libcu*.so*
+                    # rm /opt/lib64/libafcuda*.so*
+            rm ./ArrayFire-v3.7.2_Linux_x86_64.sh
+
+            sudo sh -c "echo /opt/arrayfire/lib64 >> /etc/ld.so.conf.d/arrayfire.conf"
+            sudo ldconfig
+
+            
+      - run:
+          name: install miniconda
+          command: |
+            apt install -y wget
+            cd $HOME
+            wget "https://repo.anaconda.com/miniconda/Miniconda3-4.7.10-Linux-x86_64.sh" -O miniconda.sh
+            printf '%s' "8a324adcc9eaf1c09e22a992bb6234d91a94146840ee6b11c114ecadafc68121  miniconda.sh" | sha256sum -c
+            bash miniconda.sh -b -p $HOME/miniconda
+
+      - run:
+          name: Setup environment and run tests
+          command: |
+            export PATH="$HOME/miniconda/bin:$PATH"
+            conda update -y conda
+            conda create -n myenv python=3.8 -c conda-forge
+            source activate myenv
+
+            bash scripts/requirements.sh
+            
+            wget https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip
+            unzip build-wrapper-linux-x86.zip
+            cp build-wrapper-linux-x86/libinterceptor-x86_64.so build-wrapper-linux-x86/libinterceptor-haswell.so
+
+            ./build-wrapper-linux-x86/build-wrapper-linux-x86-64 --out-dir bw-output bash scripts/gcov_coverage.sh
+
+      - sonarcloud/scan
+
+
+  
+orbs:
+  sonarcloud: sonarsource/sonarcloud@1.0.1
+
+workflows:
+  main:
+    jobs:
+      - build:
+          context: SonarCloud
