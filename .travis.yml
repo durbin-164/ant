@@ -1,6 +1,7 @@
 language: cpp
 dist: focal
 sudo: enabled
+gpu: true 
 
 compiler:
   - gcc
@@ -64,7 +65,7 @@ script:
   - sudo ldconfig
 
 
-  ###############333333333333
+  ###############
   # We do this conditionally because it saves us some downloading if the
   # version is the same.
   
