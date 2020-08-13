@@ -73,7 +73,7 @@ jobs:
       - sonarcloud/scan
 
 
-  
+
 orbs:
   sonarcloud: sonarsource/sonarcloud@1.0.2
 
@@ -87,3 +87,6 @@ workflows:
             branches:
               only: dev
           context: SonarCloud
+
+
+
