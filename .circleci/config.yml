@@ -81,8 +81,8 @@ orbs:
 workflows:
   main:
     jobs:
-      - build-cuda:
-          context: SonarCloud
+      - build-cuda
+          # context: SonarCloud
           
 
 
