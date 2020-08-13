@@ -6,9 +6,6 @@
 
 version: 2.1
 
-orbs:
-  sonarcloud: sonarsource/sonarcloud@1.0.2
-
 
 
 gpu: &gpu
@@ -17,7 +14,7 @@ gpu: &gpu
   resource_class: gpu.small
 
 jobs:
-  build:
+  build-cuda:
     <<: *gpu
     steps:
       - checkout
@@ -78,13 +75,15 @@ jobs:
       - sonarcloud/scan
 
 
+orbs:
+  sonarcloud: sonarsource/sonarcloud@1.0.2
 
 
 workflows:
   main:
     jobs:
-      - build:
-          context: SonarCloud
+      - build-cuda:
+          context: sonarcloud
           
           
 
