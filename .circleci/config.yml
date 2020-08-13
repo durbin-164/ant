@@ -14,9 +14,6 @@ gpu: &gpu
 jobs:
   build-cuda:
     <<: *gpu
-    branches:
-        only:
-          dev
     steps:
       - checkout
       - run:
@@ -80,7 +77,18 @@ jobs:
 orbs:
   sonarcloud: sonarsource/sonarcloud@1.0.1
 
+
 workflows:
+  version: 2
+  build-and-install:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: dev
+          context: SonarCloud
+
+# workflows:
   main:
     jobs:
       - build:
