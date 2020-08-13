@@ -81,14 +81,11 @@ jobs:
 
 
 workflows:
-  version: 2
-  build_and_install:
+  main:
     jobs:
       - build:
-          context: sonarcloud
-          # filters:
-          #   branches:
-          #     only: dev
+          context: SonarCloud
+          
           
 
 
