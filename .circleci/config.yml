@@ -82,7 +82,7 @@ workflows:
   version: 2
   build_and_install:
     jobs:
-      - build:
+      - build-cuda:
           filters:
             branches:
               only: dev
