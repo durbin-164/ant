@@ -87,9 +87,3 @@ workflows:
             branches:
               only: dev
           context: SonarCloud
-
-# workflows:
-  main:
-    jobs:
-      - build:
-          context: SonarCloud
