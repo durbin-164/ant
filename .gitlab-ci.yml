@@ -2,8 +2,8 @@ image: nvidia/cuda:10.1-base
 
 test:
   stage: test
-  tags:
-    - p3.2xlarge
+  # tags:
+  #   - p3.2xlarge
   variables:
     GIT_STRATEGY: none
   script:
