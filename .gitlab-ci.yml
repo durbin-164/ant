@@ -1,10 +1,10 @@
-image: nvidia/cuda:10.1-base
+image: "nvidia/cuda:10.1-base"
 
-test:
+stages:
+  - test
+
+test1:
   stage: test
-  # tags:
-  #   - p3.2xlarge
-  variables:
-    GIT_STRATEGY: none
   script:
-    - nvidia-smi
+  - echo NVIDIA_VISIBLE_DEVICES=${NVIDIA_VISIBLE_DEVICES}
+  - nvidia-smi
