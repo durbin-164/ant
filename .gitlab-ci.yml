@@ -4,9 +4,9 @@ stages:
   - test
 
 before_script:
-  # - sudo apt-get install libgtest-dev
-  - apt-get install -y python3-setuptools
-  - apt-get install python-dev
+  - apt-get update
+  
+  - apt-get install -y wget
 
   - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;  
   - apt clean
@@ -22,6 +22,24 @@ before_script:
   - conda create -q -n avenv python
   - conda activate avenv
   - bash scripts/requirements.sh
+
+
+  - apt-get install -y libgtest-dev
+  - apt-get install -y python3-setuptools
+  - apt-get install -y python-dev
+
+  #############################3
+  - wget --quiet http://arrayfire.s3.amazonaws.com/3.7.2/ArrayFire-v3.7.2_Linux_x86_64.sh
+  - chmod +x ./ArrayFire-v3.7.2_Linux_x86_64.sh
+
+  - ./ArrayFire-v3.7.2_Linux_x86_64.sh --skip-license --exclude-subdir --prefix=/opt
+            # rm /opt/lib64/libcu*.so*
+            # rm /opt/lib64/libafcuda*.so*
+  - rm ./ArrayFire-v3.7.2_Linux_x86_64.sh
+
+  - sh -c "echo /opt/arrayfire/lib64 >> /etc/ld.so.conf.d/arrayfire.conf"
+  - ldconfig
+
 
 
 test1:
