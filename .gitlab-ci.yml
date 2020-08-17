@@ -1,15 +1,15 @@
-# image: "nvidia/cuda:10.2-runtime-ubuntu16.04"
+# image: "nvidia/cuda:10.2-base-ubuntu18.04"
 
 stages:
   - test
 
 before_script:
-  - sudo apt-get install libgtest-dev
-  - sudo apt-get install -y python3-setuptools
-  - sudo apt-get install python-dev
+  # - sudo apt-get install libgtest-dev
+  - apt-get install -y python3-setuptools
+  - apt-get install python-dev
 
   - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;  
-  - sudo apt clean
+  - apt clean
   - bash miniconda.sh -b -p $HOME/miniconda
   - source "$HOME/miniconda/etc/profile.d/conda.sh"
   - hash -r
