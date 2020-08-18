@@ -6,40 +6,22 @@ stages:
 before_script:
   - apt-get update
   
-  - apt-get install -y wget
+  - apt-get install -y curl
 
-  - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;  
-  - apt clean
-  - bash miniconda.sh -b -p $HOME/miniconda
-  - source "$HOME/miniconda/etc/profile.d/conda.sh"
-  - hash -r
-  - conda config --set always_yes yes --set changeps1 no
-  - conda update -q conda
-  # Useful for debugging any issues with conda
-  - conda info -a
+  - export SONAR_SCANNER_VERSION=4.4.0.2170
+  - export SONAR_SCANNER_HOME=$HOME/.sonar/sonar-scanner-$SONAR_SCANNER_VERSION-linux
+  - curl --create-dirs -sSLo $HOME/.sonar/sonar-scanner.zip https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-$SONAR_SCANNER_VERSION-linux.zip 
+  - unzip -o $HOME/.sonar/sonar-scanner.zip -d $HOME/.sonar/
+  - export PATH=$SONAR_SCANNER_HOME/bin:$PATH
+  - export SONAR_SCANNER_OPTS="-server"
 
-  # Replace dep1 dep2 ... with your dependencies
-  - conda create -q -n avenv python
+  - curl --create-dirs -sSLo $HOME/.sonar/build-wrapper-linux-x86.zip https://sonarcloud.io/static/cpp/build-wrapper-linux-x86.zip
+  - unzip -o $HOME/.sonar/build-wrapper-linux-x86.zip -d $HOME/.sonar/
+  - export PATH=$HOME/.sonar/build-wrapper-linux-x86:$PATH
+
+  - conda create -q -n avenv python=3.8
   - conda activate avenv
   - bash scripts/requirements.sh
-
-
-  - apt-get install -y libgtest-dev
-  - apt-get install -y python3-setuptools
-  - apt-get install -y python-dev
-
-  #############################3
-  - wget --quiet http://arrayfire.s3.amazonaws.com/3.7.2/ArrayFire-v3.7.2_Linux_x86_64.sh
-  - chmod +x ./ArrayFire-v3.7.2_Linux_x86_64.sh
-
-  - ./ArrayFire-v3.7.2_Linux_x86_64.sh --skip-license --exclude-subdir --prefix=/opt
-            # rm /opt/lib64/libcu*.so*
-            # rm /opt/lib64/libafcuda*.so*
-  - rm ./ArrayFire-v3.7.2_Linux_x86_64.sh
-
-  - sh -c "echo /opt/arrayfire/lib64 >> /etc/ld.so.conf.d/arrayfire.conf"
-  - ldconfig
-
 
 
 test1:
@@ -47,3 +29,5 @@ test1:
   script:
   - echo NVIDIA_VISIBLE_DEVICES=${NVIDIA_VISIBLE_DEVICES}
   - nvidia-smi
+  - build-wrapper-linux-x86-64 --out-dir bw-output bash scripts/gcov_coverage.sh
+  - sonar-scanner -X -Dsonar.login=$SONAR_TOKEN
