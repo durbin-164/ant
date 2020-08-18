@@ -7,6 +7,7 @@ before_script:
   - apt-get update
   
   - apt-get install -y curl
+  - apt-get install zip unzip
 
   - export SONAR_SCANNER_VERSION=4.4.0.2170
   - export SONAR_SCANNER_HOME=$HOME/.sonar/sonar-scanner-$SONAR_SCANNER_VERSION-linux
@@ -19,7 +20,7 @@ before_script:
   - unzip -o $HOME/.sonar/build-wrapper-linux-x86.zip -d $HOME/.sonar/
   - export PATH=$HOME/.sonar/build-wrapper-linux-x86:$PATH
 
-  - conda create -q -n avenv python=3.8
+  - conda create -q -n -y avenv python=3.8
   - conda activate avenv
   - bash scripts/requirements.sh
 

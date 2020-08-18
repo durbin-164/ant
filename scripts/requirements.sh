@@ -1,1 +1,1 @@
-conda install pybind11
+conda install -y pybind11
