@@ -7,6 +7,7 @@ variables:
     GIT_SUBMODULE_STRATEGY: recursive
 
 before_script:
+  - ln -s /usr/local/cuda-10.2 /usr/local/cuda
   # - apt-get update
   
   # - apt-get install -y curl
@@ -32,7 +33,9 @@ before_script:
 test1:
   stage: test
   script:
+  # - cmake -D CUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda-10.2 ..
   - echo NVIDIA_VISIBLE_DEVICES=${NVIDIA_VISIBLE_DEVICES}
   - nvidia-smi
+
   - build-wrapper-linux-x86-64 --out-dir bw-output bash scripts/gcov_coverage.sh
   - sonar-scanner -X -Dsonar.login=$SONAR_TOKEN
