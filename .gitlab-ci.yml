@@ -11,6 +11,11 @@ before_script:
 
 test1:
   stage: test
+  only:
+    - master
+    - dev
+    - merge_requests
+
   script:
   - python3 setup.py test
   - build-wrapper-linux-x86-64 --out-dir bw-output bash scripts/gcov_coverage.sh

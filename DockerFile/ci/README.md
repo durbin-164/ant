@@ -3,8 +3,8 @@
 
 #### Note: One time build docker image and use latter docker load. 
 
-Step1: Install docker in your local pc
-Step2: After Install docker in your pc run following command to build ant-ci docker image in docker engine.
+Step1: Install docker in your local pc<br/>
+Step2: After Install docker in your pc run following command to build ant-ci docker image in docker engine.<br/>
 NB: need too much time. ( more than an hour )
 
 ```
@@ -45,7 +45,7 @@ https://docs.gitlab.com/runner/install/
 ### Register gitlab runner
 https://docs.gitlab.com/runner/register/index.html
 
-use executer : docker
+use executer : docker<br/>
 docker image: ant-ci-base:latest
 
 
