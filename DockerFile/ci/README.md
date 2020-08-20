@@ -66,12 +66,12 @@ gedit /etc/gitlab-runner/config.toml
 ```
 
 #### Add this in config: 
-runtime = "nvidia"
-network_mode = "host"
-pull_policy = "if-not-present"
+runtime = "nvidia"<br/>
+network_mode = "host"<br/>
+pull_policy = "if-not-present"<br/>
 
 After editing your runner look like:
-
+```
 [[runners]]
   name = "name of your runner"
   url = "your url"
@@ -93,9 +93,9 @@ After editing your runner look like:
     network_mode = "host"
     shm_size = 0
     pull_policy = "if-not-present"
-
+```
 
 ### restart gitlab runner
 ```
-gitlab-runner restart
+$ gitlab-runner restart
 ```
