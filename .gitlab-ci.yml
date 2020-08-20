@@ -40,4 +40,4 @@ test1:
   - build-wrapper-linux-x86-64 --out-dir bw-output bash scripts/gcov_coverage.sh
   # - sonar-scanner -X -Dsonar.login=$SONAR_TOKEN
 
-  - sonar-scanner -Dsonar.login=$SONAR_TOKEN -Dsonar.organization=durbin-164 -Dsonar.projectKey=durbin-164_ant -Dsonar.sources=. -Dsonar.cfamily.build-wrapper-output=bw-output -Dsonar.host.url=https://sonarcloud.io 
+  - sonar-scanner -Dsonar.login=$SONAR_TOKEN -Dsonar.organization=durbin-164 -Dsonar.projectKey=durbin-164_ant -Dsonar.sources=. -Dsonar.cfamily.build-wrapper-output=bw-output -Dsonar.host.url=https://sonarcloud.io -Dsonar.tests=tests -Dsonar.sources=src
