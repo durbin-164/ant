@@ -7,17 +7,25 @@ enable_testing()
 set(PROJECT_SOURCE_DIR "src")
 set(PROJECT_INCLUDE_DIR "src")
 
-set(SOURCE_FILES 
+set(SOURCES 
     ${PROJECT_SOURCE_DIR}/hello.cpp
     ${PROJECT_SOURCE_DIR}/hello.h
-    
     )
 
+set_property(GLOBAL PROPERTY SOURCES ${SOURCES})
+
+add_subdirectory("src")
+
+get_property( SOURCES GLOBAL PROPERTY SOURCES)
+
+
+
+
 # Set up such that your IDE organizes the files correctly
-source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${SOURCE_FILES})
+source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${SOURCES})
 
 
-add_library(ant ${SOURCE_FILES})
+add_library(ant ${SOURCES})
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
