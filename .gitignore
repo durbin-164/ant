@@ -2,3 +2,4 @@
 /.vscode
 /docs_sphinx
 /docs_doxygen
+*out

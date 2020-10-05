@@ -1,11 +1,35 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(ant VERSION 0.1.0)
 
-include(CTest)
+
+# enable_language(C)
+# enable_language(CXX)
+# set (CMAKE_CXX_STANDARD 11)
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread -lgtest")
+# set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE ON)
+
+add_subdirectory("googletest")
 enable_testing()
 
+
+find_package(CUDA REQUIRED)
+
+if (CUDA_FOUND)
+   LIST(APPEND CUDA_NVCC_FLAGS "-std=c++14;-arch=sm_50 ;-arch=compute_50; -g; -G; -Wno-deprecated-gpu-targets")
+endif()
+
+enable_language(CUDA)
+
+
 set(PROJECT_SOURCE_DIR "src")
-set(PROJECT_INCLUDE_DIR "src")
+set(PROJECT_INCLUDE_DIR 
+      "${CMAKE_SOURCE_DIR}/src"
+      "${CMAKE_SOURCE_DIR}/src/ndarray"
+      "${CMAKE_SOURCE_DIR}/src/ndarray/core"
+      "${CMAKE_SOURCE_DIR}/src/ndarray/cuda"
+)
+
+include_directories(${PROJECT_INCLUDE_DIR})
 
 set(SOURCES 
     ${PROJECT_SOURCE_DIR}/hello.cpp
@@ -18,6 +42,9 @@ add_subdirectory("src")
 
 get_property( SOURCES GLOBAL PROPERTY SOURCES)
 
+# foreach(file ${SOURCES})
+#   message("soruce file: " ${file})
+# endforeach()
 
 
 
@@ -25,13 +52,21 @@ get_property( SOURCES GLOBAL PROPERTY SOURCES)
 source_group(TREE ${CMAKE_CURRENT_SOURCE_DIR} FILES ${SOURCES})
 
 
-add_library(ant ${SOURCES})
+# add_library(${PROJECT_NAME} ${SOURCES})
+CUDA_ADD_LIBRARY(${PROJECT_NAME} SHARED
+  ${SOURCES}
+  # OPTIONS -arch sm_52
+)
+
+target_link_libraries(${PROJECT_NAME}
+    ${CUDA_LIBRARIES}
+)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 include(CPack)
 
-
+add_subdirectory("test")
 
 # Doxygen
 
