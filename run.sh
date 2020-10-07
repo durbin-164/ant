@@ -8,6 +8,8 @@ cmake ..
 make ant_test
 ./test/ant_test
 
+make gcov
+
 # rm a.out
 # clear
 # nvcc -arch=sm_50 main.cpp src/ndarray/core/array.cpp  src/ndarray/cuda/addKernel.cu -I src/ndarray/cuda -I src/ndarray/core
