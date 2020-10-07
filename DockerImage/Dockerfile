@@ -1,8 +1,11 @@
 # base
-FROM nvidia/cuda:11.0-runtime-ubuntu20.04
+FROM nvidia/cuda:11.0-devel-ubuntu20.04
+
+ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt update -y && useradd -m docker
 RUN apt install -y cmake
+RUN apt install -y git nano
 
 #Install sonar dependency
 RUN apt-get install -y zip unzip
@@ -50,7 +53,6 @@ RUN cd /home/docker && mkdir actions-runner && cd actions-runner \
     && curl -O -L https://github.com/actions/runner/releases/download/v${RUNNER_VERSION}/actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz \
     && tar xzf ./actions-runner-linux-x64-${RUNNER_VERSION}.tar.gz
 
-ENV DEBIAN_FRONTEND noninteractive
 # install some additional dependencies
 RUN chown -R docker ~docker && /home/docker/actions-runner/bin/installdependencies.sh
 
@@ -59,8 +61,6 @@ COPY start.sh start.sh
 
 # make the script executable
 RUN chmod +x start.sh
-
-RUN apt install -y git nano
 
 # since the config and run script for actions are not allowed to be run by root,
 # set the user to "docker" so all subsequent commands are run as the docker user
