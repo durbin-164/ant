@@ -16,11 +16,13 @@ jobs:
         with:
             submodules: true
       
-      - name: build and test with sonar scanner
-        env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: build and test
         run: |
           build-wrapper-linux-x86-64 --out-dir bw-output bash script/gcov_coverage.sh
+
+      - name: sonar scanner
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: |
           sonar-scanner -Dsonar.login=$SONAR_TOKEN 
          
