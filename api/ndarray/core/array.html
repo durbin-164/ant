@@ -1,0 +1,422 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="english" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Array &mdash; ant  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="prev" title="Core" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> ant
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Welcome to ant's documentation!</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">API</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../hello.html">Hello</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">NdArray</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Core</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Array</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ant</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">API</a> &raquo;</li>
+        
+          <li><a href="../index.html">NdArray</a> &raquo;</li>
+        
+          <li><a href="index.html">Core</a> &raquo;</li>
+        
+      <li>Array</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/api/ndarray/core/array.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="array">
+<span id="core-array"></span><h1>Array<a class="headerlink" href="#array" title="Permalink to this headline">¶</a></h1>
+<dl class="cpp type">
+<dt id="_CPPv47ndarray">
+<span id="_CPPv37ndarray"></span><span id="_CPPv27ndarray"></span><span id="ndarray"></span><span class="target" id="namespacendarray"></span><em class="property">namespace </em><code class="sig-name descname">ndarray</code><a class="headerlink" href="#_CPPv47ndarray" title="Permalink to this definition">¶</a><br /></dt>
+<dd><dl class="cpp class">
+<dt id="_CPPv4N7ndarray5ArrayE">
+<span id="_CPPv3N7ndarray5ArrayE"></span><span id="_CPPv2N7ndarray5ArrayE"></span><span id="ndarray::Array"></span><span class="target" id="classndarray_1_1Array"></span><em class="property">class </em><code class="sig-name descname">Array</code><a class="headerlink" href="#_CPPv4N7ndarray5ArrayE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N7ndarray5Array5ArrayEv">
+<span id="_CPPv3N7ndarray5Array5ArrayEv"></span><span id="_CPPv2N7ndarray5Array5ArrayEv"></span><span id="ndarray::Array::Array"></span><span class="target" id="classndarray_1_1Array_1ae4bf89ac0c818741d6356339d4399a53"></span><code class="sig-name descname">Array</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray5Array5ArrayEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7ndarray5ArrayD0Ev">
+<span id="_CPPv3N7ndarray5ArrayD0Ev"></span><span id="_CPPv2N7ndarray5ArrayD0Ev"></span><span id="ndarray::Array::~Array"></span><span class="target" id="classndarray_1_1Array_1a400563f6a0b34cc50ed0c6908310bd93"></span><code class="sig-name descname">~Array</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray5ArrayD0Ev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7ndarray5Array5ArrayERK5ShapePdPdKb">
+<span id="_CPPv3N7ndarray5Array5ArrayERK5ShapePdPdKb"></span><span id="_CPPv2N7ndarray5Array5ArrayERK5ShapePdPdKb"></span><span id="ndarray::Array::Array__ShapeCR.doubleP.doubleP.bC"></span><span class="target" id="classndarray_1_1Array_1a80a61a102d23ccf8405302a7f2d13ad6"></span><code class="sig-name descname">Array</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv45Shape" title="Shape">Shape</a> &amp;<em>shape</em>, double *<em>hdata</em> = nullptr, double *<em>ddata</em> = nullptr, <em class="property">const</em> bool <em>onCuda</em> = true<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray5Array5ArrayERK5ShapePdPdKb" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initialize an array. </p>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">shape</span></code>: vector of shape. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hdata</span></code>: double pointer reference of host data. default nullprt </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ddata</span></code>: double pointer reference of device data. default nullprt </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ongpu</span></code>: boolen variable for on gpu or on cpu. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7ndarray5Array13updateStridesEv">
+<span id="_CPPv3N7ndarray5Array13updateStridesEv"></span><span id="_CPPv2N7ndarray5Array13updateStridesEv"></span><span id="ndarray::Array::updateStrides"></span><span class="target" id="classndarray_1_1Array_1a9d74e21750b01226bf77e29ab71bdbbd"></span>void <code class="sig-name descname">updateStrides</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray5Array13updateStridesEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7ndarray5Array11computeSizeEv">
+<span id="_CPPv3N7ndarray5Array11computeSizeEv"></span><span id="_CPPv2N7ndarray5Array11computeSizeEv"></span><span id="ndarray::Array::computeSize"></span><span class="target" id="classndarray_1_1Array_1acb9cfd8aedfe772a67e78cdf6f000138"></span>void <code class="sig-name descname">computeSize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray5Array11computeSizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7ndarray5Array14unMappedToCudaEv">
+<span id="_CPPv3N7ndarray5Array14unMappedToCudaEv"></span><span id="_CPPv2N7ndarray5Array14unMappedToCudaEv"></span><span id="ndarray::Array::unMappedToCuda"></span><span class="target" id="classndarray_1_1Array_1a467b232eeab522a655b90d112351cda8"></span>void <code class="sig-name descname">unMappedToCuda</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray5Array14unMappedToCudaEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7ndarray5Array19mapDeviceDataToHostEv">
+<span id="_CPPv3N7ndarray5Array19mapDeviceDataToHostEv"></span><span id="_CPPv2N7ndarray5Array19mapDeviceDataToHostEv"></span><span id="ndarray::Array::mapDeviceDataToHost"></span><span class="target" id="classndarray_1_1Array_1acee15cba2822286d0635ac6d73a2f8b0"></span>void <code class="sig-name descname">mapDeviceDataToHost</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray5Array19mapDeviceDataToHostEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7ndarray5ArrayplER5Array">
+<span id="_CPPv3N7ndarray5ArrayplER5Array"></span><span id="_CPPv2N7ndarray5ArrayplER5Array"></span><span id="ndarray::Array::add-operator__ArrayR"></span><span class="target" id="classndarray_1_1Array_1acefc5732f97cd5060af3515df1a3b5a6"></span><a class="reference internal" href="#_CPPv4N7ndarray5ArrayE" title="ndarray::Array">Array</a> <code class="sig-name descname">operator+</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N7ndarray5ArrayE" title="ndarray::Array">Array</a> &amp;<em>other</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray5ArrayplER5Array" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7ndarray5Array8hostDataEv">
+<span id="_CPPv3N7ndarray5Array8hostDataEv"></span><span id="_CPPv2N7ndarray5Array8hostDataEv"></span><span id="ndarray::Array::hostData"></span><span class="target" id="classndarray_1_1Array_1add7470831ed793c925077cefe5860c2b"></span>double *<code class="sig-name descname">hostData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray5Array8hostDataEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7ndarray5Array11setHostDataEv">
+<span id="_CPPv3N7ndarray5Array11setHostDataEv"></span><span id="_CPPv2N7ndarray5Array11setHostDataEv"></span><span id="ndarray::Array::setHostData"></span><span class="target" id="classndarray_1_1Array_1a7d3cebbc9bc2597a69bf9b78c5142c93"></span>void <code class="sig-name descname">setHostData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray5Array11setHostDataEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK7ndarray5Array10deviceDataEv">
+<span id="_CPPv3NK7ndarray5Array10deviceDataEv"></span><span id="_CPPv2NK7ndarray5Array10deviceDataEv"></span><span id="ndarray::Array::deviceDataC"></span><span class="target" id="classndarray_1_1Array_1ae35725e1e398b3d2835f328efbce9d82"></span>double *<code class="sig-name descname">deviceData</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK7ndarray5Array10deviceDataEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7ndarray5Array13setDeviceDataEv">
+<span id="_CPPv3N7ndarray5Array13setDeviceDataEv"></span><span id="_CPPv2N7ndarray5Array13setDeviceDataEv"></span><span id="ndarray::Array::setDeviceData"></span><span class="target" id="classndarray_1_1Array_1ab0be42fbfbf9ee64c4af2085541f7925"></span>void <code class="sig-name descname">setDeviceData</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray5Array13setDeviceDataEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK7ndarray5Array6strideEv">
+<span id="_CPPv3NK7ndarray5Array6strideEv"></span><span id="_CPPv2NK7ndarray5Array6strideEv"></span><span id="ndarray::Array::strideC"></span><span class="target" id="classndarray_1_1Array_1aaa06a8ac095f80fd999d6760788ebf6d"></span><a class="reference internal" href="#_CPPv45Shape" title="Shape">Shape</a> <code class="sig-name descname">stride</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK7ndarray5Array6strideEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7ndarray5Array9setStrideE5Shape">
+<span id="_CPPv3N7ndarray5Array9setStrideE5Shape"></span><span id="_CPPv2N7ndarray5Array9setStrideE5Shape"></span><span id="ndarray::Array::setStride__Shape"></span><span class="target" id="classndarray_1_1Array_1a69aa32c6dc52d1ad0b714ca71b553afe"></span>void <code class="sig-name descname">setStride</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv45Shape" title="Shape">Shape</a> <em>stride</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray5Array9setStrideE5Shape" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK7ndarray5Array4rankEv">
+<span id="_CPPv3NK7ndarray5Array4rankEv"></span><span id="_CPPv2NK7ndarray5Array4rankEv"></span><span id="ndarray::Array::rankC"></span><span class="target" id="classndarray_1_1Array_1aa0c35b11cf3e0275a5ccd2cc395fff8f"></span>int <code class="sig-name descname">rank</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK7ndarray5Array4rankEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK7ndarray5Array10isHostDataEv">
+<span id="_CPPv3NK7ndarray5Array10isHostDataEv"></span><span id="_CPPv2NK7ndarray5Array10isHostDataEv"></span><span id="ndarray::Array::isHostDataC"></span><span class="target" id="classndarray_1_1Array_1a83c725fc38fd69edc33f9c3d05541f45"></span>bool <code class="sig-name descname">isHostData</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK7ndarray5Array10isHostDataEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7ndarray5Array13setIsHostDataEb">
+<span id="_CPPv3N7ndarray5Array13setIsHostDataEb"></span><span id="_CPPv2N7ndarray5Array13setIsHostDataEb"></span><span id="ndarray::Array::setIsHostData__b"></span><span class="target" id="classndarray_1_1Array_1a246e9a8359b43c9dc6850f8729b7606e"></span>void <code class="sig-name descname">setIsHostData</code><span class="sig-paren">(</span>bool <em>hostData</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray5Array13setIsHostDataEb" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK7ndarray5Array12isDeviceDataEv">
+<span id="_CPPv3NK7ndarray5Array12isDeviceDataEv"></span><span id="_CPPv2NK7ndarray5Array12isDeviceDataEv"></span><span id="ndarray::Array::isDeviceDataC"></span><span class="target" id="classndarray_1_1Array_1ac06fa21c7611e3b61656e191e7b5afef"></span>bool <code class="sig-name descname">isDeviceData</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK7ndarray5Array12isDeviceDataEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK7ndarray5Array5shapeEv">
+<span id="_CPPv3NK7ndarray5Array5shapeEv"></span><span id="_CPPv2NK7ndarray5Array5shapeEv"></span><span id="ndarray::Array::shapeC"></span><span class="target" id="classndarray_1_1Array_1a1ebddb3c88811ced1fb387c272c3c0c1"></span><a class="reference internal" href="#_CPPv45Shape" title="Shape">Shape</a> <code class="sig-name descname">shape</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK7ndarray5Array5shapeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK7ndarray5Array4sizeEv">
+<span id="_CPPv3NK7ndarray5Array4sizeEv"></span><span id="_CPPv2NK7ndarray5Array4sizeEv"></span><span id="ndarray::Array::sizeC"></span><span class="target" id="classndarray_1_1Array_1aa05b29b7f34142564815dc1c5e854dd5"></span>int <code class="sig-name descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK7ndarray5Array4sizeEv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Private Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N7ndarray5Array11deviceData_E">
+<span id="_CPPv3N7ndarray5Array11deviceData_E"></span><span id="_CPPv2N7ndarray5Array11deviceData_E"></span><span id="ndarray::Array::deviceData___doubleP"></span><span class="target" id="classndarray_1_1Array_1a485e9de0c49959853b75b9e1a5a2483b"></span>double *<code class="sig-name descname">deviceData_</code> = nullptr<a class="headerlink" href="#_CPPv4N7ndarray5Array11deviceData_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N7ndarray5Array9hostData_E">
+<span id="_CPPv3N7ndarray5Array9hostData_E"></span><span id="_CPPv2N7ndarray5Array9hostData_E"></span><span id="ndarray::Array::hostData___doubleP"></span><span class="target" id="classndarray_1_1Array_1acd7dd37e959dac94400e2f83e487d2d0"></span>double *<code class="sig-name descname">hostData_</code> = nullptr<a class="headerlink" href="#_CPPv4N7ndarray5Array9hostData_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N7ndarray5Array6shape_E">
+<span id="_CPPv3N7ndarray5Array6shape_E"></span><span id="_CPPv2N7ndarray5Array6shape_E"></span><span id="ndarray::Array::shape___Shape"></span><span class="target" id="classndarray_1_1Array_1a194feef47b9a2201762bb513d522b8e8"></span><a class="reference internal" href="#_CPPv45Shape" title="Shape">Shape</a> <code class="sig-name descname">shape_</code><a class="headerlink" href="#_CPPv4N7ndarray5Array6shape_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N7ndarray5Array7onCuda_E">
+<span id="_CPPv3N7ndarray5Array7onCuda_E"></span><span id="_CPPv2N7ndarray5Array7onCuda_E"></span><span id="ndarray::Array::onCuda___b"></span><span class="target" id="classndarray_1_1Array_1a14e7dbed9c88a4a578204ac7c583e949"></span>bool <code class="sig-name descname">onCuda_</code><a class="headerlink" href="#_CPPv4N7ndarray5Array7onCuda_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N7ndarray5Array7stride_E">
+<span id="_CPPv3N7ndarray5Array7stride_E"></span><span id="_CPPv2N7ndarray5Array7stride_E"></span><span id="ndarray::Array::stride___Shape"></span><span class="target" id="classndarray_1_1Array_1afe886ecdfb6f309333feebc6a80e3955"></span><a class="reference internal" href="#_CPPv45Shape" title="Shape">Shape</a> <code class="sig-name descname">stride_</code><a class="headerlink" href="#_CPPv4N7ndarray5Array7stride_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N7ndarray5Array5size_E">
+<span id="_CPPv3N7ndarray5Array5size_E"></span><span id="_CPPv2N7ndarray5Array5size_E"></span><span id="ndarray::Array::size___s"></span><span class="target" id="classndarray_1_1Array_1afc86e7e2f2c862acf4aab0758aea6d58"></span>size_t <code class="sig-name descname">size_</code><a class="headerlink" href="#_CPPv4N7ndarray5Array5size_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N7ndarray5Array9byteSize_E">
+<span id="_CPPv3N7ndarray5Array9byteSize_E"></span><span id="_CPPv2N7ndarray5Array9byteSize_E"></span><span id="ndarray::Array::byteSize___s"></span><span class="target" id="classndarray_1_1Array_1ae734423c0c5bf7020b0bb3148dc44578"></span>size_t <code class="sig-name descname">byteSize_</code><a class="headerlink" href="#_CPPv4N7ndarray5Array9byteSize_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N7ndarray5Array11isHostData_E">
+<span id="_CPPv3N7ndarray5Array11isHostData_E"></span><span id="_CPPv2N7ndarray5Array11isHostData_E"></span><span id="ndarray::Array::isHostData___b"></span><span class="target" id="classndarray_1_1Array_1a177377ab650a0b756407625a9e4185b9"></span>bool <code class="sig-name descname">isHostData_</code><a class="headerlink" href="#_CPPv4N7ndarray5Array11isHostData_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N7ndarray5Array13isDeviceData_E">
+<span id="_CPPv3N7ndarray5Array13isDeviceData_E"></span><span id="_CPPv2N7ndarray5Array13isDeviceData_E"></span><span id="ndarray::Array::isDeviceData___b"></span><span class="target" id="classndarray_1_1Array_1acea9c0d117d0c48f2f72fac169a37152"></span>bool <code class="sig-name descname">isDeviceData_</code><a class="headerlink" href="#_CPPv4N7ndarray5Array13isDeviceData_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N7ndarray5Array17isMallocHostData_E">
+<span id="_CPPv3N7ndarray5Array17isMallocHostData_E"></span><span id="_CPPv2N7ndarray5Array17isMallocHostData_E"></span><span id="ndarray::Array::isMallocHostData___b"></span><span class="target" id="classndarray_1_1Array_1a80acf9c2547f114343c42bebfd3707a1"></span>bool <code class="sig-name descname">isMallocHostData_</code> = false<a class="headerlink" href="#_CPPv4N7ndarray5Array17isMallocHostData_E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Typedefs</p>
+<dl class="cpp type">
+<dt id="_CPPv45Shape">
+<span id="_CPPv35Shape"></span><span id="_CPPv25Shape"></span><span class="target" id="dataType_8h_1a6d6d9d9258bf7c6bf7659ea14c42d822"></span><em class="property">using </em><code class="sig-name descname">Shape</code> = std::vector&lt;int&gt;<a class="headerlink" href="#_CPPv45Shape" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv44Axis">
+<span id="_CPPv34Axis"></span><span id="_CPPv24Axis"></span><span class="target" id="dataType_8h_1ad876edbe132d148b97b6e62b63137ce6"></span><em class="property">using </em><code class="sig-name descname">Axis</code> = std::vector&lt;int&gt;<a class="headerlink" href="#_CPPv44Axis" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv42LL">
+<span id="_CPPv32LL"></span><span id="_CPPv22LL"></span><span class="target" id="dataType_8h_1a64929c34f2d2188fc02d1a6b7f4a435e"></span><em class="property">using </em><code class="sig-name descname">LL</code> = long long<a class="headerlink" href="#_CPPv42LL" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Core" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Md. Masud Rana
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
