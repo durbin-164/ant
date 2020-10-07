@@ -12,10 +12,6 @@ jobs:
   
     steps:
       # Checkout repo
-      - name: install requirement
-        run: |
-          - git --version
-
       - uses: actions/checkout@v2
         with:
             submodules: true
