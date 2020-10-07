@@ -21,6 +21,6 @@ jobs:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          - build-wrapper-linux-x86-64 --out-dir bw-output bash script/gcov_coverage.sh
-          - sonar-scanner -Dsonar.login=$SONAR_TOKEN 
+          build-wrapper-linux-x86-64 --out-dir bw-output bash script/gcov_coverage.sh
+          sonar-scanner -Dsonar.login=$SONAR_TOKEN 
          
