@@ -102,9 +102,12 @@ TEST(ArrayTest, TestAttributeFunction)
     EXPECT_EQ(A.size(), 0);
 
     
-    
-
-   
+    // TODO: need separate device data test.
+    A.setDeviceData(n_data);
+    A.setShape(s);
+    EXPECT_EQ(A.rank(), 2);
+    EXPECT_EQ(A.size(), 8);
+    EXPECT_TRUE(A.isDeviceData());
 
 }
 

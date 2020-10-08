@@ -33,18 +33,17 @@ class Array
         //Attributes
         double* hostData();
         void setHostData(double *hdata);
-        inline double* deviceData() const {return deviceData_;}
+        double* deviceData() const {return deviceData_;}
         void setDeviceData(double *ddata);
-        inline Shape stride() const {return stride_;}
-        inline size_t rank() const {return shape_.size();}
-        inline bool isHostData() const {return isHostData_;}
-        inline void setIsHostData(bool isHostData){isHostData_ = isHostData;}
-        inline bool isDeviceData() const {return isDeviceData_;}
-        inline void setIsDeviceData(bool isDeviceData){isDeviceData_= isDeviceData;}
-        inline Shape shape() const {return shape_;}
+        Shape stride() const {return stride_;}
+        size_t rank() const {return shape_.size();}
+        bool isHostData() const {return isHostData_;}
+        void setIsHostData(bool isHostData){isHostData_ = isHostData;}
+        bool isDeviceData() const {return isDeviceData_;}
+        void setIsDeviceData(bool isDeviceData){isDeviceData_= isDeviceData;}
+        Shape shape() const {return shape_;}
         void setShape(Shape shape);
-        inline size_t size() const {return size_;}
-        inline void setSize(size_t size){size_ = size;}
+        size_t size() const {return size_;}
 
 
     private:
