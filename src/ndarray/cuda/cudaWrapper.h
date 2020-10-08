@@ -1,7 +1,7 @@
 #pragma once
 #include "array.h"
 
-namespace cudaABC
+namespace cuda
 {
 
     ndarray::Array cudaAdd(const ndarray::Array &A, const ndarray::Array &B);

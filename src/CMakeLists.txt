@@ -1,12 +1,5 @@
 cmake_minimum_required(VERSION 3.0.0)
 
-set(SOURCES 
-    ${CMAKE_CURRENT_SOURCE_DIR}/hello.cpp
-    ${CMAKE_CURRENT_SOURCE_DIR}/hello.h
-    )
-
-set_property(GLOBAL PROPERTY SOURCES ${SOURCES})
-
 add_subdirectory("ndarray")
 
 get_property( SOURCES GLOBAL PROPERTY SOURCES)

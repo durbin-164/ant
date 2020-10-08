@@ -20,7 +20,7 @@ __global__ void add_(double* a, double* b, double* c, int N) {
   }
 }
 
-namespace cudaABC
+namespace cuda
 {
       void printList(double * data, int  N){
           double *hostData = (double *)malloc(N);

@@ -1,20 +1,16 @@
 #include "array.h"
 #include "cudaWrapper.h"
-// #include "cuda.h"
-// #include <cuda_runtime_api.h>
-
 #include "cuda.h"
-// #include <cuda_runtime.h>
-#include <cuda_runtime_api.h>
+#include <cuda_runtime.h>
+// #include <cuda_runtime_api.h>
 #include <stdlib.h>
 #include <iostream>
 
 namespace ndarray{
 
     Array::Array(const Shape &shape,  double *hdata, double *ddata,const bool onCuda)
+    : shape_(shape), onCuda_(onCuda)
     {
-        shape_ = shape;
-        onCuda_ = onCuda;
         computeSize();
         updateStrides();
 
@@ -37,7 +33,7 @@ namespace ndarray{
     void Array::updateStrides(){
         stride_.resize(shape_.size());
 
-        LL initStride =1;
+        int initStride =1;
 
         for(LL i = shape_.size()-1 ; i>=0; i--){
             stride_.push_back(initStride);
@@ -51,7 +47,7 @@ namespace ndarray{
             return;
         }
         size_ =1;
-        for(LL i = 0; i < shape_.size(); i++) size_ *= shape_[i];
+        for(int s: shape_) size_ *= s;
 
         byteSize_ = size_ * sizeof(double);
     }
@@ -60,7 +56,6 @@ namespace ndarray{
     {
         if(isMallocHostData_){
             // TODO: complete array distructor to free host data.
-            // delete[] hostData_;
             free(hostData_);
             hostData_=nullptr;
             isHostData_ = false;
@@ -85,8 +80,8 @@ namespace ndarray{
 
 
     // operator overload
-    Array Array::operator+ ( Array &other){
-        return cudaABC::cudaAdd(*this, other);
+    Array Array::operator+ (const Array &other){
+        return cuda::cudaAdd(*this, other);
     }
 
 
@@ -98,6 +93,30 @@ namespace ndarray{
         return hostData_;
 
     }
+
+    inline void Array::setHostData(double *hdata){
+        if(hdata){
+            hostData_ = hdata;
+            isHostData_ = true;
+        }
+    }
+
+     inline void Array::setDeviceData(double *ddata){
+         if(ddata){
+             deviceData_ = ddata;
+             isDeviceData_ = true;
+         }
+     }
+
+      inline void Array::setStride(Shape stride){
+          stride_ = stride;
+      }
+
+      inline void Array::setShape(Shape shape){
+          shape_ = shape;
+          updateStrides();
+          computeSize();
+      }
 
 
     
