@@ -3,8 +3,8 @@ project(ant VERSION 0.1.0)
 
 
 # enable_language(C)
-# enable_language(CXX)
-set (CMAKE_CXX_STANDARD 11)
+enable_language(CXX)
+set (CMAKE_CXX_STANDARD 14)
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -pthread -lgtest")
 set(CMAKE_CXX_FLAGS "-g -O0 -Wall -fprofile-arcs -ftest-coverage")
 set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE ON)
