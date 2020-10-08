@@ -60,3 +60,35 @@ TEST(ArrayTest, AddTest2D)
         EXPECT_EQ(cActualData[i], cExpectedData[i]);
     }
 }
+
+
+TEST(ArrayTest, TestAttributeFunction)
+{
+    Shape s = {2,4};
+    double a[][4] = {{1,2,3,4},
+                    {5,6,7,8}};
+
+    ndarray::Array A(s, *a);
+    
+    EXPECT_EQ(A.rank(),2);
+    EXPECT_TRUE(A.isHostData());
+    EXPECT_TRUE(A.isDeviceData());
+
+    auto shape = A.shape();
+    TestShapeData(shape, s);
+
+    auto stride = A.stride();
+    Shape ex_stride = {4,1};
+    TestShapeData(stride, ex_stride);
+    
+
+   
+
+}
+
+void TestShapeData(Shape actual, Shape expected){
+
+    for(int i=0; i<actual.size(); i++){
+        EXPECT_EQ(actual[i], expected[i]);
+    }
+}

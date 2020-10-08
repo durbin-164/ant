@@ -94,25 +94,25 @@ namespace ndarray{
 
     }
 
-    inline void Array::setHostData(double *hdata){
+    void Array::setHostData(double *hdata){
         if(hdata){
             hostData_ = hdata;
             isHostData_ = true;
         }
     }
 
-     inline void Array::setDeviceData(double *ddata){
+    void Array::setDeviceData(double *ddata){
          if(ddata){
              deviceData_ = ddata;
              isDeviceData_ = true;
          }
      }
 
-      inline void Array::setStride(Shape stride){
+    void Array::setStride(Shape stride){
           stride_ = stride;
       }
 
-      inline void Array::setShape(Shape shape){
+    void Array::setShape(Shape shape){
           shape_ = shape;
           updateStrides();
           computeSize();

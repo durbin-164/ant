@@ -33,9 +33,9 @@ set(GCOV_SOURCES_DIR
   ${CMAKE_SOURCE_DIR}/src/ndarray/cuda/*.cu
 )
 
-foreach(file ${GCOV_SOURCES_DIR})
-  message("File: " ${file})
-endforeach()
+# foreach(file ${GCOV_SOURCES_DIR})
+#   message("File: " ${file})
+# endforeach()
 
 
 # Create the gcov target. Run coverage tests with 'make gcov'

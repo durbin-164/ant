@@ -32,18 +32,18 @@ class Array
 
         //Attributes
         double* hostData();
-        inline void setHostData(double *hdata);
+        void setHostData(double *hdata);
         inline double* deviceData() const {return deviceData_;}
-        inline void setDeviceData(double *ddata);
+        void setDeviceData(double *ddata);
         inline Shape stride() const {return stride_;}
-        inline void setStride(Shape stride);
+        void setStride(Shape stride);
         inline size_t rank() const {return shape_.size();}
         inline bool isHostData() const {return isHostData_;}
         inline void setIsHostData(bool isHostData){isHostData_ = isHostData;}
         inline bool isDeviceData() const {return isDeviceData_;}
         inline void setIsDeviceData(bool isDeviceData){isDeviceData_= isDeviceData;}
         inline Shape shape() const {return shape_;}
-        inline void setShape(Shape shape);
+        void setShape(Shape shape);
         inline size_t size() const {return size_;}
         inline void setSize(size_t size){size_ = size;}
 
