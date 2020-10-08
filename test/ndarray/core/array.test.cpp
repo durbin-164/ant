@@ -2,6 +2,7 @@
 #include "array.h"
 #include <vector>
 
+void TestShapeData(Shape& actual, Shape &expected);
 
 TEST(ArrayTest, ArrayInit)
 {
@@ -79,6 +80,7 @@ TEST(ArrayTest, TestAttributeFunction)
 
     auto stride = A.stride();
     Shape ex_stride = {4,1};
+    std::cout<<stride.size()<<std::endl;
     TestShapeData(stride, ex_stride);
     
 
@@ -86,7 +88,7 @@ TEST(ArrayTest, TestAttributeFunction)
 
 }
 
-void TestShapeData(Shape actual, Shape expected){
+void TestShapeData(Shape& actual, Shape& expected){
 
     for(int i=0; i<actual.size(); i++){
         EXPECT_EQ(actual[i], expected[i]);

@@ -36,7 +36,7 @@ namespace ndarray{
         int initStride =1;
 
         for(LL i = shape_.size()-1 ; i>=0; i--){
-            stride_.push_back(initStride);
+            stride_[i] = initStride;
             initStride *= shape_[i];
         }
     }

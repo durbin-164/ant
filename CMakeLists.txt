@@ -22,8 +22,6 @@ endif()
 
 enable_language(CUDA)
 
-find_package(Git QUIET)
-
 # set(PROJECT_SOURCE_DIR "src")
 set(PROJECT_INCLUDE_DIR 
       "${CMAKE_SOURCE_DIR}/src"
