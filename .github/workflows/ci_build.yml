@@ -2,7 +2,7 @@ name: ant_ci
 
 on:
   push:
-    branches: [master, '**']
+    branches: [master, 'dev']
   pull_request:
     branches: ['**']
 
@@ -36,10 +36,11 @@ jobs:
 
           
       - name: Deploy 🚀
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/dev' }}
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BASE_BRANCH: InitProject
+          BASE_BRANCH: dev
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: docs_sphinx/_build/html # The folder the action should deploy.
           CLEAN: true # Automatically remove deleted files from the deploy branch

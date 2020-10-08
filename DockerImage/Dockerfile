@@ -33,7 +33,13 @@ RUN curl -s -L https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/s
 ENV SONAR_RUNNER_HOME=sonar-scanner
 ENV PATH $PATH:/sonar-scanner/bin
 
+######## using for documentation and github pages#####
 
+RUN apt install -y doxygen sphinx-doc python3-pip rsync
+
+RUN pip3 install sphinx-rtd-theme \
+    && pip3 install breathe \
+    && pip3 install sphinx-sitemap
 
 # ****************Start for github runner ********************
 
