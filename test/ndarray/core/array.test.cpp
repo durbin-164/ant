@@ -82,6 +82,26 @@ TEST(ArrayTest, TestAttributeFunction)
     Shape ex_stride = {4,1};
     std::cout<<stride.size()<<std::endl;
     TestShapeData(stride, ex_stride);
+
+    Shape n_shape = {8};
+    A.setShape(n_shape);
+    auto a_n_s = A.shape();
+    TestShapeData(a_n_s, n_shape);
+
+    double n_data[]= {1,2,3,4,5,6,7,8};
+    A.setHostData(n_data);
+    auto a_n_data = A.hostData();
+
+    for(int i=0; i<A.size(); i++){
+        EXPECT_EQ(a_n_data[i], n_data[i]);
+    }
+
+    A.setShape({});
+    A.updateStrides();
+    A.computeSize();
+    EXPECT_EQ(A.size(), 0);
+
+    
     
 
    

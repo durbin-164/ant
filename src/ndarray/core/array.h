@@ -27,7 +27,7 @@ class Array
 
 
         //operator overload
-        Array operator+(const Array &other);
+        Array operator+(const Array &other) const;
 
 
         //Attributes
@@ -36,7 +36,6 @@ class Array
         inline double* deviceData() const {return deviceData_;}
         void setDeviceData(double *ddata);
         inline Shape stride() const {return stride_;}
-        void setStride(Shape stride);
         inline size_t rank() const {return shape_.size();}
         inline bool isHostData() const {return isHostData_;}
         inline void setIsHostData(bool isHostData){isHostData_ = isHostData;}

@@ -80,7 +80,7 @@ namespace ndarray{
 
 
     // operator overload
-    Array Array::operator+ (const Array &other){
+    Array Array::operator+ (const Array &other)const {
         return cuda::cudaAdd(*this, other);
     }
 
@@ -95,6 +95,7 @@ namespace ndarray{
     }
 
     void Array::setHostData(double *hdata){
+        // TODO: need to set device data also
         if(hdata){
             hostData_ = hdata;
             isHostData_ = true;
@@ -102,20 +103,19 @@ namespace ndarray{
     }
 
     void Array::setDeviceData(double *ddata){
-         if(ddata){
-             deviceData_ = ddata;
-             isDeviceData_ = true;
-         }
+        // TODO need to set host data.
+        if(ddata){
+            deviceData_ = ddata;
+            isDeviceData_ = true;
+        }
      }
 
-    void Array::setStride(Shape stride){
-          stride_ = stride;
-      }
 
     void Array::setShape(Shape shape){
-          shape_ = shape;
-          updateStrides();
-          computeSize();
+        // TODO: update this function
+        shape_ = shape;
+        updateStrides();
+        computeSize();
       }
 
 
