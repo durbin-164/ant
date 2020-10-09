@@ -12,4 +12,4 @@
 
 ### About 
 
-ANT is a NdArray which is develop in c++ and cuda. It is an educational project for self learning. 
+ANT is a NdArray which is developing in c++ and Cuda. It is an educational project for self-learning. 
