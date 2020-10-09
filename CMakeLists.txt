@@ -28,6 +28,7 @@ set(PROJECT_INCLUDE_DIR
       "${CMAKE_SOURCE_DIR}/src/ndarray"
       "${CMAKE_SOURCE_DIR}/src/ndarray/core"
       "${CMAKE_SOURCE_DIR}/src/ndarray/cuda"
+      "${CMAKE_SOURCE_DIR}/src/ndarray/util"
 )
 
 include_directories(${PROJECT_INCLUDE_DIR})

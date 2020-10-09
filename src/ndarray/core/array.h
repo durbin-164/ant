@@ -35,7 +35,7 @@ class Array
         void setHostData(double *hdata);
         double* deviceData() const {return deviceData_;}
         void setDeviceData(double *ddata);
-        Shape stride() const {return stride_;}
+        Stride stride() const {return stride_;}
         size_t rank() const {return shape_.size();}
         bool isHostData() const {return isHostData_;}
         void setIsHostData(bool isHostData){isHostData_ = isHostData;}
@@ -51,7 +51,7 @@ class Array
         double *hostData_ = nullptr;
         Shape shape_;
         bool onCuda_;
-        Shape stride_;
+        Stride stride_;
         size_t size_;
         size_t byteSize_;
         bool isHostData_;
