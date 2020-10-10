@@ -2,11 +2,11 @@
 #include "array.h"
 #include <vector>
 
-void TestShapeData(Shape& actual, Shape &expected);
+void TestShapeData(ndarray::Shape& actual, ndarray::Shape &expected);
 
 TEST(ArrayTest, ArrayInit)
 {
-    Shape s = {3};
+    ndarray::Shape s = {3};
     double a[] = {1,2,3};
 
     ndarray::Array A(s, a);
@@ -16,7 +16,7 @@ TEST(ArrayTest, ArrayInit)
 
 TEST(ArrayTest, AddTest)
 {
-    Shape s = {3};
+    ndarray::Shape s = {3};
     double a[] = {1,2,3};
 
     ndarray::Array A(s, a);
@@ -40,7 +40,7 @@ TEST(ArrayTest, AddTest)
 
 TEST(ArrayTest, AddTest2D)
 {
-    Shape s = {2,4};
+    ndarray::Shape s = {2,4};
     double a[][4] = {{1,2,3,4},
                     {5,6,7,8}};
 
@@ -65,7 +65,7 @@ TEST(ArrayTest, AddTest2D)
 
 TEST(ArrayTest, TestAttributeFunction)
 {
-    Shape s = {2,4};
+    ndarray::Shape s = {2,4};
     double a[][4] = {{1,2,3,4},
                     {5,6,7,8}};
 
@@ -75,15 +75,15 @@ TEST(ArrayTest, TestAttributeFunction)
     EXPECT_TRUE(A.isHostData());
     EXPECT_TRUE(A.isDeviceData());
 
-    auto shape = A.shape();
+    ndarray::Shape shape = A.shape();
     TestShapeData(shape, s);
 
     auto stride = A.stride();
-    Shape ex_stride = {4,1};
+    ndarray::Shape ex_stride = {4,1};
     std::cout<<stride.size()<<std::endl;
     TestShapeData(stride, ex_stride);
 
-    Shape n_shape = {8};
+    ndarray::Shape n_shape = {8};
     A.setShape(n_shape);
     auto a_n_s = A.shape();
     TestShapeData(a_n_s, n_shape);
@@ -111,7 +111,7 @@ TEST(ArrayTest, TestAttributeFunction)
 
 }
 
-void TestShapeData(Shape& actual, Shape& expected){
+void TestShapeData(ndarray::Shape& actual, ndarray::Shape& expected){
 
     for(int i=0; i<actual.size(); i++){
         EXPECT_EQ(actual[i], expected[i]);

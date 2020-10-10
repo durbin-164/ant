@@ -4,7 +4,7 @@
 #include "broadCasted.h"
 #include "util.h"
 
-void shapeTest(const Shape &actual, const Shape &expected){
+void shapeTest(const ndarray::Shape &actual, const ndarray::Shape &expected){
     for(size_t i = 0; i<expected.size(); i++){
         EXPECT_EQ(actual[i], expected[i]);
     }
@@ -12,9 +12,9 @@ void shapeTest(const Shape &actual, const Shape &expected){
 
 TEST(getBroadCastedShape, LeftShapeBroadCast)
 {
-    Shape l_shape;
-    Shape r_shape;
-    Shape out_shape;
+    ndarray::Shape l_shape;
+    ndarray::Shape r_shape;
+    ndarray::Shape out_shape;
     l_shape = {1};
     r_shape = {3,4,2};
     out_shape = ndarray::getBroadCastedShape(l_shape, r_shape);
@@ -34,9 +34,9 @@ TEST(getBroadCastedShape, LeftShapeBroadCast)
 
 TEST(getBroadCastedShape, RightShapeBroadCast)
 {
-    Shape l_shape;
-    Shape r_shape;
-    Shape out_shape;
+    ndarray::Shape l_shape;
+    ndarray::Shape r_shape;
+    ndarray::Shape out_shape;
     l_shape = {4,5,2};
     r_shape = {1};
     out_shape = ndarray::getBroadCastedShape(l_shape, r_shape);
@@ -60,9 +60,9 @@ TEST(getBroadCastedShape, RightShapeBroadCast)
 
 TEST(getBroadCastedShape, EmptyShapeException)
 {
-    Shape l_shape;
-    Shape r_shape;
-    Shape out_shape;
+    ndarray::Shape l_shape;
+    ndarray::Shape r_shape;
+    ndarray::Shape out_shape;
     std::stringstream ss;
     l_shape = {};
     r_shape = {1,2,3};
@@ -117,9 +117,9 @@ TEST(getBroadCastedShape, EmptyShapeException)
 
 TEST(getBroadCastedShape, UnableBroadCastedExpection)
 {
-    Shape l_shape;
-    Shape r_shape;
-    Shape out_shape;
+    ndarray::Shape l_shape;
+    ndarray::Shape r_shape;
+    ndarray::Shape out_shape;
     l_shape = {3,2};
     r_shape = {1,2,3};
 

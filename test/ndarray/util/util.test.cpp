@@ -5,7 +5,7 @@
 
 TEST(getVectorIntInString, CheckStringIsProuceCorrectly)
 {
-    Shape s = {3,1};
+    ndarray::Shape s = {3,1};
     std::string actual = ndarray::getVectorIntInString(s);
 
     EXPECT_EQ("3,1", actual);
