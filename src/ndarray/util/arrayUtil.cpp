@@ -1,4 +1,9 @@
 #include "ndarray/util/arrayUtil.h"
+#include <stdexcept> 
+#include <sstream>
+#include "ndarray/util/util.h"
+#include "ndarray/core/broadCasted.h"
+#include <iostream>
 
 namespace ndarray
 {
@@ -27,6 +32,31 @@ ndarray::Shape getCumulativeMultiShape(const ndarray::Shape &shape, const int of
     }
 
     return cum_shape;
+}
+
+
+ndarray::Shape getMatmulOutShape(const ndarray::Shape &l_shape, const ndarray::Shape &r_shape){
+    if(l_shape.end()[-1] != r_shape.end()[-2]){
+        std::stringstream ss;
+        ss<<"operands could not be possible together with shapes(";
+        ss<<ndarray::getVectorIntInString(l_shape)<<") (";
+        ss<<ndarray::getVectorIntInString(r_shape)<<").";
+        throw std::runtime_error(ss.str());
+    }
+
+    std::vector<int>ret_shape;
+    int offset = 2;
+    ret_shape = ndarray::getBroadCastedShape(l_shape,r_shape, offset);
+
+    if(ret_shape.size()==0){
+        ret_shape.push_back(1);
+    }
+                                        
+
+    ret_shape.push_back(l_shape.end()[-2]);
+    ret_shape.push_back(r_shape.end()[-1]);
+
+    return ret_shape;
 }
 
 

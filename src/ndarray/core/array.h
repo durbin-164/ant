@@ -25,6 +25,8 @@ class Array
         void unMappedToCuda();
         void mapDeviceDataToHost();
 
+        //math
+        Array matmul(const Array &other) const;
 
         //operator overload
         Array operator+(const Array &other) const;
