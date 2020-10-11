@@ -13,17 +13,17 @@ TEST(getBroadCastedShape, LeftShapeBroadCast)
     l_shape = {1};
     r_shape = {3,4,2};
     out_shape = ndarray::getBroadCastedShape(l_shape, r_shape);
-    testVector(out_shape, r_shape);
+    VectorEQ(out_shape, r_shape);
 
     l_shape = {4,2};
     r_shape = {3,4,2};
     out_shape = ndarray::getBroadCastedShape(l_shape, r_shape);
-    testVector(out_shape, r_shape);
+    VectorEQ(out_shape, r_shape);
 
     l_shape = {1,2};
     r_shape = {3,4,2};
     out_shape = ndarray::getBroadCastedShape(l_shape, r_shape,2);
-    testVector(out_shape, {3});
+    VectorEQ(out_shape, {3});
   
 }
 
@@ -35,22 +35,22 @@ TEST(getBroadCastedShape, RightShapeBroadCast)
     l_shape = {4,5,2};
     r_shape = {1};
     out_shape = ndarray::getBroadCastedShape(l_shape, r_shape);
-    testVector(out_shape, l_shape);
+    VectorEQ(out_shape, l_shape);
 
     l_shape = {4,5,3};
     r_shape = {3};
     out_shape = ndarray::getBroadCastedShape(l_shape, r_shape);
-    testVector(out_shape,l_shape);
+    VectorEQ(out_shape,l_shape);
 
     l_shape = {4,5,3};
     r_shape = {2};
     out_shape = ndarray::getBroadCastedShape(l_shape, r_shape,1);
-    testVector(out_shape, {4,5});
+    VectorEQ(out_shape, {4,5});
 
     l_shape = {4,5,3};
     r_shape = {4,5,3};
     out_shape = ndarray::getBroadCastedShape(l_shape, r_shape,0);
-    testVector(out_shape, l_shape);
+    VectorEQ(out_shape, l_shape);
 }
 
 TEST(getBroadCastedShape, EmptyShapeException)

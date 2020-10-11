@@ -9,6 +9,7 @@
 #include "ndarray/cuda/util.cuh"
 #include "ndarray/core/broadCasted.h"
 #include "ndarray/util/arrayUtil.h"
+#include "ndarray/util/util.h"
 
 __global__ void add_(double* A,
                     double* B,
@@ -30,7 +31,7 @@ __global__ void add_(double* A,
       
     // Boundary check
     if (tid < N) {
-      // printf("index: %d %d\n", a_index, b_index);
+      // printf("index: %d %d %lf %lf\n", a_index, b_index, A[a_index], B[b_index]);
       // Each thread adds a single element
       C[tid] = A[a_index] + B[b_index];
     }
@@ -38,6 +39,7 @@ __global__ void add_(double* A,
 
 namespace cuda
 {
+
 ndarray::Array cudaAdd(const ndarray::Array &A, const ndarray::Array &B){
         
     ndarray::Shape out_shape = ndarray::getBroadCastedShape(A.shape(), B.shape());
@@ -75,8 +77,6 @@ ndarray::Array cudaAdd(const ndarray::Array &A, const ndarray::Array &B){
 
     if(NUM_BLOCKS==1) NUM_THREADS =num_of_element;
 
-    printf("%d %d\n", NUM_BLOCKS, NUM_THREADS);
-
     // Launch the kernel on the GPU
     // Kernel calls are asynchronous (the CPU program continues execution after
     // call, but no necessarily before the kernel finishes)
@@ -89,11 +89,11 @@ ndarray::Array cudaAdd(const ndarray::Array &A, const ndarray::Array &B){
                                     cum_shape,
                                     cum_mul_shape.size()
                                       );
-
+    
     cudaFree(a_stride);
     cudaFree(b_stride);
     cudaFree(cum_shape);
-    return ndarray::Array(A.shape(), nullptr, C);
+    return ndarray::Array(out_shape, nullptr, C);
 }
 
 }//end cuda namespace

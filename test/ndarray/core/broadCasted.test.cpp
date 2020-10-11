@@ -11,18 +11,18 @@ TEST(paddedVactor, padProperly){
     int size = 4;
 
     ndarray::Shape actual = ndarray::paddedVector(s, size);
-    testVector(actual,{0,0,2,3});
+    VectorEQ(actual,{0,0,2,3});
 
     s = {3};
     size =1;
     actual = ndarray::paddedVector(s, size);
-    testVector(actual,{3});
+    VectorEQ(actual,{3});
 
 
     ndarray::Stride st = {3,4};
     size = 5;
     ndarray::Stride st_actual = ndarray::paddedVector(st, size, 1);
-    testVector(st_actual, {1,1,1,3,4});
+    VectorEQ(st_actual, {1,1,1,3,4});
 }
 
 TEST(paddedVactor, ThrowException){
@@ -57,10 +57,10 @@ TEST(getBroadCastedProperty, returnProperProperty)
 
     ndarray::BroadCastedProperty BP = ndarray::getBroadCastedProperty(out_shape, A, B);
 
-    testVector(BP.a_shape, {2,2,2,3});
-    testVector(BP.b_shape, {1,1,1,3});
-    testVector(BP.a_stride, {12,6,3,1});
-    testVector(BP.b_stride, {0,0,0,1});
+    VectorEQ(BP.a_shape, {2,2,2,3});
+    VectorEQ(BP.b_shape, {1,1,1,3});
+    VectorEQ(BP.a_stride, {12,6,3,1});
+    VectorEQ(BP.b_stride, {0,0,0,1});
 
 }
 
@@ -75,10 +75,10 @@ TEST(getBroadCastedProperty, HorizontalAndVerticalBroadCast)
 
     ndarray::BroadCastedProperty BP = ndarray::getBroadCastedProperty(out_shape, A, B);
 
-    testVector(BP.a_shape, {1,3});
-    testVector(BP.b_shape, {4,1});
-    testVector(BP.a_stride, {0,1});
-    testVector(BP.b_stride, {1,0});
+    VectorEQ(BP.a_shape, {1,3});
+    VectorEQ(BP.b_shape, {4,1});
+    VectorEQ(BP.a_stride, {0,1});
+    VectorEQ(BP.b_stride, {1,0});
 }
 
 
@@ -92,9 +92,9 @@ TEST(getBroadCastedProperty, withOffsetValue)
 
     ndarray::BroadCastedProperty BP = ndarray::getBroadCastedProperty(out_shape, A, B,2);
 
-    testVector(BP.a_shape, {2,2,2,3});
-    testVector(BP.b_shape, {1,1,1,3});
-    testVector(BP.a_stride, {12,6,3,1});
-    testVector(BP.b_stride, {0,0,3,1});
+    VectorEQ(BP.a_shape, {2,2,2,3});
+    VectorEQ(BP.b_shape, {1,1,1,3});
+    VectorEQ(BP.a_stride, {12,6,3,1});
+    VectorEQ(BP.b_stride, {0,0,3,1});
 
 }
