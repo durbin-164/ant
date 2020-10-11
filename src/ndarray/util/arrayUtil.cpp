@@ -19,7 +19,7 @@ ndarray::LL getNumOfElementByShape(const ndarray::Shape &shape){
 ndarray::Shape getCumulativeMultiShape(const ndarray::Shape &shape, const int offset){
     ndarray::Shape cum_shape(std::max((int)shape.size()-offset-1,0));
 
-    if(shape.size() <=1)return cum_shape;
+    if(shape.size()-offset <=1)return cum_shape;
 
     if(cum_shape.size() <= 0){
         cum_shape.push_back(shape.begin()[0]);
