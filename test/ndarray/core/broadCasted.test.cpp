@@ -1,139 +1,100 @@
 #include "gtest/gtest.h"
-#include "array.h"
+#include "ndarray/core/array.h"
 #include <vector>
-#include "broadCasted.h"
-#include "util.h"
+#include "ndarray/core/broadCasted.h"
+#include "ndarray/util/util.h"
+#include "testUtil.h"
 
-void shapeTest(const ndarray::Shape &actual, const ndarray::Shape &expected){
-    for(size_t i = 0; i<expected.size(); i++){
-        EXPECT_EQ(actual[i], expected[i]);
-    }
+TEST(paddedVactor, padProperly){
+
+    ndarray::Shape s = {2,3};
+    int size = 4;
+
+    ndarray::Shape actual = ndarray::paddedVector(s, size);
+    testVector(actual,{0,0,2,3});
+
+    s = {3};
+    size =1;
+    actual = ndarray::paddedVector(s, size);
+    testVector(actual,{3});
+
+
+    ndarray::Stride st = {3,4};
+    size = 5;
+    ndarray::Stride st_actual = ndarray::paddedVector(st, size, 1);
+    testVector(st_actual, {1,1,1,3,4});
 }
 
-TEST(getBroadCastedShape, LeftShapeBroadCast)
-{
-    ndarray::Shape l_shape;
-    ndarray::Shape r_shape;
-    ndarray::Shape out_shape;
-    l_shape = {1};
-    r_shape = {3,4,2};
-    out_shape = ndarray::getBroadCastedShape(l_shape, r_shape);
-    shapeTest(out_shape, r_shape);
+TEST(paddedVactor, ThrowException){
 
-    l_shape = {4,2};
-    r_shape = {3,4,2};
-    out_shape = ndarray::getBroadCastedShape(l_shape, r_shape);
-    shapeTest(out_shape, r_shape);
-
-    l_shape = {1,2};
-    r_shape = {3,4,2};
-    out_shape = ndarray::getBroadCastedShape(l_shape, r_shape,2);
-    shapeTest(out_shape, {3});
-  
-}
-
-TEST(getBroadCastedShape, RightShapeBroadCast)
-{
-    ndarray::Shape l_shape;
-    ndarray::Shape r_shape;
-    ndarray::Shape out_shape;
-    l_shape = {4,5,2};
-    r_shape = {1};
-    out_shape = ndarray::getBroadCastedShape(l_shape, r_shape);
-    shapeTest(out_shape, l_shape);
-
-    l_shape = {4,5,3};
-    r_shape = {3};
-    out_shape = ndarray::getBroadCastedShape(l_shape, r_shape);
-    shapeTest(out_shape,l_shape);
-
-    l_shape = {4,5,3};
-    r_shape = {2};
-    out_shape = ndarray::getBroadCastedShape(l_shape, r_shape,1);
-    shapeTest(out_shape, {4,5});
-
-    l_shape = {4,5,3};
-    r_shape = {4,5,3};
-    out_shape = ndarray::getBroadCastedShape(l_shape, r_shape,0);
-    shapeTest(out_shape, l_shape);
-}
-
-TEST(getBroadCastedShape, EmptyShapeException)
-{
-    ndarray::Shape l_shape;
-    ndarray::Shape r_shape;
-    ndarray::Shape out_shape;
-    std::stringstream ss;
-    l_shape = {};
-    r_shape = {1,2,3};
+    ndarray::Shape s = {2,3};
+    int size = 1;
 
     EXPECT_THROW({
-                try{
-                    ndarray::getBroadCastedShape(l_shape, r_shape);
-                }catch(std::runtime_error& e){
-                    ss<<"operands could not be broadcast together with shapes(";
-                    ss<<ndarray::getVectorIntInString(l_shape)<<") (";
-                    ss<<ndarray::getVectorIntInString(r_shape)<<").";
-                    EXPECT_EQ(ss.str(), e.what() );
-                    throw;
-                }
-            }, std::runtime_error);
 
+        try{
+            ndarray::paddedVector(s, size);
+        }catch(const std::runtime_error &e){
+            std::stringstream ss;
+            ss <<"invalid padded size where expected size "<<size;
+            ss<<" is less then give data size "<<s.size()<<".";
+            EXPECT_EQ(ss.str(), e.what());
+            throw;
+        }
 
-    l_shape = {2,3};
-    r_shape = {};
-    ss.str(std::string());
+    },std::runtime_error);
 
-    EXPECT_THROW({
-                try{
-                    ndarray::getBroadCastedShape(l_shape, r_shape);
-                }catch(std::runtime_error& e){
-                    ss<<"operands could not be broadcast together with shapes(";
-                    ss<<ndarray::getVectorIntInString(l_shape)<<") (";
-                    ss<<ndarray::getVectorIntInString(r_shape)<<").";
-                    EXPECT_EQ(ss.str(), e.what() );
-                    throw;
-                }
-            }, std::runtime_error);      
-
-    
-    l_shape = {};
-    r_shape = {};
-    ss.str(std::string());
-
-    EXPECT_THROW({
-                try{
-                    ndarray::getBroadCastedShape(l_shape, r_shape);
-                }catch(std::runtime_error& e){
-                    ss<<"operands could not be broadcast together with shapes(";
-                    ss<<ndarray::getVectorIntInString(l_shape)<<") (";
-                    ss<<ndarray::getVectorIntInString(r_shape)<<").";
-                    EXPECT_EQ(ss.str(), e.what() );
-                    throw;
-                }
-            }, std::runtime_error);
 }
 
 
-TEST(getBroadCastedShape, UnableBroadCastedExpection)
+TEST(getBroadCastedProperty, returnProperProperty)
 {
-    ndarray::Shape l_shape;
-    ndarray::Shape r_shape;
-    ndarray::Shape out_shape;
-    l_shape = {3,2};
-    r_shape = {1,2,3};
+    ndarray::Shape out_shape = {2,2,2,3};
+    double a_data[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24};
+    double b_data[] = {1,2,3};
+    ndarray::Array A({2,2,2,3}, a_data);
+    ndarray::Array B({1,3}, b_data);
 
-    EXPECT_THROW({
-                try{
-                    ndarray::getBroadCastedShape(l_shape, r_shape);
-                }catch(std::runtime_error& e){
-                    std::stringstream ss;
-                    ss<<"operands could not be broadcast together with shapes(";
-                    ss<<ndarray::getVectorIntInString(l_shape)<<") (";
-                    ss<<ndarray::getVectorIntInString(r_shape)<<").";
-                    throw;
-                }
-            }, std::runtime_error);
+    ndarray::BroadCastedProperty BP = ndarray::getBroadCastedProperty(out_shape, A, B);
+
+    testVector(BP.a_shape, {2,2,2,3});
+    testVector(BP.b_shape, {1,1,1,3});
+    testVector(BP.a_stride, {12,6,3,1});
+    testVector(BP.b_stride, {0,0,0,1});
 
 }
 
+TEST(getBroadCastedProperty, HorizontalAndVerticalBroadCast)
+{
+    ndarray::Shape out_shape = {4,3};
+    double a_data[] = {1,2,3};
+    double b_data[] = {1,2,3,4};
+
+    ndarray::Array A({1,3}, a_data);
+    ndarray::Array B({4,1}, b_data);
+
+    ndarray::BroadCastedProperty BP = ndarray::getBroadCastedProperty(out_shape, A, B);
+
+    testVector(BP.a_shape, {1,3});
+    testVector(BP.b_shape, {4,1});
+    testVector(BP.a_stride, {0,1});
+    testVector(BP.b_stride, {1,0});
+}
+
+
+TEST(getBroadCastedProperty, withOffsetValue)
+{
+    ndarray::Shape out_shape = {2,2,2,3};
+    double a_data[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24};
+    double b_data[] = {1,2,3};
+    ndarray::Array A({2,2,2,3}, a_data);
+    ndarray::Array B({1,3}, b_data);
+
+    ndarray::BroadCastedProperty BP = ndarray::getBroadCastedProperty(out_shape, A, B,2);
+
+    testVector(BP.a_shape, {2,2,2,3});
+    testVector(BP.b_shape, {1,1,1,3});
+    testVector(BP.a_stride, {12,6,3,1});
+    testVector(BP.b_stride, {0,0,3,1});
+
+}
