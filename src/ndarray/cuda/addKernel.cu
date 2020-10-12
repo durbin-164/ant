@@ -46,9 +46,9 @@ ndarray::Array cudaAdd(const ndarray::Array &A, const ndarray::Array &B){
 
     ndarray::broadcast::BroadCastedProperty BP = ndarray::broadcast::getBroadCastedProperty(out_shape, A, B);
 
-    ndarray::Shape cum_mul_shape = ndarray::getCumulativeMultiShape(out_shape);
+    ndarray::Shape cum_mul_shape = ndarray::arrayutil::getCumulativeMultiShape(out_shape);
 
-    ndarray:: LL num_of_element = ndarray::getNumOfElementByShape(out_shape);
+    ndarray:: LL num_of_element = ndarray::arrayutil::getNumOfElementByShape(out_shape);
   
       
     double *C;

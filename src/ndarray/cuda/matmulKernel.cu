@@ -53,14 +53,14 @@ namespace cuda
 
 ndarray::Array cudaMatmul(const ndarray::Array &A, const ndarray::Array &B){
     int offset = 2;
-    ndarray::Shape out_shape = ndarray::getMatmulOutShape(A.shape(), B.shape());
+    ndarray::Shape out_shape = ndarray::arrayutil::getMatmulOutShape(A.shape(), B.shape());
 
     ndarray::broadcast::BroadCastedProperty BP = ndarray::broadcast::getBroadCastedProperty(out_shape, A, B, offset);
 
-    ndarray::Shape cum_mul_shape = ndarray::getCumulativeMultiShape(out_shape, offset);
+    ndarray::Shape cum_mul_shape = ndarray::arrayutil::getCumulativeMultiShape(out_shape, offset);
 
-    ndarray:: LL num_of_element = ndarray::getNumOfElementByShape(out_shape);
-    ndarray:: LL batch_size = ndarray::getNumOfElementByShape({out_shape.begin(), out_shape.end()-2});
+    ndarray:: LL num_of_element = ndarray::arrayutil::getNumOfElementByShape(out_shape);
+    ndarray:: LL batch_size = ndarray::arrayutil::getNumOfElementByShape({out_shape.begin(), out_shape.end()-2});
 
     double *C;
     cudaMalloc(&C, num_of_element*sizeof(double));

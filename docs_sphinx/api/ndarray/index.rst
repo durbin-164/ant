@@ -7,3 +7,4 @@ NdArray
     :maxdepth: 1
     
     core/index
+    util/index

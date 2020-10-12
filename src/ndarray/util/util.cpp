@@ -3,10 +3,9 @@
 #include "cuda.h"
 #include <cuda_runtime.h>
 
-namespace ndarray
-{
 
-std::string getVectorIntInString(const std::vector<int> &vec){
+
+std::string ndarray::getVectorIntInString(const std::vector<int> &vec){
 
     std::stringstream ss;
 
@@ -40,4 +39,3 @@ std::string getVectorIntInString(const std::vector<int> &vec){
 // }
 
 
-}//end ndaarry namespace

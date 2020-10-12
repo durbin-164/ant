@@ -7,7 +7,7 @@
 
 namespace ndarray
 {
-ndarray::LL getNumOfElementByShape(const ndarray::Shape &shape){
+ndarray::LL ndarray::arrayutil::getNumOfElementByShape(const ndarray::Shape &shape){
 
     ndarray::LL size = 1;
     for(ndarray:: LL x : shape) size *= x;
@@ -16,7 +16,7 @@ ndarray::LL getNumOfElementByShape(const ndarray::Shape &shape){
 }
 
 
-ndarray::Shape getCumulativeMultiShape(const ndarray::Shape &shape, const int offset){
+ndarray::Shape ndarray::arrayutil::getCumulativeMultiShape(const ndarray::Shape &shape, const int offset){
     ndarray::Shape cum_shape(std::max((int)shape.size()-offset-1,0));
 
     if(shape.size()-offset <=1)return cum_shape;
@@ -35,7 +35,7 @@ ndarray::Shape getCumulativeMultiShape(const ndarray::Shape &shape, const int of
 }
 
 
-ndarray::Shape getMatmulOutShape(const ndarray::Shape &l_shape, const ndarray::Shape &r_shape){
+ndarray::Shape ndarray::arrayutil::getMatmulOutShape(const ndarray::Shape &l_shape, const ndarray::Shape &r_shape){
     if(l_shape.end()[-1] != r_shape.end()[-2]){
         std::stringstream ss;
         ss<<"operands could not be possible together with shapes(";
