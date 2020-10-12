@@ -46,7 +46,7 @@ ndarray::Shape getMatmulOutShape(const ndarray::Shape &l_shape, const ndarray::S
 
     std::vector<int>ret_shape;
     int offset = 2;
-    ret_shape = ndarray::getBroadCastedShape(l_shape,r_shape, offset);
+    ret_shape = ndarray::broadcast::getBroadCastedShape(l_shape,r_shape, offset);
 
     if(ret_shape.size()==0){
         ret_shape.push_back(1);

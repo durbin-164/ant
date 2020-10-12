@@ -55,7 +55,7 @@ ndarray::Array cudaMatmul(const ndarray::Array &A, const ndarray::Array &B){
     int offset = 2;
     ndarray::Shape out_shape = ndarray::getMatmulOutShape(A.shape(), B.shape());
 
-    ndarray::BroadCastedProperty BP = ndarray::getBroadCastedProperty(out_shape, A, B, offset);
+    ndarray::broadcast::BroadCastedProperty BP = ndarray::broadcast::getBroadCastedProperty(out_shape, A, B, offset);
 
     ndarray::Shape cum_mul_shape = ndarray::getCumulativeMultiShape(out_shape, offset);
 

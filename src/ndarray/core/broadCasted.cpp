@@ -6,7 +6,7 @@
 namespace ndarray
 {
 
-ndarray::Shape getBroadCastedShape(const ndarray::Shape &l_shape,const ndarray::Shape &r_shape, const int offset){
+ndarray::Shape ndarray::broadcast::getBroadCastedShape(const ndarray::Shape &l_shape,const ndarray::Shape &r_shape, const int offset){
     if(l_shape.size()==0 || (l_shape.size()==1 && l_shape[0]==0) ||
        r_shape.size()==0 || (r_shape.size()==1 && r_shape[0]==0)){
         std::stringstream ss;
@@ -51,12 +51,12 @@ ndarray::Shape getBroadCastedShape(const ndarray::Shape &l_shape,const ndarray::
     return out_shape;
 }
 
-BroadCastedProperty getBroadCastedProperty(const ndarray::Shape &out_shape, const ndarray::Array &A, const ndarray::Array &B,const int offset){
-    ndarray::Shape l_shape = ndarray::paddedVector(A.shape(), out_shape.size(), 1);
-    ndarray::Shape r_shape = ndarray::paddedVector(B.shape(), out_shape.size(), 1);
+ndarray::broadcast::BroadCastedProperty ndarray::broadcast::getBroadCastedProperty(const ndarray::Shape &out_shape, const ndarray::Array &A, const ndarray::Array &B,const int offset){
+    ndarray::Shape l_shape = ndarray::broadcast::paddedVector(A.shape(), out_shape.size(), 1);
+    ndarray::Shape r_shape = ndarray::broadcast::paddedVector(B.shape(), out_shape.size(), 1);
 
-    ndarray::Stride l_stride = ndarray::paddedVector(A.stride(), out_shape.size(), 0);
-    ndarray::Stride r_stride = ndarray::paddedVector(B.stride(), out_shape.size(), 0);
+    ndarray::Stride l_stride = ndarray::broadcast::paddedVector(A.stride(), out_shape.size(), 0);
+    ndarray::Stride r_stride = ndarray::broadcast::paddedVector(B.stride(), out_shape.size(), 0);
     
 
     ndarray::Stride broad_l_stride;
@@ -80,7 +80,7 @@ BroadCastedProperty getBroadCastedProperty(const ndarray::Shape &out_shape, cons
 }
 
 
-std::vector<int>paddedVector(const std::vector<int>&vec, const int size, const int pad_value){
+std::vector<int> ndarray::broadcast::paddedVector(const std::vector<int>&vec, const int size, const int pad_value){
 
     if(size<vec.size()){
         std::stringstream ss;

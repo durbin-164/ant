@@ -10,18 +10,18 @@ TEST(paddedVactor, padProperly){
     ndarray::Shape s = {2,3};
     int size = 4;
 
-    ndarray::Shape actual = ndarray::paddedVector(s, size);
+    ndarray::Shape actual = ndarray::broadcast::paddedVector(s, size);
     VectorEQ(actual,{0,0,2,3});
 
     s = {3};
     size =1;
-    actual = ndarray::paddedVector(s, size);
+    actual = ndarray::broadcast::paddedVector(s, size);
     VectorEQ(actual,{3});
 
 
     ndarray::Stride st = {3,4};
     size = 5;
-    ndarray::Stride st_actual = ndarray::paddedVector(st, size, 1);
+    ndarray::Stride st_actual = ndarray::broadcast::paddedVector(st, size, 1);
     VectorEQ(st_actual, {1,1,1,3,4});
 }
 
@@ -33,7 +33,7 @@ TEST(paddedVactor, ThrowException){
     EXPECT_THROW({
 
         try{
-            ndarray::paddedVector(s, size);
+            ndarray::broadcast::paddedVector(s, size);
         }catch(const std::runtime_error &e){
             std::stringstream ss;
             ss <<"invalid padded size where expected size "<<size;
@@ -55,7 +55,7 @@ TEST(getBroadCastedProperty, returnProperProperty)
     ndarray::Array A({2,2,2,3}, a_data);
     ndarray::Array B({1,3}, b_data);
 
-    ndarray::BroadCastedProperty BP = ndarray::getBroadCastedProperty(out_shape, A, B);
+    ndarray::broadcast::BroadCastedProperty BP = ndarray::broadcast::getBroadCastedProperty(out_shape, A, B);
 
     VectorEQ(BP.a_shape, {2,2,2,3});
     VectorEQ(BP.b_shape, {1,1,1,3});
@@ -73,7 +73,7 @@ TEST(getBroadCastedProperty, HorizontalAndVerticalBroadCast)
     ndarray::Array A({1,3}, a_data);
     ndarray::Array B({4,1}, b_data);
 
-    ndarray::BroadCastedProperty BP = ndarray::getBroadCastedProperty(out_shape, A, B);
+    ndarray::broadcast::BroadCastedProperty BP = ndarray::broadcast::getBroadCastedProperty(out_shape, A, B);
 
     VectorEQ(BP.a_shape, {1,3});
     VectorEQ(BP.b_shape, {4,1});
@@ -90,7 +90,7 @@ TEST(getBroadCastedProperty, withOffsetValue)
     ndarray::Array A({2,2,2,3}, a_data);
     ndarray::Array B({1,3}, b_data);
 
-    ndarray::BroadCastedProperty BP = ndarray::getBroadCastedProperty(out_shape, A, B,2);
+    ndarray::broadcast::BroadCastedProperty BP = ndarray::broadcast::getBroadCastedProperty(out_shape, A, B,2);
 
     VectorEQ(BP.a_shape, {2,2,2,3});
     VectorEQ(BP.b_shape, {1,1,1,3});

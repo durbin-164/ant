@@ -1,31 +1,22 @@
-/**
- * @file broadCasted.h
- *
- * Interfaces to Data Buffer.
- *
- * This header define the interfaces of general purpose dynamic data buffer that
- * implemented by Equinox.
- */
 
 #pragma once
 #include "ndarray/core/dataType.h"
 #include "ndarray/core/array.h"
 
-namespace ndarray
+namespace ndarray::broadcast
 {
 
 struct BroadCastedProperty;
 
-// \example: l_shape {4,1}, r_shape{1,3} => out_shape{4,3}
-
-
-/////////////////////////////////////////////////////////////////////// 
-/// \brief getBroadCastedShape
-/// \param l_shape  Left array shape.
-/// \param r_shape  Right array shape.
-/// \param offset int value
-/// \return Operation output shape.
-/////////////////////////////////////////////////////////////////////////
+/*!
+ * \brief make expected broadcasted shape of two given array <br/>
+ * Example: l_shape {4,1}, r_shape{1,3} => out_shape{4,3}
+ * 
+ * \param l_shape  Left array shape.
+ * \param r_shape  Right array shape.
+ * \param offset int value
+ * \return Operation output shape.
+ */
 ndarray::Shape getBroadCastedShape(const ndarray::Shape &l_shape,const ndarray::Shape &r_shape, const int offset = 0);
 
 
@@ -57,11 +48,9 @@ struct BroadCastedProperty{
     ndarray::Stride a_stride;
     ndarray::Stride b_stride;
 
-    BroadCastedProperty(ndarray::Shape &a_shape_, ndarray::Shape &b_shape_, ndarray::Stride &a_stride_, ndarray::Stride &b_stride_ ){
-        a_shape = a_shape_;
-        b_shape = b_shape_;
-        a_stride = a_stride_;
-        b_stride = b_stride_;
+    BroadCastedProperty(const ndarray::Shape &a_shape_, const ndarray::Shape &b_shape_, 
+        const ndarray::Stride &a_stride_, const ndarray::Stride &b_stride_ )
+        :a_shape(a_shape_), b_shape(b_shape_), a_stride(a_stride_), b_stride(b_stride_){
     }
 };
 

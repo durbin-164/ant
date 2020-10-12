@@ -42,9 +42,9 @@ namespace cuda
 
 ndarray::Array cudaAdd(const ndarray::Array &A, const ndarray::Array &B){
         
-    ndarray::Shape out_shape = ndarray::getBroadCastedShape(A.shape(), B.shape());
+    ndarray::Shape out_shape = ndarray::broadcast::getBroadCastedShape(A.shape(), B.shape());
 
-    ndarray::BroadCastedProperty BP = ndarray::getBroadCastedProperty(out_shape, A, B);
+    ndarray::broadcast::BroadCastedProperty BP = ndarray::broadcast::getBroadCastedProperty(out_shape, A, B);
 
     ndarray::Shape cum_mul_shape = ndarray::getCumulativeMultiShape(out_shape);
 

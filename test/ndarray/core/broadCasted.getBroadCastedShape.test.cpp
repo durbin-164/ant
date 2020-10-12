@@ -12,17 +12,17 @@ TEST(getBroadCastedShape, LeftShapeBroadCast)
     ndarray::Shape out_shape;
     l_shape = {1};
     r_shape = {3,4,2};
-    out_shape = ndarray::getBroadCastedShape(l_shape, r_shape);
+    out_shape = ndarray::broadcast::getBroadCastedShape(l_shape, r_shape);
     VectorEQ(out_shape, r_shape);
 
     l_shape = {4,2};
     r_shape = {3,4,2};
-    out_shape = ndarray::getBroadCastedShape(l_shape, r_shape);
+    out_shape = ndarray::broadcast::getBroadCastedShape(l_shape, r_shape);
     VectorEQ(out_shape, r_shape);
 
     l_shape = {1,2};
     r_shape = {3,4,2};
-    out_shape = ndarray::getBroadCastedShape(l_shape, r_shape,2);
+    out_shape = ndarray::broadcast::getBroadCastedShape(l_shape, r_shape,2);
     VectorEQ(out_shape, {3});
   
 }
@@ -34,22 +34,22 @@ TEST(getBroadCastedShape, RightShapeBroadCast)
     ndarray::Shape out_shape;
     l_shape = {4,5,2};
     r_shape = {1};
-    out_shape = ndarray::getBroadCastedShape(l_shape, r_shape);
+    out_shape = ndarray::broadcast::getBroadCastedShape(l_shape, r_shape);
     VectorEQ(out_shape, l_shape);
 
     l_shape = {4,5,3};
     r_shape = {3};
-    out_shape = ndarray::getBroadCastedShape(l_shape, r_shape);
+    out_shape = ndarray::broadcast::getBroadCastedShape(l_shape, r_shape);
     VectorEQ(out_shape,l_shape);
 
     l_shape = {4,5,3};
     r_shape = {2};
-    out_shape = ndarray::getBroadCastedShape(l_shape, r_shape,1);
+    out_shape = ndarray::broadcast::getBroadCastedShape(l_shape, r_shape,1);
     VectorEQ(out_shape, {4,5});
 
     l_shape = {4,5,3};
     r_shape = {4,5,3};
-    out_shape = ndarray::getBroadCastedShape(l_shape, r_shape,0);
+    out_shape = ndarray::broadcast::getBroadCastedShape(l_shape, r_shape,0);
     VectorEQ(out_shape, l_shape);
 }
 
@@ -64,7 +64,7 @@ TEST(getBroadCastedShape, EmptyShapeException)
 
     EXPECT_THROW({
                 try{
-                    ndarray::getBroadCastedShape(l_shape, r_shape);
+                    ndarray::broadcast::getBroadCastedShape(l_shape, r_shape);
                 }catch(std::runtime_error& e){
                     ss<<"operands could not be broadcast together with shapes(";
                     ss<<ndarray::getVectorIntInString(l_shape)<<") (";
@@ -81,7 +81,7 @@ TEST(getBroadCastedShape, EmptyShapeException)
 
     EXPECT_THROW({
                 try{
-                    ndarray::getBroadCastedShape(l_shape, r_shape);
+                    ndarray::broadcast::getBroadCastedShape(l_shape, r_shape);
                 }catch(std::runtime_error& e){
                     ss<<"operands could not be broadcast together with shapes(";
                     ss<<ndarray::getVectorIntInString(l_shape)<<") (";
@@ -98,7 +98,7 @@ TEST(getBroadCastedShape, EmptyShapeException)
 
     EXPECT_THROW({
                 try{
-                    ndarray::getBroadCastedShape(l_shape, r_shape);
+                    ndarray::broadcast::getBroadCastedShape(l_shape, r_shape);
                 }catch(std::runtime_error& e){
                     ss<<"operands could not be broadcast together with shapes(";
                     ss<<ndarray::getVectorIntInString(l_shape)<<") (";
@@ -120,7 +120,7 @@ TEST(getBroadCastedShape, UnableBroadCastedExpection)
 
     EXPECT_THROW({
                 try{
-                    ndarray::getBroadCastedShape(l_shape, r_shape);
+                    ndarray::broadcast::getBroadCastedShape(l_shape, r_shape);
                 }catch(std::runtime_error& e){
                     std::stringstream ss;
                     ss<<"operands could not be broadcast together with shapes(";
