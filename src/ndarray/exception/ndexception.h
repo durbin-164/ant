@@ -9,16 +9,16 @@ class InvalidShapeException: public std::exception
 
    public:
       std::string message;
-      InvalidShapeException(std::string message_)
+      explicit InvalidShapeException(const std::string &message_)
       :message(message_){
       }
 
-      InvalidShapeException(std::string operation_name, std::string shape){
+      InvalidShapeException(const std::string &operation_name, const std::string &shape){
          message = operation_name+" operation could not possible with shape "+shape+".";
       }
 
-      std::string what(){
-         return message;
+      const char * what() const throw(){
+         return message.c_str();
       }
    
 };
@@ -28,12 +28,12 @@ class InvalidSizeException: public std::exception
 
    public:
       std::string message;
-      InvalidSizeException(std::string message_)
+      explicit InvalidSizeException(const std::string &message_)
       :message(message_){
       }
 
-      std::string what(){
-         return message;
+      const char * what() const throw(){
+         return message.c_str();
       }
    
 };

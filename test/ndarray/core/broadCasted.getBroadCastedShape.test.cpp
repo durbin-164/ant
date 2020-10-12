@@ -108,6 +108,40 @@ TEST(getBroadCastedShape, EmptyShapeException)
                     throw;
                 }
             }, ndarray::exception::InvalidShapeException);
+
+
+    
+    l_shape = {0};
+    r_shape = {1,2};
+    ss.str(std::string());
+
+    EXPECT_THROW({
+                try{
+                    ndarray::broadcast::getBroadCastedShape(l_shape, r_shape);
+                }catch(ndarray::exception::InvalidShapeException& e){
+                    ss<<"broadcast operation could not possible with shape (";
+                    ss<<ndarray::getVectorIntInString(l_shape)<<") (";
+                    ss<<ndarray::getVectorIntInString(r_shape)<<").";
+                    EXPECT_EQ(ss.str(), e.what() );
+                    throw;
+                }
+            }, ndarray::exception::InvalidShapeException);
+
+    l_shape = {1,2,3};
+    r_shape = {0};
+    ss.str(std::string());
+
+    EXPECT_THROW({
+                try{
+                    ndarray::broadcast::getBroadCastedShape(l_shape, r_shape);
+                }catch(ndarray::exception::InvalidShapeException& e){
+                    ss<<"broadcast operation could not possible with shape (";
+                    ss<<ndarray::getVectorIntInString(l_shape)<<") (";
+                    ss<<ndarray::getVectorIntInString(r_shape)<<").";
+                    EXPECT_EQ(ss.str(), e.what() );
+                    throw;
+                }
+            }, ndarray::exception::InvalidShapeException);
 }
 
 
