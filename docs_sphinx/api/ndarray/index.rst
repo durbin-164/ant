@@ -8,3 +8,4 @@ NdArray
     
     core/index
     util/index
+    cuda/index
