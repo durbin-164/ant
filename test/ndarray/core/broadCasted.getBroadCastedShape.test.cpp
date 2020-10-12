@@ -4,6 +4,7 @@
 #include "ndarray/core/broadCasted.h"
 #include "ndarray/util/util.h"
 #include "testUtil.h"
+#include "ndarray/exception/ndexception.h"
 
 TEST(getBroadCastedShape, LeftShapeBroadCast)
 {
@@ -65,14 +66,14 @@ TEST(getBroadCastedShape, EmptyShapeException)
     EXPECT_THROW({
                 try{
                     ndarray::broadcast::getBroadCastedShape(l_shape, r_shape);
-                }catch(std::runtime_error& e){
-                    ss<<"operands could not be broadcast together with shapes(";
+                }catch(ndarray::exception::InvalidShapeException& e){
+                    ss<<"broadcast operation could not possible with shape (";
                     ss<<ndarray::getVectorIntInString(l_shape)<<") (";
                     ss<<ndarray::getVectorIntInString(r_shape)<<").";
                     EXPECT_EQ(ss.str(), e.what() );
                     throw;
                 }
-            }, std::runtime_error);
+            }, ndarray::exception::InvalidShapeException);
 
 
     l_shape = {2,3};
@@ -82,14 +83,14 @@ TEST(getBroadCastedShape, EmptyShapeException)
     EXPECT_THROW({
                 try{
                     ndarray::broadcast::getBroadCastedShape(l_shape, r_shape);
-                }catch(std::runtime_error& e){
-                    ss<<"operands could not be broadcast together with shapes(";
+                }catch(ndarray::exception::InvalidShapeException& e){
+                    ss<<"broadcast operation could not possible with shape (";
                     ss<<ndarray::getVectorIntInString(l_shape)<<") (";
                     ss<<ndarray::getVectorIntInString(r_shape)<<").";
                     EXPECT_EQ(ss.str(), e.what() );
                     throw;
                 }
-            }, std::runtime_error);      
+            }, ndarray::exception::InvalidShapeException);    
 
     
     l_shape = {};
@@ -99,14 +100,14 @@ TEST(getBroadCastedShape, EmptyShapeException)
     EXPECT_THROW({
                 try{
                     ndarray::broadcast::getBroadCastedShape(l_shape, r_shape);
-                }catch(std::runtime_error& e){
-                    ss<<"operands could not be broadcast together with shapes(";
+                }catch(ndarray::exception::InvalidShapeException& e){
+                    ss<<"broadcast operation could not possible with shape (";
                     ss<<ndarray::getVectorIntInString(l_shape)<<") (";
                     ss<<ndarray::getVectorIntInString(r_shape)<<").";
                     EXPECT_EQ(ss.str(), e.what() );
                     throw;
                 }
-            }, std::runtime_error);
+            }, ndarray::exception::InvalidShapeException);
 }
 
 
@@ -121,14 +122,15 @@ TEST(getBroadCastedShape, UnableBroadCastedExpection)
     EXPECT_THROW({
                 try{
                     ndarray::broadcast::getBroadCastedShape(l_shape, r_shape);
-                }catch(std::runtime_error& e){
+                }catch(ndarray::exception::InvalidShapeException& e){
                     std::stringstream ss;
-                    ss<<"operands could not be broadcast together with shapes(";
-                    ss<<ndarray::getVectorIntInString(l_shape)<<") (";
-                    ss<<ndarray::getVectorIntInString(r_shape)<<").";
+                    ss<<"broadcast operation could not possible with shape (";
+                    ss<<ndarray::getVectorIntInString(r_shape)<<") (";
+                    ss<<ndarray::getVectorIntInString(l_shape)<<").";
+                    EXPECT_EQ(ss.str(), e.what() );
                     throw;
                 }
-            }, std::runtime_error);
+            }, ndarray::exception::InvalidShapeException);
 
 }
 

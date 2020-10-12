@@ -40,7 +40,7 @@ BroadCastedProperty getBroadCastedProperty(const ndarray::Shape &out_shape, cons
  * 
  * Example: vec{3,2,4}, size = 5, pad_value = 100 =>out_vec{100,100,3,2,4}
  */
-std::vector<int>paddedVector(const std::vector<int>&vec, const int size, const int pad_value = 0);
+std::vector<int>paddedVector(const std::vector<int>&vec, const size_t size, const int pad_value = 0);
 
 struct BroadCastedProperty{
     ndarray::Shape a_shape;

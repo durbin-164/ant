@@ -4,6 +4,7 @@
 #include "ndarray/core/broadCasted.h"
 #include "ndarray/util/util.h"
 #include "testUtil.h"
+#include "ndarray/exception/ndexception.h"
 
 TEST(paddedVactor, padProperly){
 
@@ -34,7 +35,7 @@ TEST(paddedVactor, ThrowException){
 
         try{
             ndarray::broadcast::paddedVector(s, size);
-        }catch(const std::runtime_error &e){
+        }catch(ndarray::exception::InvalidSizeException &e){
             std::stringstream ss;
             ss <<"invalid padded size where expected size "<<size;
             ss<<" is less then give data size "<<s.size()<<".";
@@ -42,7 +43,7 @@ TEST(paddedVactor, ThrowException){
             throw;
         }
 
-    },std::runtime_error);
+    },ndarray::exception::InvalidSizeException);
 
 }
 

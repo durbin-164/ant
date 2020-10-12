@@ -2,6 +2,7 @@
 #include "util.h"
 #include <stdexcept> 
 #include <sstream>
+#include "ndarray/exception/ndexception.h"
 
 namespace ndarray
 {
@@ -10,10 +11,9 @@ ndarray::Shape ndarray::broadcast::getBroadCastedShape(const ndarray::Shape &l_s
     if(l_shape.size()==0 || (l_shape.size()==1 && l_shape[0]==0) ||
        r_shape.size()==0 || (r_shape.size()==1 && r_shape[0]==0)){
         std::stringstream ss;
-        ss<<"operands could not be broadcast together with shapes(";
-        ss<<ndarray::getVectorIntInString(l_shape)<<") (";
-        ss<<ndarray::getVectorIntInString(r_shape)<<").";
-        throw std::runtime_error(ss.str());
+        ss<<"("<<ndarray::getVectorIntInString(l_shape)<<") (";
+        ss<<ndarray::getVectorIntInString(r_shape)<<")";
+        throw ndarray::exception::InvalidShapeException("broadcast", ss.str());
     }
 
     if(l_shape.size()<r_shape.size()){
@@ -40,10 +40,9 @@ ndarray::Shape ndarray::broadcast::getBroadCastedShape(const ndarray::Shape &l_s
                 out_shape[i]=l; //left braodcast
             }else{
                 std::stringstream ss;
-                ss<<"operands could not be broadcast together with shapes(";
-                ss<<ndarray::getVectorIntInString(l_shape)<<") (";
-                ss<<ndarray::getVectorIntInString(r_shape)<<").";
-                throw std::runtime_error(ss.str());
+                ss<<"("<<ndarray::getVectorIntInString(l_shape)<<") (";
+                ss<<ndarray::getVectorIntInString(r_shape)<<")";
+                throw ndarray::exception::InvalidShapeException("broadcast", ss.str());
             }
         }
     }
@@ -63,7 +62,7 @@ ndarray::broadcast::BroadCastedProperty ndarray::broadcast::getBroadCastedProper
     ndarray::Stride broad_r_stride;
 
     //keep same stride between (last index to last-offset index).
-    int unchanged_stride_index = out_shape.size()-offset;
+    size_t unchanged_stride_index = out_shape.size()-offset;
 
     for(int i=0;i<out_shape.size();i++){
         int l = l_shape[i];
@@ -80,16 +79,16 @@ ndarray::broadcast::BroadCastedProperty ndarray::broadcast::getBroadCastedProper
 }
 
 
-std::vector<int> ndarray::broadcast::paddedVector(const std::vector<int>&vec, const int size, const int pad_value){
+std::vector<int> ndarray::broadcast::paddedVector(const std::vector<int>&vec, const size_t size, const int pad_value){
 
     if(size<vec.size()){
         std::stringstream ss;
         ss <<"invalid padded size where expected size "<<size;
         ss<<" is less then give data size "<<vec.size()<<".";
-        throw std::runtime_error(ss.str());
+        throw ndarray::exception::InvalidSizeException(ss.str());
     }
 
-    int pad_size = size- vec.size();
+    size_t pad_size = size- vec.size();
     std::vector<int>out_vec;
     out_vec.reserve(size);
     out_vec.resize(pad_size, pad_value);

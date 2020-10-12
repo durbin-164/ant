@@ -4,6 +4,7 @@
 #include "ndarray/util/util.h"
 #include "ndarray/core/broadCasted.h"
 #include <iostream>
+#include "ndarray/exception/ndexception.h"
 
 namespace ndarray
 {
@@ -27,7 +28,7 @@ ndarray::Shape ndarray::arrayutil::getCumulativeMultiShape(const ndarray::Shape 
     }
     cum_shape[cum_shape.size()-1]=shape[shape.size()-offset-1];
 
-    for(int i=cum_shape.size()-1; i>0;i--){
+    for(int i= (int)cum_shape.size()-1; i>0;i--){
     cum_shape[i-1] = cum_shape[i]*shape[i];
     }
 
@@ -38,17 +39,16 @@ ndarray::Shape ndarray::arrayutil::getCumulativeMultiShape(const ndarray::Shape 
 ndarray::Shape ndarray::arrayutil::getMatmulOutShape(const ndarray::Shape &l_shape, const ndarray::Shape &r_shape){
     if(l_shape.end()[-1] != r_shape.end()[-2]){
         std::stringstream ss;
-        ss<<"operands could not be possible together with shapes(";
-        ss<<ndarray::getVectorIntInString(l_shape)<<") (";
-        ss<<ndarray::getVectorIntInString(r_shape)<<").";
-        throw std::runtime_error(ss.str());
+        ss<<"("<<ndarray::getVectorIntInString(l_shape)<<") (";
+        ss<<ndarray::getVectorIntInString(r_shape)<<")";
+        throw ndarray::exception::InvalidShapeException("matmul", ss.str());
     }
 
     std::vector<int>ret_shape;
     int offset = 2;
     ret_shape = ndarray::broadcast::getBroadCastedShape(l_shape,r_shape, offset);
 
-    if(ret_shape.size()==0){
+    if(ret_shape.empty()){
         ret_shape.push_back(1);
     }
                                         

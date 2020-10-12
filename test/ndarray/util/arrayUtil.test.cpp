@@ -3,6 +3,9 @@
 #include "ndarray/core/dataType.h"
 #include "ndarray/util/arrayUtil.h"
 #include "testUtil.h"
+#include "ndarray/exception/ndexception.h"
+#include <sstream>
+#include "ndarray/util/util.h"
 
 TEST(getNumOfElementByShape, returnProperNumber)
 {
@@ -83,3 +86,25 @@ TEST(getMatmulOutShape, givenBatch)
 
     VectorEQ(actual, {1,2,2});
 }
+
+
+TEST(getMatmulOutShape, throwExceptionForInvalidShape)
+{
+    ndarray::Shape l_shape = {2,4};
+    ndarray::Shape r_shape = {3,2};
+
+
+    EXPECT_THROW({
+                try{
+                    ndarray::arrayutil::getMatmulOutShape(l_shape,r_shape);
+                }catch(ndarray::exception::InvalidShapeException& e){
+                    std::stringstream ss;
+                    ss<<"matmul operation could not possible with shape (";
+                    ss<<ndarray::getVectorIntInString(l_shape)<<") (";
+                    ss<<ndarray::getVectorIntInString(r_shape)<<").";
+                    EXPECT_EQ(ss.str(), e.what() );
+                    throw;
+                }
+            }, ndarray::exception::InvalidShapeException);
+}
+
