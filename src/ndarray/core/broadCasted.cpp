@@ -6,7 +6,7 @@
 namespace ndarray
 {
 
-Shape getBroadCastedShape(const Shape &l_shape, const Shape &r_shape,const int offset){
+ndarray::Shape getBroadCastedShape(const ndarray::Shape &l_shape,const ndarray::Shape &r_shape, const int offset){
     if(l_shape.size()==0 || (l_shape.size()==1 && l_shape[0]==0) ||
        r_shape.size()==0 || (r_shape.size()==1 && r_shape[0]==0)){
         std::stringstream ss;
