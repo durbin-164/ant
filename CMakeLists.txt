@@ -13,7 +13,7 @@ enable_language(CUDA)
 # enable_language(CXX)
 # set (CMAKE_CXX_STANDARD 14)
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -pthread -lgtest")
-set(CMAKE_CXX_FLAGS "-g -O0 -coverage ")
+set(CMAKE_CXX_FLAGS "-g -O0 -coverage -fno-inline-functions -fno-inline -fno-omit-frame-pointer -fno-optimize-sibling-calls")
 set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE ON)
 
 

@@ -2,6 +2,7 @@
 #include "util.h"
 #include <stdexcept> 
 #include <sstream>
+#include <string>
 #include "ndarray/exception/ndexception.h"
 
 namespace ndarray
@@ -10,10 +11,10 @@ namespace ndarray
 ndarray::Shape ndarray::broadcast::getBroadCastedShape(const ndarray::Shape &l_shape,const ndarray::Shape &r_shape, const int offset){
     if(l_shape.size()==0 || (l_shape.size()==1 && l_shape[0]==0) ||
        r_shape.size()==0 || (r_shape.size()==1 && r_shape[0]==0)){
-        std::stringstream ss;
-        ss<<"("<<ndarray::getVectorIntInString(l_shape)<<") (";
-        ss<<ndarray::getVectorIntInString(r_shape)<<")";
-        throw ndarray::exception::InvalidShapeException("broadcast", ss.str());
+        std::string ss;
+        ss+="("+ndarray::getVectorIntInString(l_shape)+") (";
+        ss+=ndarray::getVectorIntInString(r_shape)+")";
+        throw ndarray::exception::InvalidShapeException("broadcast", ss);
     }
 
     if(l_shape.size()<r_shape.size()){
@@ -39,10 +40,10 @@ ndarray::Shape ndarray::broadcast::getBroadCastedShape(const ndarray::Shape &l_s
             }else if(r==1){
                 out_shape[i]=l; //left braodcast
             }else{
-                std::stringstream ss;
-                ss<<"("<<ndarray::getVectorIntInString(l_shape)<<") (";
-                ss<<ndarray::getVectorIntInString(r_shape)<<")";
-                throw ndarray::exception::InvalidShapeException("broadcast", ss.str());
+                std::string ss;
+                ss+="("+ndarray::getVectorIntInString(l_shape)+") (";
+                ss+=ndarray::getVectorIntInString(r_shape)+")";
+                throw ndarray::exception::InvalidShapeException("broadcast", ss);
             }
         }
     }
