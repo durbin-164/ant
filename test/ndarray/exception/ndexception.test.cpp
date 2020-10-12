@@ -6,7 +6,7 @@
 
 TEST(InvalidShapeException, returnProperMessage)
 {
-    ndarray::exception::InvalidSizeException IS("demo message");
+    ndarray::exception::InvalidShapeException IS("demo message");
     EXPECT_EQ(IS.what(),"demo message");
 
     ndarray::exception::InvalidShapeException IS2("demo", "(1,2,3)");
