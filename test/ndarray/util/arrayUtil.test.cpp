@@ -29,6 +29,7 @@ TEST(getCumulativeMultiShape, whenCumShapeZero)
     
 }
 
+
 TEST(getCumulativeMultiShape, returnProperCumShape)
 {
     ndarray::Shape s = {5,4,2,3};

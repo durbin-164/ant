@@ -22,7 +22,7 @@ ndarray::Shape ndarray::arrayutil::getCumulativeMultiShape(const ndarray::Shape 
 
     if(shape.size()-offset <=1)return cum_shape;
 
-    if(cum_shape.size() <= 0){
+    if(cum_shape.empty()){
         cum_shape.push_back(shape.begin()[0]);
         return cum_shape;
     }
