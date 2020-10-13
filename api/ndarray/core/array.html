@@ -37,6 +37,7 @@
     
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="BroadCasted" href="broadCasted.html" />
     <link rel="prev" title="Core" href="index.html" /> 
 </head>
 
@@ -85,12 +86,16 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../../index.html">Welcome to ant's documentation!</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">API</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../../hello.html">Hello</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">NdArray</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="index.html">Core</a><ul class="current">
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="broadCasted.html">BroadCasted</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dataType.html">DataType</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../util/index.html">Util</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cuda/index.html">Cuda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exception/index.html">Exception</a></li>
 </ul>
 </li>
 </ul>
@@ -174,7 +179,7 @@
 <dd><dl class="cpp class">
 <dt id="_CPPv4N7ndarray5ArrayE">
 <span id="_CPPv3N7ndarray5ArrayE"></span><span id="_CPPv2N7ndarray5ArrayE"></span><span id="ndarray::Array"></span><span class="target" id="classndarray_1_1Array"></span><em class="property">class </em><code class="sig-name descname">Array</code><a class="headerlink" href="#_CPPv4N7ndarray5ArrayE" title="Permalink to this definition">¶</a><br /></dt>
-<dd><div class="breathe-sectiondef docutils container">
+<dd><em>#include &lt;array.h&gt;</em><div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
 <dl class="cpp function">
 <dt id="_CPPv4N7ndarray5Array5ArrayEv">
@@ -188,7 +193,7 @@
 
 <dl class="cpp function">
 <dt id="_CPPv4N7ndarray5Array5ArrayERK5ShapePdPdKb">
-<span id="_CPPv3N7ndarray5Array5ArrayERK5ShapePdPdKb"></span><span id="_CPPv2N7ndarray5Array5ArrayERK5ShapePdPdKb"></span><span id="ndarray::Array::Array__ShapeCR.doubleP.doubleP.bC"></span><span class="target" id="classndarray_1_1Array_1a80a61a102d23ccf8405302a7f2d13ad6"></span><code class="sig-name descname">Array</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv45Shape" title="Shape">Shape</a> &amp;<em>shape</em>, double *<em>hdata</em> = nullptr, double *<em>ddata</em> = nullptr, <em class="property">const</em> bool <em>onCuda</em> = true<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray5Array5ArrayERK5ShapePdPdKb" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N7ndarray5Array5ArrayERK5ShapePdPdKb"></span><span id="_CPPv2N7ndarray5Array5ArrayERK5ShapePdPdKb"></span><span id="ndarray::Array::Array__ShapeCR.doubleP.doubleP.bC"></span><span class="target" id="classndarray_1_1Array_1a80a61a102d23ccf8405302a7f2d13ad6"></span><code class="sig-name descname">Array</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="dataType.html#_CPPv4N7ndarray5ShapeE" title="ndarray::Shape">Shape</a> &amp;<em>shape</em>, double *<em>hdata</em> = nullptr, double *<em>ddata</em> = nullptr, <em class="property">const</em> bool <em>onCuda</em> = true<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray5Array5ArrayERK5ShapePdPdKb" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Initialize an array. </p>
 <p><dl class="simple">
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
@@ -223,6 +228,11 @@
 <dd></dd></dl>
 
 <dl class="cpp function">
+<dt id="_CPPv4NK7ndarray5Array6matmulERK5Array">
+<span id="_CPPv3NK7ndarray5Array6matmulERK5Array"></span><span id="_CPPv2NK7ndarray5Array6matmulERK5Array"></span><span id="ndarray::Array::matmul__ArrayCRC"></span><span class="target" id="classndarray_1_1Array_1aaadd0b9f901c43d181b82019ef6bccbd"></span><a class="reference internal" href="#_CPPv4N7ndarray5ArrayE" title="ndarray::Array">Array</a> <code class="sig-name descname">matmul</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N7ndarray5ArrayE" title="ndarray::Array">Array</a> &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK7ndarray5Array6matmulERK5Array" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
 <dt id="_CPPv4NK7ndarray5ArrayplERK5Array">
 <span id="_CPPv3NK7ndarray5ArrayplERK5Array"></span><span id="_CPPv2NK7ndarray5ArrayplERK5Array"></span><span id="ndarray::Array::add-operator__ArrayCRC"></span><span class="target" id="classndarray_1_1Array_1ae5efe95a377cd119a65012a30134e200"></span><a class="reference internal" href="#_CPPv4N7ndarray5ArrayE" title="ndarray::Array">Array</a> <code class="sig-name descname">operator+</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N7ndarray5ArrayE" title="ndarray::Array">Array</a> &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK7ndarray5ArrayplERK5Array" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
@@ -249,7 +259,7 @@
 
 <dl class="cpp function">
 <dt id="_CPPv4NK7ndarray5Array6strideEv">
-<span id="_CPPv3NK7ndarray5Array6strideEv"></span><span id="_CPPv2NK7ndarray5Array6strideEv"></span><span id="ndarray::Array::strideC"></span><span class="target" id="classndarray_1_1Array_1aaa06a8ac095f80fd999d6760788ebf6d"></span><a class="reference internal" href="#_CPPv45Shape" title="Shape">Shape</a> <code class="sig-name descname">stride</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK7ndarray5Array6strideEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK7ndarray5Array6strideEv"></span><span id="_CPPv2NK7ndarray5Array6strideEv"></span><span id="ndarray::Array::strideC"></span><span class="target" id="classndarray_1_1Array_1a556b67525e8b07ef42631e0ff12e32cf"></span><a class="reference internal" href="dataType.html#_CPPv4N7ndarray6StrideE" title="ndarray::Stride">Stride</a> <code class="sig-name descname">stride</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK7ndarray5Array6strideEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -279,12 +289,12 @@
 
 <dl class="cpp function">
 <dt id="_CPPv4NK7ndarray5Array5shapeEv">
-<span id="_CPPv3NK7ndarray5Array5shapeEv"></span><span id="_CPPv2NK7ndarray5Array5shapeEv"></span><span id="ndarray::Array::shapeC"></span><span class="target" id="classndarray_1_1Array_1a1ebddb3c88811ced1fb387c272c3c0c1"></span><a class="reference internal" href="#_CPPv45Shape" title="Shape">Shape</a> <code class="sig-name descname">shape</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK7ndarray5Array5shapeEv" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3NK7ndarray5Array5shapeEv"></span><span id="_CPPv2NK7ndarray5Array5shapeEv"></span><span id="ndarray::Array::shapeC"></span><span class="target" id="classndarray_1_1Array_1a1ebddb3c88811ced1fb387c272c3c0c1"></span><a class="reference internal" href="dataType.html#_CPPv4N7ndarray5ShapeE" title="ndarray::Shape">Shape</a> <code class="sig-name descname">shape</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK7ndarray5Array5shapeEv" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
 <dt id="_CPPv4N7ndarray5Array8setShapeE5Shape">
-<span id="_CPPv3N7ndarray5Array8setShapeE5Shape"></span><span id="_CPPv2N7ndarray5Array8setShapeE5Shape"></span><span id="ndarray::Array::setShape__Shape"></span><span class="target" id="classndarray_1_1Array_1a4ac1a2d1619b9d68f9311bb95752c5bc"></span>void <code class="sig-name descname">setShape</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv45Shape" title="Shape">Shape</a> <em>shape</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray5Array8setShapeE5Shape" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N7ndarray5Array8setShapeE5Shape"></span><span id="_CPPv2N7ndarray5Array8setShapeE5Shape"></span><span id="ndarray::Array::setShape__Shape"></span><span class="target" id="classndarray_1_1Array_1a4ac1a2d1619b9d68f9311bb95752c5bc"></span>void <code class="sig-name descname">setShape</code><span class="sig-paren">(</span><a class="reference internal" href="dataType.html#_CPPv4N7ndarray5ShapeE" title="ndarray::Shape">Shape</a> <em>shape</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray5Array8setShapeE5Shape" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">
@@ -307,7 +317,7 @@
 
 <dl class="cpp var">
 <dt id="_CPPv4N7ndarray5Array6shape_E">
-<span id="_CPPv3N7ndarray5Array6shape_E"></span><span id="_CPPv2N7ndarray5Array6shape_E"></span><span id="ndarray::Array::shape___Shape"></span><span class="target" id="classndarray_1_1Array_1a194feef47b9a2201762bb513d522b8e8"></span><a class="reference internal" href="#_CPPv45Shape" title="Shape">Shape</a> <code class="sig-name descname">shape_</code><a class="headerlink" href="#_CPPv4N7ndarray5Array6shape_E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N7ndarray5Array6shape_E"></span><span id="_CPPv2N7ndarray5Array6shape_E"></span><span id="ndarray::Array::shape___Shape"></span><span class="target" id="classndarray_1_1Array_1a194feef47b9a2201762bb513d522b8e8"></span><a class="reference internal" href="dataType.html#_CPPv4N7ndarray5ShapeE" title="ndarray::Shape">Shape</a> <code class="sig-name descname">shape_</code><a class="headerlink" href="#_CPPv4N7ndarray5Array6shape_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp var">
@@ -317,7 +327,7 @@
 
 <dl class="cpp var">
 <dt id="_CPPv4N7ndarray5Array7stride_E">
-<span id="_CPPv3N7ndarray5Array7stride_E"></span><span id="_CPPv2N7ndarray5Array7stride_E"></span><span id="ndarray::Array::stride___Shape"></span><span class="target" id="classndarray_1_1Array_1afe886ecdfb6f309333feebc6a80e3955"></span><a class="reference internal" href="#_CPPv45Shape" title="Shape">Shape</a> <code class="sig-name descname">stride_</code><a class="headerlink" href="#_CPPv4N7ndarray5Array7stride_E" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv3N7ndarray5Array7stride_E"></span><span id="_CPPv2N7ndarray5Array7stride_E"></span><span id="ndarray::Array::stride___Stride"></span><span class="target" id="classndarray_1_1Array_1a6617e6d7aac292a14092489bd82d6b55"></span><a class="reference internal" href="dataType.html#_CPPv4N7ndarray6StrideE" title="ndarray::Stride">Stride</a> <code class="sig-name descname">stride_</code><a class="headerlink" href="#_CPPv4N7ndarray5Array7stride_E" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp var">
@@ -350,24 +360,6 @@
 
 </dd></dl>
 
-<div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Typedefs</p>
-<dl class="cpp type">
-<dt id="_CPPv45Shape">
-<span id="_CPPv35Shape"></span><span id="_CPPv25Shape"></span><span class="target" id="dataType_8h_1a6d6d9d9258bf7c6bf7659ea14c42d822"></span><em class="property">using </em><code class="sig-name descname">Shape</code> = std::vector&lt;int&gt;<a class="headerlink" href="#_CPPv45Shape" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp type">
-<dt id="_CPPv44Axis">
-<span id="_CPPv34Axis"></span><span id="_CPPv24Axis"></span><span class="target" id="dataType_8h_1ad876edbe132d148b97b6e62b63137ce6"></span><em class="property">using </em><code class="sig-name descname">Axis</code> = std::vector&lt;int&gt;<a class="headerlink" href="#_CPPv44Axis" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp type">
-<dt id="_CPPv42LL">
-<span id="_CPPv32LL"></span><span id="_CPPv22LL"></span><span class="target" id="dataType_8h_1a64929c34f2d2188fc02d1a6b7f4a435e"></span><em class="property">using </em><code class="sig-name descname">LL</code> = long long<a class="headerlink" href="#_CPPv42LL" title="Permalink to this definition">¶</a><br /></dt>
-<dd></dd></dl>
-
-</div>
 </div>
 
 
@@ -377,6 +369,8 @@
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="broadCasted.html" class="btn btn-neutral float-right" title="BroadCasted" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="index.html" class="btn btn-neutral float-left" title="Core" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

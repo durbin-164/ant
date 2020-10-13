@@ -61,7 +61,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>ndarray</b></li><li class="navelem"><a class="el" href="classndarray_1_1Array.html">Array</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacendarray.html">ndarray</a></li><li class="navelem"><a class="el" href="classndarray_1_1Array.html">Array</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -72,70 +72,60 @@ $(function() {
 <div class="title">ndarray::Array Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;array.h&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a80a61a102d23ccf8405302a7f2d13ad6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#a80a61a102d23ccf8405302a7f2d13ad6">Array</a> (const Shape &amp;shape, double *hdata=nullptr, double *ddata=nullptr, const bool onCuda=true)</td></tr>
+<tr class="memitem:ae4bf89ac0c818741d6356339d4399a53"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#ae4bf89ac0c818741d6356339d4399a53">Array</a> ()</td></tr>
+<tr class="separator:ae4bf89ac0c818741d6356339d4399a53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a400563f6a0b34cc50ed0c6908310bd93"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#a400563f6a0b34cc50ed0c6908310bd93">~Array</a> ()</td></tr>
+<tr class="separator:a400563f6a0b34cc50ed0c6908310bd93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80a61a102d23ccf8405302a7f2d13ad6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#a80a61a102d23ccf8405302a7f2d13ad6">Array</a> (const <a class="el" href="namespacendarray.html#aef5c9fe78996f611e027267c47359be2">Shape</a> &amp;<a class="el" href="classndarray_1_1Array.html#a1ebddb3c88811ced1fb387c272c3c0c1">shape</a>, double *hdata=nullptr, double *ddata=nullptr, const bool onCuda=true)</td></tr>
 <tr class="memdesc:a80a61a102d23ccf8405302a7f2d13ad6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize an array.  <a href="classndarray_1_1Array.html#a80a61a102d23ccf8405302a7f2d13ad6">More...</a><br /></td></tr>
 <tr class="separator:a80a61a102d23ccf8405302a7f2d13ad6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d74e21750b01226bf77e29ab71bdbbd"><td class="memItemLeft" align="right" valign="top"><a id="a9d74e21750b01226bf77e29ab71bdbbd"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>updateStrides</b> ()</td></tr>
+<tr class="memitem:a9d74e21750b01226bf77e29ab71bdbbd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#a9d74e21750b01226bf77e29ab71bdbbd">updateStrides</a> ()</td></tr>
 <tr class="separator:a9d74e21750b01226bf77e29ab71bdbbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb9cfd8aedfe772a67e78cdf6f000138"><td class="memItemLeft" align="right" valign="top"><a id="acb9cfd8aedfe772a67e78cdf6f000138"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>computeSize</b> ()</td></tr>
+<tr class="memitem:acb9cfd8aedfe772a67e78cdf6f000138"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#acb9cfd8aedfe772a67e78cdf6f000138">computeSize</a> ()</td></tr>
 <tr class="separator:acb9cfd8aedfe772a67e78cdf6f000138"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a467b232eeab522a655b90d112351cda8"><td class="memItemLeft" align="right" valign="top"><a id="a467b232eeab522a655b90d112351cda8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>unMappedToCuda</b> ()</td></tr>
+<tr class="memitem:a467b232eeab522a655b90d112351cda8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#a467b232eeab522a655b90d112351cda8">unMappedToCuda</a> ()</td></tr>
 <tr class="separator:a467b232eeab522a655b90d112351cda8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acee15cba2822286d0635ac6d73a2f8b0"><td class="memItemLeft" align="right" valign="top"><a id="acee15cba2822286d0635ac6d73a2f8b0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>mapDeviceDataToHost</b> ()</td></tr>
+<tr class="memitem:acee15cba2822286d0635ac6d73a2f8b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#acee15cba2822286d0635ac6d73a2f8b0">mapDeviceDataToHost</a> ()</td></tr>
 <tr class="separator:acee15cba2822286d0635ac6d73a2f8b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5efe95a377cd119a65012a30134e200"><td class="memItemLeft" align="right" valign="top"><a id="ae5efe95a377cd119a65012a30134e200"></a>
-<a class="el" href="classndarray_1_1Array.html">Array</a>&#160;</td><td class="memItemRight" valign="bottom"><b>operator+</b> (const <a class="el" href="classndarray_1_1Array.html">Array</a> &amp;other) const</td></tr>
+<tr class="memitem:aaadd0b9f901c43d181b82019ef6bccbd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classndarray_1_1Array.html">Array</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#aaadd0b9f901c43d181b82019ef6bccbd">matmul</a> (const <a class="el" href="classndarray_1_1Array.html">Array</a> &amp;other) const</td></tr>
+<tr class="separator:aaadd0b9f901c43d181b82019ef6bccbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5efe95a377cd119a65012a30134e200"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classndarray_1_1Array.html">Array</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#ae5efe95a377cd119a65012a30134e200">operator+</a> (const <a class="el" href="classndarray_1_1Array.html">Array</a> &amp;other) const</td></tr>
 <tr class="separator:ae5efe95a377cd119a65012a30134e200"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add7470831ed793c925077cefe5860c2b"><td class="memItemLeft" align="right" valign="top"><a id="add7470831ed793c925077cefe5860c2b"></a>
-double *&#160;</td><td class="memItemRight" valign="bottom"><b>hostData</b> ()</td></tr>
+<tr class="memitem:add7470831ed793c925077cefe5860c2b"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#add7470831ed793c925077cefe5860c2b">hostData</a> ()</td></tr>
 <tr class="separator:add7470831ed793c925077cefe5860c2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a598cec2cb5094cdf5d76f2b4e869adff"><td class="memItemLeft" align="right" valign="top"><a id="a598cec2cb5094cdf5d76f2b4e869adff"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setHostData</b> (double *hdata)</td></tr>
+<tr class="memitem:a598cec2cb5094cdf5d76f2b4e869adff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#a598cec2cb5094cdf5d76f2b4e869adff">setHostData</a> (double *hdata)</td></tr>
 <tr class="separator:a598cec2cb5094cdf5d76f2b4e869adff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae35725e1e398b3d2835f328efbce9d82"><td class="memItemLeft" align="right" valign="top"><a id="ae35725e1e398b3d2835f328efbce9d82"></a>
-double *&#160;</td><td class="memItemRight" valign="bottom"><b>deviceData</b> () const</td></tr>
+<tr class="memitem:ae35725e1e398b3d2835f328efbce9d82"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#ae35725e1e398b3d2835f328efbce9d82">deviceData</a> () const</td></tr>
 <tr class="separator:ae35725e1e398b3d2835f328efbce9d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88dd4de670023a58959475451e350e33"><td class="memItemLeft" align="right" valign="top"><a id="a88dd4de670023a58959475451e350e33"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setDeviceData</b> (double *ddata)</td></tr>
+<tr class="memitem:a88dd4de670023a58959475451e350e33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#a88dd4de670023a58959475451e350e33">setDeviceData</a> (double *ddata)</td></tr>
 <tr class="separator:a88dd4de670023a58959475451e350e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa06a8ac095f80fd999d6760788ebf6d"><td class="memItemLeft" align="right" valign="top"><a id="aaa06a8ac095f80fd999d6760788ebf6d"></a>
-Shape&#160;</td><td class="memItemRight" valign="bottom"><b>stride</b> () const</td></tr>
-<tr class="separator:aaa06a8ac095f80fd999d6760788ebf6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac546c36dda85d8e3eea22c65f5c17ccb"><td class="memItemLeft" align="right" valign="top"><a id="ac546c36dda85d8e3eea22c65f5c17ccb"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>rank</b> () const</td></tr>
+<tr class="memitem:a556b67525e8b07ef42631e0ff12e32cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacendarray.html#ac5e839c9ba6e4138f53e6453ffdc3be4">Stride</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#a556b67525e8b07ef42631e0ff12e32cf">stride</a> () const</td></tr>
+<tr class="separator:a556b67525e8b07ef42631e0ff12e32cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac546c36dda85d8e3eea22c65f5c17ccb"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#ac546c36dda85d8e3eea22c65f5c17ccb">rank</a> () const</td></tr>
 <tr class="separator:ac546c36dda85d8e3eea22c65f5c17ccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83c725fc38fd69edc33f9c3d05541f45"><td class="memItemLeft" align="right" valign="top"><a id="a83c725fc38fd69edc33f9c3d05541f45"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isHostData</b> () const</td></tr>
+<tr class="memitem:a83c725fc38fd69edc33f9c3d05541f45"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#a83c725fc38fd69edc33f9c3d05541f45">isHostData</a> () const</td></tr>
 <tr class="separator:a83c725fc38fd69edc33f9c3d05541f45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ff483b79f3c8da2f32993b41477150d"><td class="memItemLeft" align="right" valign="top"><a id="a0ff483b79f3c8da2f32993b41477150d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setIsHostData</b> (bool isHostData)</td></tr>
+<tr class="memitem:a0ff483b79f3c8da2f32993b41477150d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#a0ff483b79f3c8da2f32993b41477150d">setIsHostData</a> (bool <a class="el" href="classndarray_1_1Array.html#a83c725fc38fd69edc33f9c3d05541f45">isHostData</a>)</td></tr>
 <tr class="separator:a0ff483b79f3c8da2f32993b41477150d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac06fa21c7611e3b61656e191e7b5afef"><td class="memItemLeft" align="right" valign="top"><a id="ac06fa21c7611e3b61656e191e7b5afef"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isDeviceData</b> () const</td></tr>
+<tr class="memitem:ac06fa21c7611e3b61656e191e7b5afef"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#ac06fa21c7611e3b61656e191e7b5afef">isDeviceData</a> () const</td></tr>
 <tr class="separator:ac06fa21c7611e3b61656e191e7b5afef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfbf20357ed941450b304ee84917de85"><td class="memItemLeft" align="right" valign="top"><a id="adfbf20357ed941450b304ee84917de85"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setIsDeviceData</b> (bool isDeviceData)</td></tr>
+<tr class="memitem:adfbf20357ed941450b304ee84917de85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#adfbf20357ed941450b304ee84917de85">setIsDeviceData</a> (bool <a class="el" href="classndarray_1_1Array.html#ac06fa21c7611e3b61656e191e7b5afef">isDeviceData</a>)</td></tr>
 <tr class="separator:adfbf20357ed941450b304ee84917de85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ebddb3c88811ced1fb387c272c3c0c1"><td class="memItemLeft" align="right" valign="top"><a id="a1ebddb3c88811ced1fb387c272c3c0c1"></a>
-Shape&#160;</td><td class="memItemRight" valign="bottom"><b>shape</b> () const</td></tr>
+<tr class="memitem:a1ebddb3c88811ced1fb387c272c3c0c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacendarray.html#aef5c9fe78996f611e027267c47359be2">Shape</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#a1ebddb3c88811ced1fb387c272c3c0c1">shape</a> () const</td></tr>
 <tr class="separator:a1ebddb3c88811ced1fb387c272c3c0c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ac1a2d1619b9d68f9311bb95752c5bc"><td class="memItemLeft" align="right" valign="top"><a id="a4ac1a2d1619b9d68f9311bb95752c5bc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>setShape</b> (Shape shape)</td></tr>
+<tr class="memitem:a4ac1a2d1619b9d68f9311bb95752c5bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#a4ac1a2d1619b9d68f9311bb95752c5bc">setShape</a> (<a class="el" href="namespacendarray.html#aef5c9fe78996f611e027267c47359be2">Shape</a> <a class="el" href="classndarray_1_1Array.html#a1ebddb3c88811ced1fb387c272c3c0c1">shape</a>)</td></tr>
 <tr class="separator:a4ac1a2d1619b9d68f9311bb95752c5bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a078fc11425d17418d4e00b2c969a157e"><td class="memItemLeft" align="right" valign="top"><a id="a078fc11425d17418d4e00b2c969a157e"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>size</b> () const</td></tr>
+<tr class="memitem:a078fc11425d17418d4e00b2c969a157e"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#a078fc11425d17418d4e00b2c969a157e">size</a> () const</td></tr>
 <tr class="separator:a078fc11425d17418d4e00b2c969a157e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a80a61a102d23ccf8405302a7f2d13ad6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80a61a102d23ccf8405302a7f2d13ad6">&#9670;&nbsp;</a></span>Array()</h2>
+<a id="ae4bf89ac0c818741d6356339d4399a53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4bf89ac0c818741d6356339d4399a53">&#9670;&nbsp;</a></span>Array() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -143,7 +133,41 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>size</b> () const</
         <tr>
           <td class="memname">ndarray::Array::Array </td>
           <td>(</td>
-          <td class="paramtype">const Shape &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a400563f6a0b34cc50ed0c6908310bd93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a400563f6a0b34cc50ed0c6908310bd93">&#9670;&nbsp;</a></span>~Array()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ndarray::Array::~Array </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a80a61a102d23ccf8405302a7f2d13ad6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80a61a102d23ccf8405302a7f2d13ad6">&#9670;&nbsp;</a></span>Array() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ndarray::Array::Array </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacendarray.html#aef5c9fe78996f611e027267c47359be2">Shape</a> &amp;&#160;</td>
           <td class="paramname"><em>shape</em>, </td>
         </tr>
         <tr>
@@ -185,9 +209,412 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>size</b> () const</
 
 </div>
 </div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="acb9cfd8aedfe772a67e78cdf6f000138"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb9cfd8aedfe772a67e78cdf6f000138">&#9670;&nbsp;</a></span>computeSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ndarray::Array::computeSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae35725e1e398b3d2835f328efbce9d82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae35725e1e398b3d2835f328efbce9d82">&#9670;&nbsp;</a></span>deviceData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double* ndarray::Array::deviceData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="add7470831ed793c925077cefe5860c2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add7470831ed793c925077cefe5860c2b">&#9670;&nbsp;</a></span>hostData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double * ndarray::Array::hostData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac06fa21c7611e3b61656e191e7b5afef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac06fa21c7611e3b61656e191e7b5afef">&#9670;&nbsp;</a></span>isDeviceData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ndarray::Array::isDeviceData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a83c725fc38fd69edc33f9c3d05541f45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83c725fc38fd69edc33f9c3d05541f45">&#9670;&nbsp;</a></span>isHostData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ndarray::Array::isHostData </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acee15cba2822286d0635ac6d73a2f8b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acee15cba2822286d0635ac6d73a2f8b0">&#9670;&nbsp;</a></span>mapDeviceDataToHost()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ndarray::Array::mapDeviceDataToHost </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaadd0b9f901c43d181b82019ef6bccbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaadd0b9f901c43d181b82019ef6bccbd">&#9670;&nbsp;</a></span>matmul()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classndarray_1_1Array.html">Array</a> ndarray::Array::matmul </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classndarray_1_1Array.html">Array</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae5efe95a377cd119a65012a30134e200"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5efe95a377cd119a65012a30134e200">&#9670;&nbsp;</a></span>operator+()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classndarray_1_1Array.html">Array</a> ndarray::Array::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classndarray_1_1Array.html">Array</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac546c36dda85d8e3eea22c65f5c17ccb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac546c36dda85d8e3eea22c65f5c17ccb">&#9670;&nbsp;</a></span>rank()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t ndarray::Array::rank </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a88dd4de670023a58959475451e350e33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88dd4de670023a58959475451e350e33">&#9670;&nbsp;</a></span>setDeviceData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ndarray::Array::setDeviceData </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>ddata</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a598cec2cb5094cdf5d76f2b4e869adff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a598cec2cb5094cdf5d76f2b4e869adff">&#9670;&nbsp;</a></span>setHostData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ndarray::Array::setHostData </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>hdata</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adfbf20357ed941450b304ee84917de85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfbf20357ed941450b304ee84917de85">&#9670;&nbsp;</a></span>setIsDeviceData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ndarray::Array::setIsDeviceData </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isDeviceData</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0ff483b79f3c8da2f32993b41477150d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ff483b79f3c8da2f32993b41477150d">&#9670;&nbsp;</a></span>setIsHostData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ndarray::Array::setIsHostData </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isHostData</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4ac1a2d1619b9d68f9311bb95752c5bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ac1a2d1619b9d68f9311bb95752c5bc">&#9670;&nbsp;</a></span>setShape()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ndarray::Array::setShape </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacendarray.html#aef5c9fe78996f611e027267c47359be2">Shape</a>&#160;</td>
+          <td class="paramname"><em>shape</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1ebddb3c88811ced1fb387c272c3c0c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ebddb3c88811ced1fb387c272c3c0c1">&#9670;&nbsp;</a></span>shape()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacendarray.html#aef5c9fe78996f611e027267c47359be2">Shape</a> ndarray::Array::shape </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a078fc11425d17418d4e00b2c969a157e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a078fc11425d17418d4e00b2c969a157e">&#9670;&nbsp;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t ndarray::Array::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a556b67525e8b07ef42631e0ff12e32cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a556b67525e8b07ef42631e0ff12e32cf">&#9670;&nbsp;</a></span>stride()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacendarray.html#ac5e839c9ba6e4138f53e6453ffdc3be4">Stride</a> ndarray::Array::stride </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a467b232eeab522a655b90d112351cda8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a467b232eeab522a655b90d112351cda8">&#9670;&nbsp;</a></span>unMappedToCuda()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ndarray::Array::unMappedToCuda </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9d74e21750b01226bf77e29ab71bdbbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d74e21750b01226bf77e29ab71bdbbd">&#9670;&nbsp;</a></span>updateStrides()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ndarray::Array::updateStrides </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/docker/actions-runner/_work/ant/ant/src/ndarray/core/array.h</li>
-<li>/home/docker/actions-runner/_work/ant/ant/src/ndarray/core/array.cpp</li>
+<li>/home/docker/actions-runner/_work/ant/ant/src/ndarray/core/<a class="el" href="array_8h.html">array.h</a></li>
+<li>/home/docker/actions-runner/_work/ant/ant/src/ndarray/core/<a class="el" href="array_8cpp.html">array.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

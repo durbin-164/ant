@@ -1,0 +1,297 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="english" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>ArrayUtil &mdash; ant  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Util" href="util.html" />
+    <link rel="prev" title="Util" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> ant
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Welcome to ant's documentation!</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">NdArray</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../core/index.html">Core</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Util</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">ArrayUtil</a></li>
+<li class="toctree-l4"><a class="reference internal" href="util.html">Util</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../cuda/index.html">Cuda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exception/index.html">Exception</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ant</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">API</a> &raquo;</li>
+        
+          <li><a href="../index.html">NdArray</a> &raquo;</li>
+        
+          <li><a href="index.html">Util</a> &raquo;</li>
+        
+      <li>ArrayUtil</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/api/ndarray/util/arrayUtil.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="arrayutil">
+<span id="util-arrayutil"></span><h1>ArrayUtil<a class="headerlink" href="#arrayutil" title="Permalink to this headline">¶</a></h1>
+<dl class="cpp type">
+<dt id="_CPPv47ndarray">
+<span id="_CPPv37ndarray"></span><span id="_CPPv27ndarray"></span><span id="ndarray"></span><span class="target" id="namespacendarray"></span><em class="property">namespace </em><code class="sig-name descname">ndarray</code><br /></dt>
+<dd><dl class="cpp type">
+<dt id="_CPPv4N7ndarray9arrayutilE">
+<span id="_CPPv3N7ndarray9arrayutilE"></span><span id="_CPPv2N7ndarray9arrayutilE"></span><span id="ndarray::arrayutil"></span><span class="target" id="namespacendarray_1_1arrayutil"></span><em class="property">namespace </em><code class="sig-name descname">arrayutil</code><a class="headerlink" href="#_CPPv4N7ndarray9arrayutilE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N7ndarray9arrayutil22getNumOfElementByShapeERKN7ndarray5ShapeE">
+<span id="_CPPv3N7ndarray9arrayutil22getNumOfElementByShapeERKN7ndarray5ShapeE"></span><span id="_CPPv2N7ndarray9arrayutil22getNumOfElementByShapeERKN7ndarray5ShapeE"></span><span id="ndarray::arrayutil::getNumOfElementByShape__ndarray::ShapeCR"></span><span class="target" id="namespacendarray_1_1arrayutil_1ae1dd7a1ec215ae77901af7ca3153480c"></span><a class="reference internal" href="../core/array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="../core/dataType.html#_CPPv4N7ndarray2LLE" title="ndarray::LL">LL</a> <code class="sig-name descname">getNumOfElementByShape</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../core/array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="../core/dataType.html#_CPPv4N7ndarray5ShapeE" title="ndarray::Shape">Shape</a> &amp;<em>shape</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray9arrayutil22getNumOfElementByShapeERKN7ndarray5ShapeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>get array size or number of element by array shape.<p> Example: shape{2,3,4} =&gt; output 2*3*4 = 24 </p>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>number of element of given array. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">shape</span></code>: vector data of array shape. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7ndarray9arrayutil23getCumulativeMultiShapeERKN7ndarray5ShapeEKi">
+<span id="_CPPv3N7ndarray9arrayutil23getCumulativeMultiShapeERKN7ndarray5ShapeEKi"></span><span id="_CPPv2N7ndarray9arrayutil23getCumulativeMultiShapeERKN7ndarray5ShapeEKi"></span><span id="ndarray::arrayutil::getCumulativeMultiShape__ndarray::ShapeCR.iC"></span><span class="target" id="namespacendarray_1_1arrayutil_1aadd8fa20667d089f1a12a156957ad934"></span><a class="reference internal" href="../core/array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="../core/dataType.html#_CPPv4N7ndarray5ShapeE" title="ndarray::Shape">Shape</a> <code class="sig-name descname">getCumulativeMultiShape</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../core/array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="../core/dataType.html#_CPPv4N7ndarray5ShapeE" title="ndarray::Shape">Shape</a> &amp;<em>shape</em>, <em class="property">const</em> int <em>offset</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray9arrayutil23getCumulativeMultiShapeERKN7ndarray5ShapeEKi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>get cumulative multyping shape. output size should be shape_size-1.<p> Example 1: shape{2,3,4} =&gt; cum_shape{12,4} </p>
+<p> Example 2: shape{2,3,4,5}, offset = 2 =&gt; cun_shape{3}</p>
+<p> Example 3: Shape{2,3}, offset=1 =&gt; cum_shape{} </p>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>vector data with cumulative multyping shape. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">shape</span></code>: vector data of array shape. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">offset</span></code>: skip number of element from last of the shape. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7ndarray9arrayutil17getMatmulOutShapeERKN7ndarray5ShapeERKN7ndarray5ShapeE">
+<span id="_CPPv3N7ndarray9arrayutil17getMatmulOutShapeERKN7ndarray5ShapeERKN7ndarray5ShapeE"></span><span id="_CPPv2N7ndarray9arrayutil17getMatmulOutShapeERKN7ndarray5ShapeERKN7ndarray5ShapeE"></span><span id="ndarray::arrayutil::getMatmulOutShape__ndarray::ShapeCR.ndarray::ShapeCR"></span><span class="target" id="namespacendarray_1_1arrayutil_1a9d1c0bc39be4aebce0ed79581c10a68a"></span><a class="reference internal" href="../core/array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="../core/dataType.html#_CPPv4N7ndarray5ShapeE" title="ndarray::Shape">Shape</a> <code class="sig-name descname">getMatmulOutShape</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../core/array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="../core/dataType.html#_CPPv4N7ndarray5ShapeE" title="ndarray::Shape">Shape</a> &amp;<em>l_shape</em>, <em class="property">const</em> <a class="reference internal" href="../core/array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="../core/dataType.html#_CPPv4N7ndarray5ShapeE" title="ndarray::Shape">Shape</a> &amp;<em>r_shape</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray9arrayutil17getMatmulOutShapeERKN7ndarray5ShapeERKN7ndarray5ShapeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>get matmul expected output shape from two array shape. Also support broad castring. Example: l_shape{4,1,3,4}, r_shape{1,3,4,5} =&gt; out_shape{4,3,3,5} </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Expected broad casted matmul shape. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">l_shape</span></code>: left array shape. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">r_shape</span></code>: right array shape. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="util.html" class="btn btn-neutral float-right" title="Util" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Util" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Md. Masud Rana
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

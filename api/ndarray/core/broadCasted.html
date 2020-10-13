@@ -1,0 +1,336 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="english" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>BroadCasted &mdash; ant  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="DataType" href="dataType.html" />
+    <link rel="prev" title="Array" href="array.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> ant
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Welcome to ant's documentation!</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">NdArray</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Core</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="array.html">Array</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">BroadCasted</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dataType.html">DataType</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../util/index.html">Util</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cuda/index.html">Cuda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exception/index.html">Exception</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ant</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">API</a> &raquo;</li>
+        
+          <li><a href="../index.html">NdArray</a> &raquo;</li>
+        
+          <li><a href="index.html">Core</a> &raquo;</li>
+        
+      <li>BroadCasted</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/api/ndarray/core/broadCasted.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="broadcasted">
+<span id="core-broadcasted"></span><h1>BroadCasted<a class="headerlink" href="#broadcasted" title="Permalink to this headline">¶</a></h1>
+<dl class="cpp type">
+<dt id="_CPPv47ndarray">
+<span id="_CPPv37ndarray"></span><span id="_CPPv27ndarray"></span><span id="ndarray"></span><span class="target" id="namespacendarray"></span><em class="property">namespace </em><code class="sig-name descname">ndarray</code><br /></dt>
+<dd><dl class="cpp type">
+<dt id="_CPPv4N7ndarray9broadcastE">
+<span id="_CPPv3N7ndarray9broadcastE"></span><span id="_CPPv2N7ndarray9broadcastE"></span><span id="ndarray::broadcast"></span><span class="target" id="namespacendarray_1_1broadcast"></span><em class="property">namespace </em><code class="sig-name descname">broadcast</code><a class="headerlink" href="#_CPPv4N7ndarray9broadcastE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N7ndarray9broadcast19getBroadCastedShapeERKN7ndarray5ShapeERKN7ndarray5ShapeEKi">
+<span id="_CPPv3N7ndarray9broadcast19getBroadCastedShapeERKN7ndarray5ShapeERKN7ndarray5ShapeEKi"></span><span id="_CPPv2N7ndarray9broadcast19getBroadCastedShapeERKN7ndarray5ShapeERKN7ndarray5ShapeEKi"></span><span id="ndarray::broadcast::getBroadCastedShape__ndarray::ShapeCR.ndarray::ShapeCR.iC"></span><span class="target" id="namespacendarray_1_1broadcast_1ac750057223c67aa054a4973736b422e4"></span><a class="reference internal" href="array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="dataType.html#_CPPv4N7ndarray5ShapeE" title="ndarray::Shape">Shape</a> <code class="sig-name descname">getBroadCastedShape</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="dataType.html#_CPPv4N7ndarray5ShapeE" title="ndarray::Shape">Shape</a> &amp;<em>l_shape</em>, <em class="property">const</em> <a class="reference internal" href="array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="dataType.html#_CPPv4N7ndarray5ShapeE" title="ndarray::Shape">Shape</a> &amp;<em>r_shape</em>, <em class="property">const</em> int <em>offset</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray9broadcast19getBroadCastedShapeERKN7ndarray5ShapeERKN7ndarray5ShapeEKi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>make expected broadcasted shape of two given array <p> Example: l_shape {4,1}, r_shape{1,3} =&gt; out_shape{4,3} </p>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>Operation output shape. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">l_shape</span></code>: Left array shape. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">r_shape</span></code>: Right array shape. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">offset</span></code>: int value </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7ndarray9broadcast22getBroadCastedPropertyERKN7ndarray5ShapeERKN7ndarray5ArrayERKN7ndarray5ArrayEKi">
+<span id="_CPPv3N7ndarray9broadcast22getBroadCastedPropertyERKN7ndarray5ShapeERKN7ndarray5ArrayERKN7ndarray5ArrayEKi"></span><span id="_CPPv2N7ndarray9broadcast22getBroadCastedPropertyERKN7ndarray5ShapeERKN7ndarray5ArrayERKN7ndarray5ArrayEKi"></span><span id="ndarray::broadcast::getBroadCastedProperty__ndarray::ShapeCR.ndarray::ArrayCR.ndarray::ArrayCR.iC"></span><span class="target" id="namespacendarray_1_1broadcast_1a59e64d9801904c63c045675d60221e51"></span><a class="reference internal" href="#_CPPv4N7ndarray9broadcast19BroadCastedPropertyE" title="ndarray::broadcast::BroadCastedProperty">BroadCastedProperty</a> <code class="sig-name descname">getBroadCastedProperty</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="dataType.html#_CPPv4N7ndarray5ShapeE" title="ndarray::Shape">Shape</a> &amp;<em>out_shape</em>, <em class="property">const</em> <a class="reference internal" href="array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="array.html#_CPPv4N7ndarray5ArrayE" title="ndarray::Array">Array</a> &amp;<em>A</em>, <em class="property">const</em> <a class="reference internal" href="array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="array.html#_CPPv4N7ndarray5ArrayE" title="ndarray::Array">Array</a> &amp;<em>B</em>, <em class="property">const</em> int <em>offset</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray9broadcast22getBroadCastedPropertyERKN7ndarray5ShapeERKN7ndarray5ArrayERKN7ndarray5ArrayEKi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Calculate broadcasted operated array shape and stride. Which is needed for calculate actual index of operation data. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p><a class="reference internal" href="#structndarray_1_1broadcast_1_1BroadCastedProperty"><span class="std std-ref">BroadCastedProperty</span></a> DTO class which have a_shape, b_shape, a_stride, b_stride. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">out_shape</span></code>: broadcasted output shape. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A</span></code>: ndarray. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">B</span></code>: ndarray. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7ndarray9broadcast12paddedVectorERKNSt6vectorIiEEK6size_tKi">
+<span id="_CPPv3N7ndarray9broadcast12paddedVectorERKNSt6vectorIiEEK6size_tKi"></span><span id="_CPPv2N7ndarray9broadcast12paddedVectorERKNSt6vectorIiEEK6size_tKi"></span><span id="ndarray::broadcast::paddedVector__std::vector:i:CR.sC.iC"></span><span class="target" id="namespacendarray_1_1broadcast_1abad5114cd82d9f8a08b325f9254ee95c"></span>std::vector&lt;int&gt; <code class="sig-name descname">paddedVector</code><span class="sig-paren">(</span><em class="property">const</em> std::vector&lt;int&gt; &amp;<em>vec</em>, <em class="property">const</em> size_t <em>size</em>, <em class="property">const</em> int <em>pad_value</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray9broadcast12paddedVectorERKNSt6vectorIiEEK6size_tKi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>make a vector fill with pad value </p>
+<p><p>Example: vec{3,2,4}, size = 5, pad_value = 100 =&gt;out_vec{100,100,3,2,4} </p>
+<dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>vector with padded value</p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">vec</span></code>: int type vector. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">size</span></code>: expected vector size. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pad_value</span></code>: expected value to fill. default: 0</p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+<dl class="cpp struct">
+<dt id="_CPPv4N7ndarray9broadcast19BroadCastedPropertyE">
+<span id="_CPPv3N7ndarray9broadcast19BroadCastedPropertyE"></span><span id="_CPPv2N7ndarray9broadcast19BroadCastedPropertyE"></span><span id="ndarray::broadcast::BroadCastedProperty"></span><span class="target" id="structndarray_1_1broadcast_1_1BroadCastedProperty"></span><em class="property">struct </em><code class="sig-name descname">BroadCastedProperty</code><a class="headerlink" href="#_CPPv4N7ndarray9broadcast19BroadCastedPropertyE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;broadCasted.h&gt;</em><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N7ndarray9broadcast19BroadCastedProperty19BroadCastedPropertyERKN7ndarray5ShapeERKN7ndarray5ShapeERKN7ndarray6StrideERKN7ndarray6StrideE">
+<span id="_CPPv3N7ndarray9broadcast19BroadCastedProperty19BroadCastedPropertyERKN7ndarray5ShapeERKN7ndarray5ShapeERKN7ndarray6StrideERKN7ndarray6StrideE"></span><span id="_CPPv2N7ndarray9broadcast19BroadCastedProperty19BroadCastedPropertyERKN7ndarray5ShapeERKN7ndarray5ShapeERKN7ndarray6StrideERKN7ndarray6StrideE"></span><span id="ndarray::broadcast::BroadCastedProperty::BroadCastedProperty__ndarray::ShapeCR.ndarray::ShapeCR.ndarray::StrideCR.ndarray::StrideCR"></span><span class="target" id="structndarray_1_1broadcast_1_1BroadCastedProperty_1aa7cdfbcc07a8442f070e7ab00f038513"></span><code class="sig-name descname">BroadCastedProperty</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="dataType.html#_CPPv4N7ndarray5ShapeE" title="ndarray::Shape">Shape</a> &amp;<em>a_shape_</em>, <em class="property">const</em> <a class="reference internal" href="array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="dataType.html#_CPPv4N7ndarray5ShapeE" title="ndarray::Shape">Shape</a> &amp;<em>b_shape_</em>, <em class="property">const</em> <a class="reference internal" href="array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="dataType.html#_CPPv4N7ndarray6StrideE" title="ndarray::Stride">Stride</a> &amp;<em>a_stride_</em>, <em class="property">const</em> <a class="reference internal" href="array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="dataType.html#_CPPv4N7ndarray6StrideE" title="ndarray::Stride">Stride</a> &amp;<em>b_stride_</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray9broadcast19BroadCastedProperty19BroadCastedPropertyERKN7ndarray5ShapeERKN7ndarray5ShapeERKN7ndarray6StrideERKN7ndarray6StrideE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N7ndarray9broadcast19BroadCastedProperty7a_shapeE">
+<span id="_CPPv3N7ndarray9broadcast19BroadCastedProperty7a_shapeE"></span><span id="_CPPv2N7ndarray9broadcast19BroadCastedProperty7a_shapeE"></span><span id="ndarray::broadcast::BroadCastedProperty::a_shape__ndarray::Shape"></span><span class="target" id="structndarray_1_1broadcast_1_1BroadCastedProperty_1a33e8c11a3ca2a812407b7f6d19b50cbb"></span><a class="reference internal" href="array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="dataType.html#_CPPv4N7ndarray5ShapeE" title="ndarray::Shape">Shape</a> <code class="sig-name descname">a_shape</code><a class="headerlink" href="#_CPPv4N7ndarray9broadcast19BroadCastedProperty7a_shapeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N7ndarray9broadcast19BroadCastedProperty7b_shapeE">
+<span id="_CPPv3N7ndarray9broadcast19BroadCastedProperty7b_shapeE"></span><span id="_CPPv2N7ndarray9broadcast19BroadCastedProperty7b_shapeE"></span><span id="ndarray::broadcast::BroadCastedProperty::b_shape__ndarray::Shape"></span><span class="target" id="structndarray_1_1broadcast_1_1BroadCastedProperty_1af15b4e05cc7a2a000f0478bc76829064"></span><a class="reference internal" href="array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="dataType.html#_CPPv4N7ndarray5ShapeE" title="ndarray::Shape">Shape</a> <code class="sig-name descname">b_shape</code><a class="headerlink" href="#_CPPv4N7ndarray9broadcast19BroadCastedProperty7b_shapeE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N7ndarray9broadcast19BroadCastedProperty8a_strideE">
+<span id="_CPPv3N7ndarray9broadcast19BroadCastedProperty8a_strideE"></span><span id="_CPPv2N7ndarray9broadcast19BroadCastedProperty8a_strideE"></span><span id="ndarray::broadcast::BroadCastedProperty::a_stride__ndarray::Stride"></span><span class="target" id="structndarray_1_1broadcast_1_1BroadCastedProperty_1af8e3ae2dbc6220e352f23bb9a1e13a93"></span><a class="reference internal" href="array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="dataType.html#_CPPv4N7ndarray6StrideE" title="ndarray::Stride">Stride</a> <code class="sig-name descname">a_stride</code><a class="headerlink" href="#_CPPv4N7ndarray9broadcast19BroadCastedProperty8a_strideE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt id="_CPPv4N7ndarray9broadcast19BroadCastedProperty8b_strideE">
+<span id="_CPPv3N7ndarray9broadcast19BroadCastedProperty8b_strideE"></span><span id="_CPPv2N7ndarray9broadcast19BroadCastedProperty8b_strideE"></span><span id="ndarray::broadcast::BroadCastedProperty::b_stride__ndarray::Stride"></span><span class="target" id="structndarray_1_1broadcast_1_1BroadCastedProperty_1a431ea8d6ba389bad9b31f458be8d00a6"></span><a class="reference internal" href="array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="dataType.html#_CPPv4N7ndarray6StrideE" title="ndarray::Stride">Stride</a> <code class="sig-name descname">b_stride</code><a class="headerlink" href="#_CPPv4N7ndarray9broadcast19BroadCastedProperty8b_strideE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="dataType.html" class="btn btn-neutral float-right" title="DataType" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="array.html" class="btn btn-neutral float-left" title="Array" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Md. Masud Rana
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

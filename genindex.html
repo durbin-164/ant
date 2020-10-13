@@ -151,24 +151,20 @@
 <h1 id="index">Index</h1>
 
 <div class="genindex-jumpbox">
- <a href="#A"><strong>A</strong></a>
- | <a href="#L"><strong>L</strong></a>
+ <a href="#C"><strong>C</strong></a>
  | <a href="#N"><strong>N</strong></a>
- | <a href="#S"><strong>S</strong></a>
  
 </div>
-<h2 id="A">A</h2>
+<h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/ndarray/core/array.html#_CPPv44Axis">Axis (C++ type)</a>
+      <li><a href="api/ndarray/cuda/cudaWrapper.html#_CPPv44cuda">cuda (C++ type)</a>
 </li>
   </ul></td>
-</tr></table>
-
-<h2 id="L">L</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/ndarray/core/array.html#_CPPv42LL">LL (C++ type)</a>
+      <li><a href="api/ndarray/cuda/cudaWrapper.html#_CPPv4N4cuda7cudaAddERKN7ndarray5ArrayERKN7ndarray5ArrayE">cuda::cudaAdd (C++ function)</a>
+</li>
+      <li><a href="api/ndarray/cuda/cudaWrapper.html#_CPPv4N4cuda10cudaMatmulERKN7ndarray5ArrayERKN7ndarray5ArrayE">cuda::cudaMatmul (C++ function)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -176,7 +172,7 @@
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/ndarray/core/array.html#_CPPv47ndarray">ndarray (C++ type)</a>
+      <li><a href="api/ndarray/core/array.html#_CPPv47ndarray">ndarray (C++ type)</a>, <a href="api/ndarray/core/broadCasted.html#_CPPv47ndarray">[1]</a>, <a href="api/ndarray/core/dataType.html#_CPPv47ndarray">[2]</a>, <a href="api/ndarray/exception/ndexception.html#_CPPv47ndarray">[3]</a>, <a href="api/ndarray/util/arrayUtil.html#_CPPv47ndarray">[4]</a>, <a href="api/ndarray/util/util.html#_CPPv47ndarray">[5]</a>
 </li>
       <li><a href="api/ndarray/core/array.html#_CPPv4N7ndarray5ArrayE">ndarray::Array (C++ class)</a>
 </li>
@@ -206,10 +202,10 @@
 </li>
       <li><a href="api/ndarray/core/array.html#_CPPv4N7ndarray5Array19mapDeviceDataToHostEv">ndarray::Array::mapDeviceDataToHost (C++ function)</a>
 </li>
+      <li><a href="api/ndarray/core/array.html#_CPPv4NK7ndarray5Array6matmulERK5Array">ndarray::Array::matmul (C++ function)</a>
+</li>
       <li><a href="api/ndarray/core/array.html#_CPPv4N7ndarray5Array7onCuda_E">ndarray::Array::onCuda_ (C++ member)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/ndarray/core/array.html#_CPPv4NK7ndarray5ArrayplERK5Array">ndarray::Array::operator+ (C++ function)</a>
 </li>
       <li><a href="api/ndarray/core/array.html#_CPPv4NK7ndarray5Array4rankEv">ndarray::Array::rank (C++ function)</a>
@@ -238,17 +234,69 @@
 </li>
       <li><a href="api/ndarray/core/array.html#_CPPv4N7ndarray5Array14unMappedToCudaEv">ndarray::Array::unMappedToCuda (C++ function)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/ndarray/core/array.html#_CPPv4N7ndarray5Array13updateStridesEv">ndarray::Array::updateStrides (C++ function)</a>
 </li>
       <li><a href="api/ndarray/core/array.html#_CPPv4N7ndarray5ArrayD0Ev">ndarray::Array::~Array (C++ function)</a>
 </li>
-  </ul></td>
-</tr></table>
-
-<h2 id="S">S</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/ndarray/core/array.html#_CPPv45Shape">Shape (C++ type)</a>
+      <li><a href="api/ndarray/util/arrayUtil.html#_CPPv4N7ndarray9arrayutilE">ndarray::arrayutil (C++ type)</a>
+</li>
+      <li><a href="api/ndarray/util/arrayUtil.html#_CPPv4N7ndarray9arrayutil23getCumulativeMultiShapeERKN7ndarray5ShapeEKi">ndarray::arrayutil::getCumulativeMultiShape (C++ function)</a>
+</li>
+      <li><a href="api/ndarray/util/arrayUtil.html#_CPPv4N7ndarray9arrayutil17getMatmulOutShapeERKN7ndarray5ShapeERKN7ndarray5ShapeE">ndarray::arrayutil::getMatmulOutShape (C++ function)</a>
+</li>
+      <li><a href="api/ndarray/util/arrayUtil.html#_CPPv4N7ndarray9arrayutil22getNumOfElementByShapeERKN7ndarray5ShapeE">ndarray::arrayutil::getNumOfElementByShape (C++ function)</a>
+</li>
+      <li><a href="api/ndarray/core/dataType.html#_CPPv4N7ndarray4AxisE">ndarray::Axis (C++ type)</a>
+</li>
+      <li><a href="api/ndarray/core/broadCasted.html#_CPPv4N7ndarray9broadcastE">ndarray::broadcast (C++ type)</a>
+</li>
+      <li><a href="api/ndarray/core/broadCasted.html#_CPPv4N7ndarray9broadcast19BroadCastedPropertyE">ndarray::broadcast::BroadCastedProperty (C++ struct)</a>
+</li>
+      <li><a href="api/ndarray/core/broadCasted.html#_CPPv4N7ndarray9broadcast19BroadCastedProperty7a_shapeE">ndarray::broadcast::BroadCastedProperty::a_shape (C++ member)</a>
+</li>
+      <li><a href="api/ndarray/core/broadCasted.html#_CPPv4N7ndarray9broadcast19BroadCastedProperty8a_strideE">ndarray::broadcast::BroadCastedProperty::a_stride (C++ member)</a>
+</li>
+      <li><a href="api/ndarray/core/broadCasted.html#_CPPv4N7ndarray9broadcast19BroadCastedProperty7b_shapeE">ndarray::broadcast::BroadCastedProperty::b_shape (C++ member)</a>
+</li>
+      <li><a href="api/ndarray/core/broadCasted.html#_CPPv4N7ndarray9broadcast19BroadCastedProperty8b_strideE">ndarray::broadcast::BroadCastedProperty::b_stride (C++ member)</a>
+</li>
+      <li><a href="api/ndarray/core/broadCasted.html#_CPPv4N7ndarray9broadcast19BroadCastedProperty19BroadCastedPropertyERKN7ndarray5ShapeERKN7ndarray5ShapeERKN7ndarray6StrideERKN7ndarray6StrideE">ndarray::broadcast::BroadCastedProperty::BroadCastedProperty (C++ function)</a>
+</li>
+      <li><a href="api/ndarray/core/broadCasted.html#_CPPv4N7ndarray9broadcast22getBroadCastedPropertyERKN7ndarray5ShapeERKN7ndarray5ArrayERKN7ndarray5ArrayEKi">ndarray::broadcast::getBroadCastedProperty (C++ function)</a>
+</li>
+      <li><a href="api/ndarray/core/broadCasted.html#_CPPv4N7ndarray9broadcast19getBroadCastedShapeERKN7ndarray5ShapeERKN7ndarray5ShapeEKi">ndarray::broadcast::getBroadCastedShape (C++ function)</a>
+</li>
+      <li><a href="api/ndarray/core/broadCasted.html#_CPPv4N7ndarray9broadcast12paddedVectorERKNSt6vectorIiEEK6size_tKi">ndarray::broadcast::paddedVector (C++ function)</a>
+</li>
+      <li><a href="api/ndarray/exception/ndexception.html#_CPPv4N7ndarray9exceptionE">ndarray::exception (C++ type)</a>
+</li>
+      <li><a href="api/ndarray/exception/ndexception.html#_CPPv4N7ndarray9exception21InvalidShapeExceptionE">ndarray::exception::InvalidShapeException (C++ class)</a>
+</li>
+      <li><a href="api/ndarray/exception/ndexception.html#_CPPv4N7ndarray9exception21InvalidShapeException21InvalidShapeExceptionERKNSt6stringE">ndarray::exception::InvalidShapeException::InvalidShapeException (C++ function)</a>, <a href="api/ndarray/exception/ndexception.html#_CPPv4N7ndarray9exception21InvalidShapeException21InvalidShapeExceptionERKNSt6stringERKNSt6stringE">[1]</a>
+</li>
+      <li><a href="api/ndarray/exception/ndexception.html#_CPPv4N7ndarray9exception21InvalidShapeException7messageE">ndarray::exception::InvalidShapeException::message (C++ member)</a>
+</li>
+      <li><a href="api/ndarray/exception/ndexception.html#_CPPv4NK7ndarray9exception21InvalidShapeException4whatEv">ndarray::exception::InvalidShapeException::what (C++ function)</a>
+</li>
+      <li><a href="api/ndarray/exception/ndexception.html#_CPPv4N7ndarray9exception20InvalidSizeExceptionE">ndarray::exception::InvalidSizeException (C++ class)</a>
+</li>
+      <li><a href="api/ndarray/exception/ndexception.html#_CPPv4N7ndarray9exception20InvalidSizeException20InvalidSizeExceptionERKNSt6stringE">ndarray::exception::InvalidSizeException::InvalidSizeException (C++ function)</a>
+</li>
+      <li><a href="api/ndarray/exception/ndexception.html#_CPPv4N7ndarray9exception20InvalidSizeException7messageE">ndarray::exception::InvalidSizeException::message (C++ member)</a>
+</li>
+      <li><a href="api/ndarray/exception/ndexception.html#_CPPv4NK7ndarray9exception20InvalidSizeException4whatEv">ndarray::exception::InvalidSizeException::what (C++ function)</a>
+</li>
+      <li><a href="api/ndarray/util/util.html#_CPPv4N7ndarray20getVectorIntInStringERKNSt6vectorIiEE">ndarray::getVectorIntInString (C++ function)</a>
+</li>
+      <li><a href="api/ndarray/core/dataType.html#_CPPv4N7ndarray2LLE">ndarray::LL (C++ type)</a>
+</li>
+      <li><a href="api/ndarray/util/util.html#_CPPv4N7ndarray8printVecERKNSt6vectorIiEE">ndarray::printVec (C++ function)</a>
+</li>
+      <li><a href="api/ndarray/core/dataType.html#_CPPv4N7ndarray5ShapeE">ndarray::Shape (C++ type)</a>
+</li>
+      <li><a href="api/ndarray/core/dataType.html#_CPPv4N7ndarray6StrideE">ndarray::Stride (C++ type)</a>
 </li>
   </ul></td>
 </tr></table>
