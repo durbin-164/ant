@@ -79,6 +79,12 @@ namespace ndarray{
     }
 
 
+    //math
+    Array Array::matmul(const Array &other) const{
+        return cuda::cudaMatmul(*this, other);
+    }
+
+
     // operator overload
     Array Array::operator+ (const Array &other)const {
         return cuda::cudaAdd(*this, other);

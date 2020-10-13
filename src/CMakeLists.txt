@@ -18,3 +18,4 @@ target_link_libraries(${PROJECT_NAME}
     ${CUDA_LIBRARIES}
 )
 
+set_target_properties(${PROJECT_NAME} PROPERTIES CUDA_SEPARABLE_COMPILATION ON)

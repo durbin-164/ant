@@ -24,6 +24,7 @@ set(GCOV_OBJECT_DIR
     ${CMAKE_BINARY_DIR}/src/CMakeFiles/ant.dir/ndarray
     ${CMAKE_BINARY_DIR}/src/CMakeFiles/ant.dir/ndarray/core
     ${CMAKE_BINARY_DIR}/src/CMakeFiles/ant.dir/ndarray/cuda
+    ${CMAKE_BINARY_DIR}/src/CMakeFiles/ant.dir/ndarray/util
 )
 
 set(GCOV_SOURCES_DIR
@@ -31,6 +32,7 @@ set(GCOV_SOURCES_DIR
   ${CMAKE_SOURCE_DIR}/src/ndarray/*.cpp
   ${CMAKE_SOURCE_DIR}/src/ndarray/core/*.cpp
   ${CMAKE_SOURCE_DIR}/src/ndarray/cuda/*.cu
+  ${CMAKE_SOURCE_DIR}/src/ndarray/util/*.cpp
 )
 
 # foreach(file ${GCOV_SOURCES_DIR})

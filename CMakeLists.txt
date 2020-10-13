@@ -1,12 +1,19 @@
 cmake_minimum_required(VERSION 3.16.0)
 project(ant VERSION 0.1.0)
 
+find_package(CUDA REQUIRED)
+
+if (CUDA_FOUND)
+   LIST(APPEND CUDA_NVCC_FLAGS "-std=c++14 -arch=sm_50 -rdc=true -Wno-deprecated-gpu-targets")
+endif()
+enable_language(CUDA)
+
 
 # enable_language(C)
-enable_language(CXX)
-set (CMAKE_CXX_STANDARD 14)
+# enable_language(CXX)
+# set (CMAKE_CXX_STANDARD 14)
 # set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -pthread -lgtest")
-set(CMAKE_CXX_FLAGS "-g -O0 -fprofile-arcs -ftest-coverage -fno-inline-functions -fno-inline --coverage")
+set(CMAKE_CXX_FLAGS "-g -O1 -coverage -fno-inline-functions -fno-inline -fno-omit-frame-pointer -fno-optimize-sibling-calls")
 set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE ON)
 
 
@@ -14,20 +21,17 @@ add_subdirectory("googletest")
 enable_testing()
 
 
-find_package(CUDA REQUIRED)
 
-if (CUDA_FOUND)
-   LIST(APPEND CUDA_NVCC_FLAGS "-std=c++14;-arch=sm_50 ;-arch=compute_50; -g; -G; -Wno-deprecated-gpu-targets")
-endif()
 
-enable_language(CUDA)
 
 # set(PROJECT_SOURCE_DIR "src")
 set(PROJECT_INCLUDE_DIR 
       "${CMAKE_SOURCE_DIR}/src"
+      "${CMAKE_SOURCE_DIR}/test"
       "${CMAKE_SOURCE_DIR}/src/ndarray"
       "${CMAKE_SOURCE_DIR}/src/ndarray/core"
       "${CMAKE_SOURCE_DIR}/src/ndarray/cuda"
+      "${CMAKE_SOURCE_DIR}/src/ndarray/util"
 )
 
 include_directories(${PROJECT_INCLUDE_DIR})
