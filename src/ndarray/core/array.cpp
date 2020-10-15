@@ -5,6 +5,7 @@
 // #include <cuda_runtime_api.h>
 #include <stdlib.h>
 #include <iostream>
+#include "ndarray/util/arrayUtil.h"
 
 namespace ndarray{
 
@@ -89,6 +90,14 @@ namespace ndarray{
     Array Array::operator+ (const Array &other)const {
         return cuda::cudaAdd(*this, other);
     }
+
+    // template <typename ...ArgsT>
+    // double Array::getVal(ArgsT... indices_){
+    //     ndarray::Indices indices = {indices_...};
+    //     ndarray::LL index = ndarray::arrayutil::getIndexFromIndices(indices, *this);
+
+    //     return hostData()[index];
+    // }
 
 
     //attribute

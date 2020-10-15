@@ -1,5 +1,6 @@
 #pragma once
 #include "ndarray/core/dataType.h"
+#include "ndarray/core/array.h"
 
 namespace ndarray::arrayutil
 {
@@ -33,4 +34,6 @@ ndarray::Shape getCumulativeMultiShape(const ndarray::Shape &shape, const int of
  * @return Expected broad casted matmul shape.
  */ 
 ndarray::Shape getMatmulOutShape(const ndarray::Shape &l_shape, const ndarray::Shape &r_shape);
+
+ndarray::LL getIndexFromIndices(const ndarray::Indices & indices, const ndarray::Array &A);
 }

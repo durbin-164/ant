@@ -1,5 +1,6 @@
 #pragma once
 #include "dataType.h"
+#include "iostream"
 
 namespace ndarray{
 class Array
@@ -30,7 +31,16 @@ class Array
 
         //operator overload
         Array operator+(const Array &other) const;
-
+        
+        template <typename ...ArgsT>
+        double getVal(ArgsT... indices_);
+        // {
+        //     ndarray::Indices indices = {indices_ ...};
+        //     for(auto x: indices){
+        //         std::cout<<x<<std::endl;
+        //     }
+        //     return 10.0;
+        // }
 
         //Attributes
         double* hostData();
@@ -62,6 +72,7 @@ class Array
 
 
 };
+
 
 }//end of namespace ndarray
 

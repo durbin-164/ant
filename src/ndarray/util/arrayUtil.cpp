@@ -5,6 +5,7 @@
 #include "ndarray/core/broadCasted.h"
 #include <iostream>
 #include "ndarray/exception/ndexception.h"
+#include "ndarray/core/array.h"
 
 namespace ndarray
 {
@@ -57,6 +58,29 @@ ndarray::Shape ndarray::arrayutil::getMatmulOutShape(const ndarray::Shape &l_sha
     ret_shape.push_back(r_shape.end()[-1]);
 
     return ret_shape;
+}
+
+
+ndarray::LL ndarray::arrayutil::getIndexFromIndices(const ndarray::Indices & indices, const ndarray::Array &A){
+    if(indices.size() != A.shape().size()){
+        std::stringstream ss;
+        ss<<"invalid index. index size must be "<<A.shape().size()<<" .";
+        throw ndarray::exception::InvalidSizeException(ss.str());
+    }
+
+    ndarray::LL index = 0;
+
+    for(size_t i =0; i< A.shape().size(); i++){
+        if(indices[i]<0 || indices[i]>=A.shape()[i]){
+            std::stringstream ss;
+            ss<<"index must be between 0 and "<<A.shape()[i]-1 <<" at axis "<<i<<".";
+            throw ndarray::exception::IndexOutOfRangeException(ss.str());
+        }
+
+        index += indices[i]*A.stride()[i];
+    }
+
+    return index;
 }
 
 
