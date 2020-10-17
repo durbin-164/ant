@@ -79,6 +79,12 @@ namespace ndarray{
         cudaMemcpy(hostData_, deviceData_, byteSize_, cudaMemcpyDeviceToHost);
     }
 
+    //Property function
+
+    double Array::getValueByIndices(const ndarray::Indices &indices){
+        ndarray::LL index = ndarray::arrayutil::getIndexFromIndices(indices, *this);
+        return hostData()[index];
+    }
 
     //math
     Array Array::matmul(const Array &other) const{

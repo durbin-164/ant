@@ -25,6 +25,7 @@ class Array
         void computeSize();
         void unMappedToCuda();
         void mapDeviceDataToHost();
+        double getValueByIndices(const ndarray::Indices &indices);
 
         //math
         Array matmul(const Array &other) const;
@@ -33,14 +34,11 @@ class Array
         Array operator+(const Array &other) const;
         
         template <typename ...ArgsT>
-        double getVal(ArgsT... indices_);
-        // {
-        //     ndarray::Indices indices = {indices_ ...};
-        //     for(auto x: indices){
-        //         std::cout<<x<<std::endl;
-        //     }
-        //     return 10.0;
-        // }
+        double operator()(ArgsT... indices_)
+        {
+            ndarray::Indices indices = {indices_ ...};
+            return getValueByIndices(indices);
+        }
 
         //Attributes
         double* hostData();
