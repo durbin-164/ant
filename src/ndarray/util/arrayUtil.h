@@ -13,13 +13,13 @@ namespace ndarray::arrayutil
 ndarray::LL getNumOfElementByShape(const ndarray::Shape &shape);
 
 /**
- * \brief get cumulative multyping shape. output size should be shape_size-1.<br/>
- * Example 1: shape{2,3,4} => cum_shape{12,4} <br/>
- * Example 2: shape{2,3,4,5}, offset = 2 => cun_shape{3}<br/>
- * Example 3: Shape{2,3},  offset=1 => cum_shape{}
+ * \brief get cumulative multyping shape. output size should be same as shape_size.<br/>
+ * Example 1: shape{2,3,4} => cum_shape{12,4,1} <br/>
+ * Example 2: shape{2,3,4,5}, offset = 2 => cun_shape{3,1}<br/>
+ * Example 3: Shape{2,3},  offset=1 => cum_shape{1}
  * @param shape vector data of array shape.
  * @param offset skip number of element from last of the shape.
- * @return vector data with cumulative multyping shape.
+ * @return vector data with cumulative multyping shape likse as stride.
  */
 ndarray::Shape getCumulativeMultiShape(const ndarray::Shape &shape, const int offset = 0 );
 

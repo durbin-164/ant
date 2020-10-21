@@ -9,7 +9,6 @@ __device__ int getIndex(int index, int *cum_mul_shape, int *stride , int cum_sha
         index %= cum_mul_shape[i];
         // printf("in index: %d %d\n", cum_mul_shape[i], index);
     }
-    ret_index += index * stride[cum_shape_N];
 
     return ret_index;
 }

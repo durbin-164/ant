@@ -22,10 +22,6 @@ TEST(getCumulativeMultiShape, whenCumShapeZero)
 
     ndarray::Shape actual = ndarray::arrayutil::getCumulativeMultiShape(s, 4);
     VectorEQ(actual, {4});
-
-    s = {1};
-    actual = ndarray::arrayutil::getCumulativeMultiShape(s);
-    VectorEQ(actual, {});
     
 }
 
@@ -35,7 +31,11 @@ TEST(getCumulativeMultiShape, returnProperCumShape)
     ndarray::Shape s = {5,4,2,3};
 
     ndarray::Shape actual = ndarray::arrayutil::getCumulativeMultiShape(s, 0);
-    VectorEQ(actual, {24,6,3});
+    VectorEQ(actual, {24,6,3,1});
+
+    s = {4};
+    actual = ndarray::arrayutil::getCumulativeMultiShape(s);
+    VectorEQ(actual, {1});
 }
 
 TEST(getMatmulOutShape, returnProperShape)

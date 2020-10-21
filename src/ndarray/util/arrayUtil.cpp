@@ -19,18 +19,19 @@ ndarray::LL ndarray::arrayutil::getNumOfElementByShape(const ndarray::Shape &sha
 
 
 ndarray::Shape ndarray::arrayutil::getCumulativeMultiShape(const ndarray::Shape &shape, const int offset){
-    ndarray::Shape cum_shape(std::max((int)shape.size()-offset-1,0));
+    ndarray::Shape cum_shape(std::max((int)shape.size()-offset,0));
 
-    if(shape.size()-offset <=1)return cum_shape;
+    if(shape.size()-offset <=0)return cum_shape;
 
     if(cum_shape.empty()){
         cum_shape.push_back(shape.begin()[0]);
         return cum_shape;
     }
-    cum_shape[cum_shape.size()-1]=shape[shape.size()-offset-1];
+    int cum_size = 1;
 
-    for(int i= (int)cum_shape.size()-1; i>0;i--){
-    cum_shape[i-1] = cum_shape[i]*shape[i];
+    for(int i= (int)cum_shape.size()-1; i>=0;i--){
+        cum_shape[i] = cum_size;
+        cum_size =  cum_shape[i]*shape[i];
     }
 
     return cum_shape;
