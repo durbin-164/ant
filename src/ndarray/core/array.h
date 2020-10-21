@@ -40,6 +40,8 @@ class Array
             return getValueByIndices(indices);
         }
 
+        Array operator[](const ndarray::Slices &slices);
+
         //Attributes
         double* hostData();
         void setHostData(double *hdata);

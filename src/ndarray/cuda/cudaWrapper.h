@@ -20,4 +20,6 @@ ndarray::Array cudaAdd(const ndarray::Array &A, const ndarray::Array &B);
  */
 ndarray::Array cudaMatmul(const ndarray::Array &A, const ndarray::Array &B);
 
+ndarray::Array cudaSlices(const ndarray::Array &A, const ndarray::Slices &slices);
+
 }

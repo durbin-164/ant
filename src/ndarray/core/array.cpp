@@ -105,6 +105,9 @@ namespace ndarray{
     //     return hostData()[index];
     // }
 
+    Array Array::operator[](const ndarray::Slices &slices){
+        return cuda::cudaSlices(*this, slices);
+    }
 
     //attribute
      double* Array::hostData(){

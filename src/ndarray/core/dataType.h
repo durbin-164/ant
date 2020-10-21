@@ -27,6 +27,10 @@ using Indices  = std::vector<int>;
  */
 using LL = long long;
 
+/*!
+ * Integer Type 2D-vector data structure.
+ */
+using Slices  = std::vector<std::vector<int>>;
 
 
 }//end ndarray namespace
