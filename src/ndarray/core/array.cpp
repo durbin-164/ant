@@ -6,6 +6,8 @@
 #include <stdlib.h>
 #include <iostream>
 #include "ndarray/util/arrayUtil.h"
+#include <sstream>
+#include "ndarray/exception/ndexception.h"
 
 namespace ndarray{
 
@@ -144,4 +146,25 @@ namespace ndarray{
 
 
     
+
+    //operation
+    void Array::transpose(const ndarray::Axis &axis){
+        ndarray::Shape t_shape;
+        ndarray::Stride t_stride;
+
+        for(int ax: axis){
+            if(ax<0 || ax >=shape_.size())
+            {
+                std::stringstream ss;
+                ss<<"in transpose axis "<<ax<<" is out of range.";
+                ss<<"axis must be between 0 and "<<shape_.size()-1<<".";
+                throw ndarray::exception::AxisOutOfRangeException(ss.str());
+            }
+            t_shape.push_back(shape_[ax]);
+            t_stride.push_back(stride_[ax]);
+        }
+
+        shape_ = t_shape;
+        stride_ = t_stride;
+    }
 }

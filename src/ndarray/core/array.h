@@ -42,6 +42,10 @@ class Array
 
         Array operator[](const ndarray::Slices &slices);
 
+
+        //operation
+        void transpose(const ndarray::Axis &axis);
+
         //Attributes
         double* hostData();
         void setHostData(double *hdata);
