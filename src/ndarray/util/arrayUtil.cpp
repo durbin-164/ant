@@ -65,7 +65,7 @@ ndarray::Shape ndarray::arrayutil::getMatmulOutShape(const ndarray::Shape &l_sha
 ndarray::LL ndarray::arrayutil::getIndexFromIndices(const ndarray::Indices & indices, const ndarray::Array &A){
     if(indices.size() != A.shape().size()){
         std::stringstream ss;
-        ss<<"invalid index. index size must be "<<A.shape().size()<<" .";
+        ss<<"invalid index. index size must be "<<A.shape().size()<<".";
         throw ndarray::exception::InvalidSizeException(ss.str());
     }
 
@@ -74,7 +74,7 @@ ndarray::LL ndarray::arrayutil::getIndexFromIndices(const ndarray::Indices & ind
     for(size_t i =0; i< A.shape().size(); i++){
         if(indices[i]<0 || indices[i]>=A.shape()[i]){
             std::stringstream ss;
-            ss<<"index must be between 0 and "<<A.shape()[i]-1 <<" at axis "<<i<<".";
+            ss<<"index "<<indices[i]<<" must be between 0 and "<<A.shape()[i]-1 <<" at axis "<<i<<".";
             throw ndarray::exception::IndexOutOfRangeException(ss.str());
         }
 
