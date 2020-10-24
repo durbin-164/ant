@@ -20,6 +20,12 @@ ndarray::Array cudaAdd(const ndarray::Array &A, const ndarray::Array &B);
  */
 ndarray::Array cudaMatmul(const ndarray::Array &A, const ndarray::Array &B);
 
+/**
+ * \brief slices a ndarray in cuda and return a cuda ndarray.
+ * @param A a ndarray
+ * @param slices a 2D vector of slices.
+ * @return another ndarray with slices value.
+ */
 ndarray::Array cudaSlices(const ndarray::Array &A, const ndarray::Slices &slices);
 
 }

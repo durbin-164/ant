@@ -35,5 +35,13 @@ ndarray::Shape getCumulativeMultiShape(const ndarray::Shape &shape, const int of
  */ 
 ndarray::Shape getMatmulOutShape(const ndarray::Shape &l_shape, const ndarray::Shape &r_shape);
 
+/**
+ * \brief calculate actula location of the given indices<br/>
+ * Example: indices{0,1} of a 2D array. output will be that row and column actual location in 1D array.
+ * 
+ * @param indices a vector of indices. size must be same  as ndarray shape size.
+ * @param A a ndarray.
+ * @return actual location of that indices.
+ */
 ndarray::LL getIndexFromIndices(const ndarray::Indices & indices, const ndarray::Array &A);
 }
