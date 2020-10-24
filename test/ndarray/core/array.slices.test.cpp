@@ -29,7 +29,7 @@ TEST(Slices, clipingSlice)
 
     double *actual = B.hostData();
     double expected[] = {8,10,14,16};
-    VectorEQ(B.shape(), {2,2,1});
+    VectorEQ(B.shape(), {2,2});
     DoubleArrayEQ(actual, expected, 4); 
 }
 
@@ -44,7 +44,7 @@ TEST(Slices, singleValue)
 
     double *actual = B.hostData();
     double expected[] = {11};
-    VectorEQ(B.shape(), {1,1,1});
+    VectorEQ(B.shape(),{1});
     DoubleArrayEQ(actual, expected, 1); 
 }
 

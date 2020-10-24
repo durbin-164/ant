@@ -80,7 +80,15 @@ ndarray::Array cudaSlices(const ndarray::Array &A, const ndarray::Slices &slices
     
     cudaFree(stride);
     cudaFree(cum_shape);
-    return ndarray::Array(out_shape, nullptr, B);
+    ndarray::Shape filled_shape ;
+    for(size_t i = 0; i < out_shape.size(); i++)
+    {
+      if(i< slices.size() && slices[i].size()<2) continue;
+      filled_shape.push_back(out_shape[i]);
+    }
+    if(filled_shape.empty())filled_shape.push_back(ndarray::arrayutil::getNumOfElementByShape(out_shape));
+
+    return ndarray::Array(filled_shape, nullptr, B);
 }
 
 }// end namespace cuda
