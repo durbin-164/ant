@@ -99,15 +99,8 @@ namespace ndarray{
         return cuda::cudaAdd(*this, other);
     }
 
-    // template <typename ...ArgsT>
-    // double Array::getVal(ArgsT... indices_){
-    //     ndarray::Indices indices = {indices_...};
-    //     ndarray::LL index = ndarray::arrayutil::getIndexFromIndices(indices, *this);
 
-    //     return hostData()[index];
-    // }
-
-    Array Array::operator[](const ndarray::Slices &slices){
+    Array Array::operator[](const ndarray::Slices &slices) const{
         return cuda::cudaSlices(*this, slices);
     }
 

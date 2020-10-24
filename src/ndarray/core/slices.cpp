@@ -24,44 +24,38 @@ ndarray::Slices ndarray::slices::filledSlices(const ndarray::Shape &in_shape, co
             continue;
         }
 
+        int start;
+        int end;
+        std::stringstream ss;
+
         switch (slices[i].size())
         {
             case 1:
-                {
-                int start = slices[i][0];
+                start = slices[i][0];
                 if(start<0) start = in_shape[i]+start;
                 if(start<0 || start >= in_shape[i]) {
-                    std::stringstream ss;
                     ss<<"index "<<slices[i][0]<<" is out of bounds for axis "<<i<<" with size "<<in_shape[i];
                     throw ndarray::exception::IndexOutOfRangeException(ss.str());
                 }
                 ret_slices.push_back({start, start+1, 1});
-                }
                 break;
             case 2:
-                {
-                int start =slices[i][0];
-                int end = slices[i][1];
+                start =slices[i][0];
+                end = slices[i][1];
                 ndarray::varifyStartAndEndValue(start, end, in_shape[i]);
                 ret_slices.push_back({start, end, 1});
-                }
+                
                 break;
             case 3:
-                {
-                int start =slices[i][0];
-                int end = slices[i][1];
+                start =slices[i][0];
+                end = slices[i][1];
                 ndarray::varifyStartAndEndValue(start, end, in_shape[i]);
                 ret_slices.push_back({start, end, slices[i][2]});
-                }
                 break;
             
             default:
-                {
-                std::stringstream ss;
                 ss<<"slice parameter size "<<slices[i].size()<<" out of range at axis "<<i;
                 throw ndarray::exception::InvalidSizeException(ss.str());
-                }
-                break;
         }
     }
 
@@ -72,8 +66,8 @@ ndarray::Slices ndarray::slices::filledSlices(const ndarray::Shape &in_shape, co
 ndarray::Shape ndarray::slices::getSliceOutShape(const ndarray::Slices &slices){
     ndarray::Shape out_shape;
 
-    for(size_t i =0; i<slices.size(); i ++){
-        int dif = std::max( (int)ceil( float( slices[i][1]-slices[i][0] ) /slices[i][2]), 0);
+    for(auto slice:slices){
+        int dif = std::max( (int)ceil( float( slice[1]-slice[0] ) / float(slice[2])), 0);
         out_shape.push_back(dif);
     }
 
@@ -94,7 +88,10 @@ void varifyStartAndEndValue(int &start, int &end, int shape){
     if(start < 0) start = shape+start;
     if(end < 0) end = shape + end;
 
-    start = start<0 ? 0: start>shape ? shape: start;
-    end = end <0 ? 0 : end >shape ? shape: end;
+    if(start<0) start =0;
+    else if(start>shape)start = shape;
+    
+    if(end<0) end = 0;
+    else if(end>shape) end = shape;
 }
 }

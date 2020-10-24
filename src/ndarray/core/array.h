@@ -40,7 +40,7 @@ class Array
             return getValueByIndices(indices);
         }
 
-        Array operator[](const ndarray::Slices &slices);
+        Array operator[](const ndarray::Slices &slices) const;
 
 
         //operation
