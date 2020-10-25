@@ -19,6 +19,17 @@ std::string ndarray::getVectorIntInString(const std::vector<int> &vec){
     return ss.str();
 }
 
+
+// template <typename ...ArgsT>
+// void pass_me_int (ArgsT... rest) {
+//     std::vector<int> ints = {rest...};
+//     for (const auto f : ints) {
+//         std::cout<<f<<std::endl;
+//     }
+// }
+
+
+
 // void printVec(const std::vector<int>vec){
 //   for(int x: vec)printf("%d ", x);
 //   printf("\n");

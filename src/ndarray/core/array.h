@@ -1,5 +1,6 @@
 #pragma once
 #include "dataType.h"
+#include "iostream"
 
 namespace ndarray{
 class Array
@@ -24,13 +25,26 @@ class Array
         void computeSize();
         void unMappedToCuda();
         void mapDeviceDataToHost();
+        double getValueByIndices(const ndarray::Indices &indices);
 
         //math
         Array matmul(const Array &other) const;
 
         //operator overload
         Array operator+(const Array &other) const;
+        
+        template <typename ...ArgsT>
+        double operator()(ArgsT... indices_)
+        {
+            ndarray::Indices indices = {indices_ ...};
+            return getValueByIndices(indices);
+        }
 
+        Array operator[](const ndarray::Slices &slices) const;
+
+
+        //operation
+        void transpose(const ndarray::Axis &axis);
 
         //Attributes
         double* hostData();
@@ -62,6 +76,7 @@ class Array
 
 
 };
+
 
 }//end of namespace ndarray
 

@@ -6,18 +6,47 @@
 
 TEST(InvalidShapeException, returnProperMessage)
 {
-    ndarray::exception::InvalidShapeException IS("demo message");
-    EXPECT_EQ(IS.what(),"demo message");
+    try{
+        ndarray::exception::InvalidShapeException IS("demo message");
+    }catch(ndarray::exception::InvalidShapeException &e){
+         EXPECT_EQ(e.what(),"demo message");
+    }
 
-    ndarray::exception::InvalidShapeException IS2("demo", "(1,2,3)");
-    std::string message = "demo operation could not possible with shape (1,2,3).";
-
-    EXPECT_EQ(IS2.what(),message);
+    try{
+        ndarray::exception::InvalidShapeException IS2("demo", "(1,2,3)");
+    }catch(ndarray::exception::InvalidShapeException &e){
+        std::string message = "demo operation could not possible with shape (1,2,3).";
+        EXPECT_EQ(e.what(),message);
+    }
 
 }
 
 TEST(InvalidSizeException, returnProperMessage)
 {
-    ndarray::exception::InvalidSizeException IS("demo message");
-    EXPECT_EQ(IS.what(),"demo message");
+    try{
+        ndarray::exception::InvalidSizeException IS("demo message");
+    }catch(ndarray::exception::InvalidSizeException &e){
+        EXPECT_EQ(e.what(),"demo message");
+    }
+}
+
+TEST(IndexOutOfRangeException, returnProperMessage)
+{
+    try{
+        ndarray::exception::IndexOutOfRangeException IORE("index out of range");
+    }catch(ndarray::exception::IndexOutOfRangeException &e){
+        EXPECT_EQ(e.what(),"index out of range");
+    }
+}
+
+
+TEST(AxisOutOfRangeException, returnProperMessage)
+{
+    try{
+        ndarray::exception::AxisOutOfRangeException AORE("axis out of range");
+    }catch(ndarray::exception::AxisOutOfRangeException &e){
+        EXPECT_EQ(e.what(),"axis out of range");
+    }
+    
+    
 }

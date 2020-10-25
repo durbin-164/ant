@@ -38,5 +38,34 @@ class InvalidSizeException: public std::exception
    
 };
 
+class IndexOutOfRangeException: public std::exception
+{
+
+   public:
+      std::string message;
+      explicit IndexOutOfRangeException(const std::string &message_)
+      :message(message_){
+      }
+
+      const char * what() const throw(){
+         return message.c_str();
+      }
+   
+};
+
+class AxisOutOfRangeException: public std::exception{
+    public:
+      std::string message;
+      explicit AxisOutOfRangeException(const std::string &message_)
+      :message(message_){
+      }
+
+      const char * what() const throw(){
+         return message.c_str();
+      }
+};
+
+
+
 
 }//end exception namespace
