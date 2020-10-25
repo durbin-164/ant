@@ -15,4 +15,9 @@ digraph "/home/docker/actions-runner/_work/ant/ant/src/ndarray/core/array.h"
   Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node6 [label="/home/docker/actions\l-runner/_work/ant/ant\l/src/ndarray/cuda/cudaWrapper.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$cudaWrapper_8h.html",tooltip=" "];
   Node6 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="/home/docker/actions\l-runner/_work/ant/ant\l/src/ndarray/util/arrayUtil.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$arrayUtil_8h.html",tooltip=" "];
+  Node7 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

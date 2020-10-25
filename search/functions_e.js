@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['_7earray_116',['~Array',['../classndarray_1_1Array.html#a400563f6a0b34cc50ed0c6908310bd93',1,'ndarray::Array']]]
+  ['unmappedtocuda_148',['unMappedToCuda',['../classndarray_1_1Array.html#a467b232eeab522a655b90d112351cda8',1,'ndarray::Array']]],
+  ['updatestrides_149',['updateStrides',['../classndarray_1_1Array.html#a9d74e21750b01226bf77e29ab71bdbbd',1,'ndarray::Array']]]
 ];

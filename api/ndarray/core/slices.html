@@ -1,0 +1,300 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="english" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Slices &mdash; ant  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Util" href="../util/index.html" />
+    <link rel="prev" title="DataType" href="dataType.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home" alt="Documentation Home"> ant
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../index.html">Welcome to ant's documentation!</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">NdArray</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">Core</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="array.html">Array</a></li>
+<li class="toctree-l4"><a class="reference internal" href="broadCasted.html">BroadCasted</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dataType.html">DataType</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">Slices</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../util/index.html">Util</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../cuda/index.html">Cuda</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../exception/index.html">Exception</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">ant</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../../index.html">API</a> &raquo;</li>
+        
+          <li><a href="../index.html">NdArray</a> &raquo;</li>
+        
+          <li><a href="index.html">Core</a> &raquo;</li>
+        
+      <li>Slices</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../_sources/api/ndarray/core/slices.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="slices">
+<span id="core-slices"></span><h1>Slices<a class="headerlink" href="#slices" title="Permalink to this headline">¶</a></h1>
+<dl class="cpp type">
+<dt id="_CPPv47ndarray">
+<span id="_CPPv37ndarray"></span><span id="_CPPv27ndarray"></span><span id="ndarray"></span><span class="target" id="namespacendarray"></span><em class="property">namespace </em><code class="sig-name descname">ndarray</code><br /></dt>
+<dd><dl class="cpp type">
+<dt id="_CPPv4N7ndarray6slicesE">
+<span id="_CPPv3N7ndarray6slicesE"></span><span id="_CPPv2N7ndarray6slicesE"></span><span id="ndarray::slices"></span><span class="target" id="namespacendarray_1_1slices"></span><em class="property">namespace </em><code class="sig-name descname">slices</code><a class="headerlink" href="#_CPPv4N7ndarray6slicesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N7ndarray6slices12filledSlicesERKN7ndarray5ShapeERKN7ndarray6SlicesE">
+<span id="_CPPv3N7ndarray6slices12filledSlicesERKN7ndarray5ShapeERKN7ndarray6SlicesE"></span><span id="_CPPv2N7ndarray6slices12filledSlicesERKN7ndarray5ShapeERKN7ndarray6SlicesE"></span><span id="ndarray::slices::filledSlices__ndarray::ShapeCR.ndarray::SlicesCR"></span><span class="target" id="namespacendarray_1_1slices_1a9f10d083eccc3c904dbeec3545b64feb"></span><a class="reference internal" href="array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="dataType.html#_CPPv4N7ndarray6SlicesE" title="ndarray::Slices">Slices</a> <code class="sig-name descname">filledSlices</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="dataType.html#_CPPv4N7ndarray5ShapeE" title="ndarray::Shape">Shape</a> &amp;<em>in_shape</em>, <em class="property">const</em> <a class="reference internal" href="array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="dataType.html#_CPPv4N7ndarray6SlicesE" title="ndarray::Slices">Slices</a> &amp;<em>slices</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray6slices12filledSlicesERKN7ndarray5ShapeERKN7ndarray6SlicesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>return proper format 2D slices vector<p> Example: </p>
+<p> in_shape{3,4,2}, slices{{0,2}, {1,-1,2}} =&gt; out_slices{{0,2,1},{1,3,2},{0,2,1}}</p>
+<p> in_shape{3,4,2}, slices{{0,none}, {none,-1,2}, {none,none,-1}} =&gt; out_slices{{0,4,1},{0,3,2},{1,-1,-1}}</p>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>2D slices vector with proper value and size must be equal in_shape size. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">in_shape</span></code>: actual shape of the Slices ndarray. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">slices</span></code>: 2D vector with slices value. all inner vector must be size less than or equal one. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7ndarray6slices16getSliceOutShapeERKN7ndarray6SlicesE">
+<span id="_CPPv3N7ndarray6slices16getSliceOutShapeERKN7ndarray6SlicesE"></span><span id="_CPPv2N7ndarray6slices16getSliceOutShapeERKN7ndarray6SlicesE"></span><span id="ndarray::slices::getSliceOutShape__ndarray::SlicesCR"></span><span class="target" id="namespacendarray_1_1slices_1a662168352264b10905a6d8aac7085c3c"></span><a class="reference internal" href="array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="dataType.html#_CPPv4N7ndarray5ShapeE" title="ndarray::Shape">Shape</a> <code class="sig-name descname">getSliceOutShape</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="dataType.html#_CPPv4N7ndarray6SlicesE" title="ndarray::Slices">Slices</a> &amp;<em>slices</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray6slices16getSliceOutShapeERKN7ndarray6SlicesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>return primary output shape of filtered slices<p> Example: slices{{0,2,1},{1,3,2},{0,2,1}} =&gt; out_shape{2,1,2} </p>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>shape of the output ndarray. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">slices</span></code>: 2D slices vector </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7ndarray6slices18getSliceStartIndexERKN7ndarray6SlicesERKN7ndarray6StrideE">
+<span id="_CPPv3N7ndarray6slices18getSliceStartIndexERKN7ndarray6SlicesERKN7ndarray6StrideE"></span><span id="_CPPv2N7ndarray6slices18getSliceStartIndexERKN7ndarray6SlicesERKN7ndarray6StrideE"></span><span id="ndarray::slices::getSliceStartIndex__ndarray::SlicesCR.ndarray::StrideCR"></span><span class="target" id="namespacendarray_1_1slices_1a23f7eeef3f6f5702aaa816f16d3c5fe4"></span><a class="reference internal" href="array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="dataType.html#_CPPv4N7ndarray2LLE" title="ndarray::LL">LL</a> <code class="sig-name descname">getSliceStartIndex</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="dataType.html#_CPPv4N7ndarray6SlicesE" title="ndarray::Slices">Slices</a> &amp;<em>slices</em>, <em class="property">const</em> <a class="reference internal" href="array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="dataType.html#_CPPv4N7ndarray6StrideE" title="ndarray::Stride">Stride</a> &amp;<em>stride</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray6slices18getSliceStartIndexERKN7ndarray6SlicesERKN7ndarray6StrideE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>return slices base index. from where index will be start.<p> Example: slices{{2,5,1},{0,3,2}} , stride{6,1} =&gt; out = 6*2+0*1 = 12 </p>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>start index where from slices will be start. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">slices</span></code>: 2D slices vector </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">stride</span></code>: actual stride of slices ndarray </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../util/index.html" class="btn btn-neutral float-right" title="Util" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="dataType.html" class="btn btn-neutral float-left" title="DataType" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Md. Masud Rana
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

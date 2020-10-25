@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ll_123',['LL',['../namespacendarray.html#ab5b29a8c08b4e45379e51283c5407f67',1,'ndarray']]]
+  ['indices_159',['Indices',['../namespacendarray.html#affe2778b55baa56d1817263fc8ffa565',1,'ndarray']]]
 ];

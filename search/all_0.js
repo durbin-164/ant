@@ -7,5 +7,6 @@ var searchData=
   ['array_2eh_4',['array.h',['../array_8h.html',1,'']]],
   ['arrayutil_2ecpp_5',['arrayUtil.cpp',['../arrayUtil_8cpp.html',1,'']]],
   ['arrayutil_2eh_6',['arrayUtil.h',['../arrayUtil_8h.html',1,'']]],
-  ['axis_7',['Axis',['../namespacendarray.html#aec48aaaf89d8da47c301f120df9740f5',1,'ndarray']]]
+  ['axis_7',['Axis',['../namespacendarray.html#aec48aaaf89d8da47c301f120df9740f5',1,'ndarray']]],
+  ['axisoutofrangeexception_8',['AxisOutOfRangeException',['../classndarray_1_1exception_1_1AxisOutOfRangeException.html',1,'ndarray::exception::AxisOutOfRangeException'],['../classndarray_1_1exception_1_1AxisOutOfRangeException.html#a3236f833248684b72a49e21e2a22ba5f',1,'ndarray::exception::AxisOutOfRangeException::AxisOutOfRangeException()']]]
 ];

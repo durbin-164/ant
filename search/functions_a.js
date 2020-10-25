@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['rank_104',['rank',['../classndarray_1_1Array.html#ac546c36dda85d8e3eea22c65f5c17ccb',1,'ndarray::Array']]]
+  ['paddedvector_136',['paddedVector',['../namespacendarray_1_1broadcast.html#abad5114cd82d9f8a08b325f9254ee95c',1,'ndarray::broadcast']]],
+  ['printvec_137',['printVec',['../namespacendarray.html#afb45f17ff8d5b456c39eebc48764e7f0',1,'ndarray']]]
 ];

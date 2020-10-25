@@ -91,6 +91,7 @@
 <li class="toctree-l4 current"><a class="current reference internal" href="#">Array</a></li>
 <li class="toctree-l4"><a class="reference internal" href="broadCasted.html">BroadCasted</a></li>
 <li class="toctree-l4"><a class="reference internal" href="dataType.html">DataType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="slices.html">Slices</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../util/index.html">Util</a></li>
@@ -228,6 +229,11 @@
 <dd></dd></dl>
 
 <dl class="cpp function">
+<dt id="_CPPv4N7ndarray5Array17getValueByIndicesERKN7ndarray7IndicesE">
+<span id="_CPPv3N7ndarray5Array17getValueByIndicesERKN7ndarray7IndicesE"></span><span id="_CPPv2N7ndarray5Array17getValueByIndicesERKN7ndarray7IndicesE"></span><span id="ndarray::Array::getValueByIndices__ndarray::IndicesCR"></span><span class="target" id="classndarray_1_1Array_1a6979d61ba36a7b23bd025738ba4a6ad0"></span>double <code class="sig-name descname">getValueByIndices</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="dataType.html#_CPPv4N7ndarray7IndicesE" title="ndarray::Indices">Indices</a> &amp;<em>indices</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray5Array17getValueByIndicesERKN7ndarray7IndicesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
 <dt id="_CPPv4NK7ndarray5Array6matmulERK5Array">
 <span id="_CPPv3NK7ndarray5Array6matmulERK5Array"></span><span id="_CPPv2NK7ndarray5Array6matmulERK5Array"></span><span id="ndarray::Array::matmul__ArrayCRC"></span><span class="target" id="classndarray_1_1Array_1aaadd0b9f901c43d181b82019ef6bccbd"></span><a class="reference internal" href="#_CPPv4N7ndarray5ArrayE" title="ndarray::Array">Array</a> <code class="sig-name descname">matmul</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N7ndarray5ArrayE" title="ndarray::Array">Array</a> &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK7ndarray5Array6matmulERK5Array" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
@@ -235,6 +241,21 @@
 <dl class="cpp function">
 <dt id="_CPPv4NK7ndarray5ArrayplERK5Array">
 <span id="_CPPv3NK7ndarray5ArrayplERK5Array"></span><span id="_CPPv2NK7ndarray5ArrayplERK5Array"></span><span id="ndarray::Array::add-operator__ArrayCRC"></span><span class="target" id="classndarray_1_1Array_1ae5efe95a377cd119a65012a30134e200"></span><a class="reference internal" href="#_CPPv4N7ndarray5ArrayE" title="ndarray::Array">Array</a> <code class="sig-name descname">operator+</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv4N7ndarray5ArrayE" title="ndarray::Array">Array</a> &amp;<em>other</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK7ndarray5ArrayplERK5Array" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4IDpEN7ndarray5ArrayclEdDp5ArgsT">
+<span id="_CPPv3IDpEN7ndarray5ArrayclEDp5ArgsT"></span><span id="_CPPv2IDpEN7ndarray5ArrayclEDp5ArgsT"></span>template&lt;typename ...<code class="sig-name descname">ArgsT</code>&gt;<br /><span class="target" id="classndarray_1_1Array_1a4f7331e6b9f0f7d9477459c2b24488a4"></span>double <code class="sig-name descname">operator()</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDpEN7ndarray5ArrayclEdDp5ArgsT" title="ndarray::Array::operator()::ArgsT">ArgsT</a>... <em>indices_</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IDpEN7ndarray5ArrayclEdDp5ArgsT" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4NK7ndarray5ArrayixERKN7ndarray6SlicesE">
+<span id="_CPPv3NK7ndarray5ArrayixERKN7ndarray6SlicesE"></span><span id="_CPPv2NK7ndarray5ArrayixERKN7ndarray6SlicesE"></span><span id="ndarray::Array::subscript-operator__ndarray::SlicesCRC"></span><span class="target" id="classndarray_1_1Array_1ac46879bb92f4b606665fdf02ecfd1140"></span><a class="reference internal" href="#_CPPv4N7ndarray5ArrayE" title="ndarray::Array">Array</a> <code class="sig-name descname">operator[]</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="dataType.html#_CPPv4N7ndarray6SlicesE" title="ndarray::Slices">Slices</a> &amp;<em>slices</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK7ndarray5ArrayixERKN7ndarray6SlicesE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7ndarray5Array9transposeERKN7ndarray4AxisE">
+<span id="_CPPv3N7ndarray5Array9transposeERKN7ndarray4AxisE"></span><span id="_CPPv2N7ndarray5Array9transposeERKN7ndarray4AxisE"></span><span id="ndarray::Array::transpose__ndarray::AxisCR"></span><span class="target" id="classndarray_1_1Array_1affcfbbe9b2f0e7cc67fb69045fb317ae"></span>void <code class="sig-name descname">transpose</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="dataType.html#_CPPv4N7ndarray4AxisE" title="ndarray::Axis">Axis</a> &amp;<em>axis</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray5Array9transposeERKN7ndarray4AxisE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 <dl class="cpp function">

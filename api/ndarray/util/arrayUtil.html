@@ -199,12 +199,12 @@
 <dl class="cpp function">
 <dt id="_CPPv4N7ndarray9arrayutil23getCumulativeMultiShapeERKN7ndarray5ShapeEKi">
 <span id="_CPPv3N7ndarray9arrayutil23getCumulativeMultiShapeERKN7ndarray5ShapeEKi"></span><span id="_CPPv2N7ndarray9arrayutil23getCumulativeMultiShapeERKN7ndarray5ShapeEKi"></span><span id="ndarray::arrayutil::getCumulativeMultiShape__ndarray::ShapeCR.iC"></span><span class="target" id="namespacendarray_1_1arrayutil_1aadd8fa20667d089f1a12a156957ad934"></span><a class="reference internal" href="../core/array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="../core/dataType.html#_CPPv4N7ndarray5ShapeE" title="ndarray::Shape">Shape</a> <code class="sig-name descname">getCumulativeMultiShape</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../core/array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="../core/dataType.html#_CPPv4N7ndarray5ShapeE" title="ndarray::Shape">Shape</a> &amp;<em>shape</em>, <em class="property">const</em> int <em>offset</em> = 0<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray9arrayutil23getCumulativeMultiShapeERKN7ndarray5ShapeEKi" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>get cumulative multyping shape. output size should be shape_size-1.<p> Example 1: shape{2,3,4} =&gt; cum_shape{12,4} </p>
-<p> Example 2: shape{2,3,4,5}, offset = 2 =&gt; cun_shape{3}</p>
-<p> Example 3: Shape{2,3}, offset=1 =&gt; cum_shape{} </p>
+<dd><p>get cumulative multyping shape. output size should be same as shape_size.<p> Example 1: shape{2,3,4} =&gt; cum_shape{12,4,1} </p>
+<p> Example 2: shape{2,3,4,5}, offset = 2 =&gt; cun_shape{3,1}</p>
+<p> Example 3: Shape{2,3}, offset=1 =&gt; cum_shape{1} </p>
 </p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>vector data with cumulative multyping shape. </p>
+<dt><strong>Return</strong></dt><dd><p>vector data with cumulative multyping shape likse as stride. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">shape</span></code>: vector data of array shape. </p></li>
@@ -225,6 +225,23 @@
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">l_shape</span></code>: left array shape. </p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">r_shape</span></code>: right array shape. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv4N7ndarray9arrayutil19getIndexFromIndicesERKN7ndarray7IndicesERKN7ndarray5ArrayE">
+<span id="_CPPv3N7ndarray9arrayutil19getIndexFromIndicesERKN7ndarray7IndicesERKN7ndarray5ArrayE"></span><span id="_CPPv2N7ndarray9arrayutil19getIndexFromIndicesERKN7ndarray7IndicesERKN7ndarray5ArrayE"></span><span id="ndarray::arrayutil::getIndexFromIndices__ndarray::IndicesCR.ndarray::ArrayCR"></span><span class="target" id="namespacendarray_1_1arrayutil_1abc6520fbe27b483de47633f4ecaa3136"></span><a class="reference internal" href="../core/array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="../core/dataType.html#_CPPv4N7ndarray2LLE" title="ndarray::LL">LL</a> <code class="sig-name descname">getIndexFromIndices</code><span class="sig-paren">(</span><em class="property">const</em> <a class="reference internal" href="../core/array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="../core/dataType.html#_CPPv4N7ndarray7IndicesE" title="ndarray::Indices">Indices</a> &amp;<em>indices</em>, <em class="property">const</em> <a class="reference internal" href="../core/array.html#_CPPv47ndarray" title="ndarray">ndarray</a>::<a class="reference internal" href="../core/array.html#_CPPv4N7ndarray5ArrayE" title="ndarray::Array">Array</a> &amp;<em>A</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N7ndarray9arrayutil19getIndexFromIndicesERKN7ndarray7IndicesERKN7ndarray5ArrayE" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>calculate actula location of the given indices<p> Example: indices{0,1} of a 2D array. output will be that row and column actual location in 1D array. </p>
+</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>actual location of that indices. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">indices</span></code>: a vector of indices. size must be same as ndarray shape size. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">A</span></code>: a ndarray. </p></li>
 </ul>
 </dd>
 </dl>

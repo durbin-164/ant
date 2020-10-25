@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['cuda_64',['cuda',['../namespacecuda.html',1,'']]]
+  ['cuda_84',['cuda',['../namespacecuda.html',1,'']]]
 ];

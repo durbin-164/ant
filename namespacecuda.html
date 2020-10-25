@@ -76,6 +76,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ab34518a52a2c519653701d5e565a588c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classndarray_1_1Array.html">ndarray::Array</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecuda.html#ab34518a52a2c519653701d5e565a588c">cudaMatmul</a> (const <a class="el" href="classndarray_1_1Array.html">ndarray::Array</a> &amp;A, const <a class="el" href="classndarray_1_1Array.html">ndarray::Array</a> &amp;B)</td></tr>
 <tr class="memdesc:ab34518a52a2c519653701d5e565a588c"><td class="mdescLeft">&#160;</td><td class="mdescRight">matmul of two ndarray in cuda.  <a href="namespacecuda.html#ab34518a52a2c519653701d5e565a588c">More...</a><br /></td></tr>
 <tr class="separator:ab34518a52a2c519653701d5e565a588c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a060eab5e031a4497802f8485cbf393c0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classndarray_1_1Array.html">ndarray::Array</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecuda.html#a060eab5e031a4497802f8485cbf393c0">cudaSlices</a> (const <a class="el" href="classndarray_1_1Array.html">ndarray::Array</a> &amp;A, const <a class="el" href="namespacendarray.html#aa08d1d822ac44c654f2ae9112ce71008">ndarray::Slices</a> &amp;slices)</td></tr>
+<tr class="memdesc:a060eab5e031a4497802f8485cbf393c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">slices a ndarray in cuda and return a cuda ndarray.  <a href="namespacecuda.html#a060eab5e031a4497802f8485cbf393c0">More...</a><br /></td></tr>
+<tr class="separator:a060eab5e031a4497802f8485cbf393c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a73ab3b8bb7ccac6e285fc2fde2c80787"></a>
@@ -151,6 +154,44 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>another ndarray which have A.matmul(B) data. </dd></dl>
+
+</div>
+</div>
+<a id="a060eab5e031a4497802f8485cbf393c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a060eab5e031a4497802f8485cbf393c0">&#9670;&nbsp;</a></span>cudaSlices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classndarray_1_1Array.html">ndarray::Array</a> cuda::cudaSlices </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classndarray_1_1Array.html">ndarray::Array</a> &amp;&#160;</td>
+          <td class="paramname"><em>A</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespacendarray.html#aa08d1d822ac44c654f2ae9112ce71008">ndarray::Slices</a> &amp;&#160;</td>
+          <td class="paramname"><em>slices</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>slices a ndarray in cuda and return a cuda ndarray. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">A</td><td>a ndarray </td></tr>
+    <tr><td class="paramname">slices</td><td>a 2D vector of slices. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>another ndarray with slices value. </dd></dl>
 
 </div>
 </div>

@@ -160,11 +160,13 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/ndarray/cuda/cudaWrapper.html#_CPPv44cuda">cuda (C++ type)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/ndarray/cuda/cudaWrapper.html#_CPPv4N4cuda7cudaAddERKN7ndarray5ArrayERKN7ndarray5ArrayE">cuda::cudaAdd (C++ function)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/ndarray/cuda/cudaWrapper.html#_CPPv4N4cuda10cudaMatmulERKN7ndarray5ArrayERKN7ndarray5ArrayE">cuda::cudaMatmul (C++ function)</a>
+</li>
+      <li><a href="api/ndarray/cuda/cudaWrapper.html#_CPPv4N4cuda10cudaSlicesERKN7ndarray5ArrayERKN7ndarray6SlicesE">cuda::cudaSlices (C++ function)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -172,7 +174,7 @@
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api/ndarray/core/array.html#_CPPv47ndarray">ndarray (C++ type)</a>, <a href="api/ndarray/core/broadCasted.html#_CPPv47ndarray">[1]</a>, <a href="api/ndarray/core/dataType.html#_CPPv47ndarray">[2]</a>, <a href="api/ndarray/exception/ndexception.html#_CPPv47ndarray">[3]</a>, <a href="api/ndarray/util/arrayUtil.html#_CPPv47ndarray">[4]</a>, <a href="api/ndarray/util/util.html#_CPPv47ndarray">[5]</a>
+      <li><a href="api/ndarray/core/array.html#_CPPv47ndarray">ndarray (C++ type)</a>, <a href="api/ndarray/core/broadCasted.html#_CPPv47ndarray">[1]</a>, <a href="api/ndarray/core/dataType.html#_CPPv47ndarray">[2]</a>, <a href="api/ndarray/core/slices.html#_CPPv47ndarray">[3]</a>, <a href="api/ndarray/exception/ndexception.html#_CPPv47ndarray">[4]</a>, <a href="api/ndarray/util/arrayUtil.html#_CPPv47ndarray">[5]</a>, <a href="api/ndarray/util/util.html#_CPPv47ndarray">[6]</a>
 </li>
       <li><a href="api/ndarray/core/array.html#_CPPv4N7ndarray5ArrayE">ndarray::Array (C++ class)</a>
 </li>
@@ -185,6 +187,8 @@
       <li><a href="api/ndarray/core/array.html#_CPPv4NK7ndarray5Array10deviceDataEv">ndarray::Array::deviceData (C++ function)</a>
 </li>
       <li><a href="api/ndarray/core/array.html#_CPPv4N7ndarray5Array11deviceData_E">ndarray::Array::deviceData_ (C++ member)</a>
+</li>
+      <li><a href="api/ndarray/core/array.html#_CPPv4N7ndarray5Array17getValueByIndicesERKN7ndarray7IndicesE">ndarray::Array::getValueByIndices (C++ function)</a>
 </li>
       <li><a href="api/ndarray/core/array.html#_CPPv4N7ndarray5Array8hostDataEv">ndarray::Array::hostData (C++ function)</a>
 </li>
@@ -206,7 +210,11 @@
 </li>
       <li><a href="api/ndarray/core/array.html#_CPPv4N7ndarray5Array7onCuda_E">ndarray::Array::onCuda_ (C++ member)</a>
 </li>
+      <li><a href="api/ndarray/core/array.html#_CPPv4IDpEN7ndarray5ArrayclEdDp5ArgsT">ndarray::Array::operator() (C++ function)</a>
+</li>
       <li><a href="api/ndarray/core/array.html#_CPPv4NK7ndarray5ArrayplERK5Array">ndarray::Array::operator+ (C++ function)</a>
+</li>
+      <li><a href="api/ndarray/core/array.html#_CPPv4NK7ndarray5ArrayixERKN7ndarray6SlicesE">ndarray::Array::operator[] (C++ function)</a>
 </li>
       <li><a href="api/ndarray/core/array.html#_CPPv4NK7ndarray5Array4rankEv">ndarray::Array::rank (C++ function)</a>
 </li>
@@ -232,10 +240,10 @@
 </li>
       <li><a href="api/ndarray/core/array.html#_CPPv4N7ndarray5Array7stride_E">ndarray::Array::stride_ (C++ member)</a>
 </li>
+      <li><a href="api/ndarray/core/array.html#_CPPv4N7ndarray5Array9transposeERKN7ndarray4AxisE">ndarray::Array::transpose (C++ function)</a>
+</li>
       <li><a href="api/ndarray/core/array.html#_CPPv4N7ndarray5Array14unMappedToCudaEv">ndarray::Array::unMappedToCuda (C++ function)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/ndarray/core/array.html#_CPPv4N7ndarray5Array13updateStridesEv">ndarray::Array::updateStrides (C++ function)</a>
 </li>
       <li><a href="api/ndarray/core/array.html#_CPPv4N7ndarray5ArrayD0Ev">ndarray::Array::~Array (C++ function)</a>
@@ -244,6 +252,10 @@
 </li>
       <li><a href="api/ndarray/util/arrayUtil.html#_CPPv4N7ndarray9arrayutil23getCumulativeMultiShapeERKN7ndarray5ShapeEKi">ndarray::arrayutil::getCumulativeMultiShape (C++ function)</a>
 </li>
+      <li><a href="api/ndarray/util/arrayUtil.html#_CPPv4N7ndarray9arrayutil19getIndexFromIndicesERKN7ndarray7IndicesERKN7ndarray5ArrayE">ndarray::arrayutil::getIndexFromIndices (C++ function)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api/ndarray/util/arrayUtil.html#_CPPv4N7ndarray9arrayutil17getMatmulOutShapeERKN7ndarray5ShapeERKN7ndarray5ShapeE">ndarray::arrayutil::getMatmulOutShape (C++ function)</a>
 </li>
       <li><a href="api/ndarray/util/arrayUtil.html#_CPPv4N7ndarray9arrayutil22getNumOfElementByShapeERKN7ndarray5ShapeE">ndarray::arrayutil::getNumOfElementByShape (C++ function)</a>
@@ -272,6 +284,22 @@
 </li>
       <li><a href="api/ndarray/exception/ndexception.html#_CPPv4N7ndarray9exceptionE">ndarray::exception (C++ type)</a>
 </li>
+      <li><a href="api/ndarray/exception/ndexception.html#_CPPv4N7ndarray9exception23AxisOutOfRangeExceptionE">ndarray::exception::AxisOutOfRangeException (C++ class)</a>
+</li>
+      <li><a href="api/ndarray/exception/ndexception.html#_CPPv4N7ndarray9exception23AxisOutOfRangeException23AxisOutOfRangeExceptionERKNSt6stringE">ndarray::exception::AxisOutOfRangeException::AxisOutOfRangeException (C++ function)</a>
+</li>
+      <li><a href="api/ndarray/exception/ndexception.html#_CPPv4N7ndarray9exception23AxisOutOfRangeException7messageE">ndarray::exception::AxisOutOfRangeException::message (C++ member)</a>
+</li>
+      <li><a href="api/ndarray/exception/ndexception.html#_CPPv4NK7ndarray9exception23AxisOutOfRangeException4whatEv">ndarray::exception::AxisOutOfRangeException::what (C++ function)</a>
+</li>
+      <li><a href="api/ndarray/exception/ndexception.html#_CPPv4N7ndarray9exception24IndexOutOfRangeExceptionE">ndarray::exception::IndexOutOfRangeException (C++ class)</a>
+</li>
+      <li><a href="api/ndarray/exception/ndexception.html#_CPPv4N7ndarray9exception24IndexOutOfRangeException24IndexOutOfRangeExceptionERKNSt6stringE">ndarray::exception::IndexOutOfRangeException::IndexOutOfRangeException (C++ function)</a>
+</li>
+      <li><a href="api/ndarray/exception/ndexception.html#_CPPv4N7ndarray9exception24IndexOutOfRangeException7messageE">ndarray::exception::IndexOutOfRangeException::message (C++ member)</a>
+</li>
+      <li><a href="api/ndarray/exception/ndexception.html#_CPPv4NK7ndarray9exception24IndexOutOfRangeException4whatEv">ndarray::exception::IndexOutOfRangeException::what (C++ function)</a>
+</li>
       <li><a href="api/ndarray/exception/ndexception.html#_CPPv4N7ndarray9exception21InvalidShapeExceptionE">ndarray::exception::InvalidShapeException (C++ class)</a>
 </li>
       <li><a href="api/ndarray/exception/ndexception.html#_CPPv4N7ndarray9exception21InvalidShapeException21InvalidShapeExceptionERKNSt6stringE">ndarray::exception::InvalidShapeException::InvalidShapeException (C++ function)</a>, <a href="api/ndarray/exception/ndexception.html#_CPPv4N7ndarray9exception21InvalidShapeException21InvalidShapeExceptionERKNSt6stringERKNSt6stringE">[1]</a>
@@ -290,11 +318,23 @@
 </li>
       <li><a href="api/ndarray/util/util.html#_CPPv4N7ndarray20getVectorIntInStringERKNSt6vectorIiEE">ndarray::getVectorIntInString (C++ function)</a>
 </li>
+      <li><a href="api/ndarray/core/dataType.html#_CPPv4N7ndarray7IndicesE">ndarray::Indices (C++ type)</a>
+</li>
       <li><a href="api/ndarray/core/dataType.html#_CPPv4N7ndarray2LLE">ndarray::LL (C++ type)</a>
 </li>
       <li><a href="api/ndarray/util/util.html#_CPPv4N7ndarray8printVecERKNSt6vectorIiEE">ndarray::printVec (C++ function)</a>
 </li>
       <li><a href="api/ndarray/core/dataType.html#_CPPv4N7ndarray5ShapeE">ndarray::Shape (C++ type)</a>
+</li>
+      <li><a href="api/ndarray/core/dataType.html#_CPPv4N7ndarray6SlicesE">ndarray::Slices (C++ type)</a>
+</li>
+      <li><a href="api/ndarray/core/slices.html#_CPPv4N7ndarray6slicesE">ndarray::slices (C++ type)</a>
+</li>
+      <li><a href="api/ndarray/core/slices.html#_CPPv4N7ndarray6slices12filledSlicesERKN7ndarray5ShapeERKN7ndarray6SlicesE">ndarray::slices::filledSlices (C++ function)</a>
+</li>
+      <li><a href="api/ndarray/core/slices.html#_CPPv4N7ndarray6slices16getSliceOutShapeERKN7ndarray6SlicesE">ndarray::slices::getSliceOutShape (C++ function)</a>
+</li>
+      <li><a href="api/ndarray/core/slices.html#_CPPv4N7ndarray6slices18getSliceStartIndexERKN7ndarray6SlicesERKN7ndarray6StrideE">ndarray::slices::getSliceStartIndex (C++ function)</a>
 </li>
       <li><a href="api/ndarray/core/dataType.html#_CPPv4N7ndarray6StrideE">ndarray::Stride (C++ type)</a>
 </li>

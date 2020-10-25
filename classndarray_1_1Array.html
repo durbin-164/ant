@@ -92,10 +92,19 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a467b232eeab522a655b90d112351cda8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acee15cba2822286d0635ac6d73a2f8b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#acee15cba2822286d0635ac6d73a2f8b0">mapDeviceDataToHost</a> ()</td></tr>
 <tr class="separator:acee15cba2822286d0635ac6d73a2f8b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6979d61ba36a7b23bd025738ba4a6ad0"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#a6979d61ba36a7b23bd025738ba4a6ad0">getValueByIndices</a> (const <a class="el" href="namespacendarray.html#affe2778b55baa56d1817263fc8ffa565">ndarray::Indices</a> &amp;indices)</td></tr>
+<tr class="separator:a6979d61ba36a7b23bd025738ba4a6ad0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaadd0b9f901c43d181b82019ef6bccbd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classndarray_1_1Array.html">Array</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#aaadd0b9f901c43d181b82019ef6bccbd">matmul</a> (const <a class="el" href="classndarray_1_1Array.html">Array</a> &amp;other) const</td></tr>
 <tr class="separator:aaadd0b9f901c43d181b82019ef6bccbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5efe95a377cd119a65012a30134e200"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classndarray_1_1Array.html">Array</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#ae5efe95a377cd119a65012a30134e200">operator+</a> (const <a class="el" href="classndarray_1_1Array.html">Array</a> &amp;other) const</td></tr>
 <tr class="separator:ae5efe95a377cd119a65012a30134e200"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f7331e6b9f0f7d9477459c2b24488a4"><td class="memTemplParams" colspan="2">template&lt;typename ... ArgsT&gt; </td></tr>
+<tr class="memitem:a4f7331e6b9f0f7d9477459c2b24488a4"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#a4f7331e6b9f0f7d9477459c2b24488a4">operator()</a> (ArgsT... indices_)</td></tr>
+<tr class="separator:a4f7331e6b9f0f7d9477459c2b24488a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac46879bb92f4b606665fdf02ecfd1140"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classndarray_1_1Array.html">Array</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#ac46879bb92f4b606665fdf02ecfd1140">operator[]</a> (const <a class="el" href="namespacendarray.html#aa08d1d822ac44c654f2ae9112ce71008">ndarray::Slices</a> &amp;slices) const</td></tr>
+<tr class="separator:ac46879bb92f4b606665fdf02ecfd1140"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affcfbbe9b2f0e7cc67fb69045fb317ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#affcfbbe9b2f0e7cc67fb69045fb317ae">transpose</a> (const <a class="el" href="namespacendarray.html#aec48aaaf89d8da47c301f120df9740f5">ndarray::Axis</a> &amp;axis)</td></tr>
+<tr class="separator:affcfbbe9b2f0e7cc67fb69045fb317ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add7470831ed793c925077cefe5860c2b"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#add7470831ed793c925077cefe5860c2b">hostData</a> ()</td></tr>
 <tr class="separator:add7470831ed793c925077cefe5860c2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a598cec2cb5094cdf5d76f2b4e869adff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classndarray_1_1Array.html#a598cec2cb5094cdf5d76f2b4e869adff">setHostData</a> (double *hdata)</td></tr>
@@ -252,6 +261,24 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a6979d61ba36a7b23bd025738ba4a6ad0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6979d61ba36a7b23bd025738ba4a6ad0">&#9670;&nbsp;</a></span>getValueByIndices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ndarray::Array::getValueByIndices </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacendarray.html#affe2778b55baa56d1817263fc8ffa565">ndarray::Indices</a> &amp;&#160;</td>
+          <td class="paramname"><em>indices</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="add7470831ed793c925077cefe5860c2b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#add7470831ed793c925077cefe5860c2b">&#9670;&nbsp;</a></span>hostData()</h2>
 
@@ -354,6 +381,34 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a4f7331e6b9f0f7d9477459c2b24488a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f7331e6b9f0f7d9477459c2b24488a4">&#9670;&nbsp;</a></span>operator()()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename ... ArgsT&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ndarray::Array::operator() </td>
+          <td>(</td>
+          <td class="paramtype">ArgsT...&#160;</td>
+          <td class="paramname"><em>indices_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ae5efe95a377cd119a65012a30134e200"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae5efe95a377cd119a65012a30134e200">&#9670;&nbsp;</a></span>operator+()</h2>
 
@@ -365,6 +420,24 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classndarray_1_1Array.html">Array</a> &amp;&#160;</td>
           <td class="paramname"><em>other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac46879bb92f4b606665fdf02ecfd1140"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac46879bb92f4b606665fdf02ecfd1140">&#9670;&nbsp;</a></span>operator[]()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classndarray_1_1Array.html">Array</a> ndarray::Array::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacendarray.html#aa08d1d822ac44c654f2ae9112ce71008">ndarray::Slices</a> &amp;&#160;</td>
+          <td class="paramname"><em>slices</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -574,6 +647,24 @@ Public Member Functions</h2></td></tr>
 <span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="affcfbbe9b2f0e7cc67fb69045fb317ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affcfbbe9b2f0e7cc67fb69045fb317ae">&#9670;&nbsp;</a></span>transpose()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ndarray::Array::transpose </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="namespacendarray.html#aec48aaaf89d8da47c301f120df9740f5">ndarray::Axis</a> &amp;&#160;</td>
+          <td class="paramname"><em>axis</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 
 </div>

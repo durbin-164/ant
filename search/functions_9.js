@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['paddedvector_102',['paddedVector',['../namespacendarray_1_1broadcast.html#abad5114cd82d9f8a08b325f9254ee95c',1,'ndarray::broadcast']]],
-  ['printvec_103',['printVec',['../namespacendarray.html#afb45f17ff8d5b456c39eebc48764e7f0',1,'ndarray']]]
+  ['operator_28_29_133',['operator()',['../classndarray_1_1Array.html#a4f7331e6b9f0f7d9477459c2b24488a4',1,'ndarray::Array']]],
+  ['operator_2b_134',['operator+',['../classndarray_1_1Array.html#ae5efe95a377cd119a65012a30134e200',1,'ndarray::Array']]],
+  ['operator_5b_5d_135',['operator[]',['../classndarray_1_1Array.html#ac46879bb92f4b606665fdf02ecfd1140',1,'ndarray::Array']]]
 ];

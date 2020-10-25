@@ -73,6 +73,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="dataType_8h.html">ndarray/core/dataType.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="array_8h.html">ndarray/core/array.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for arrayUtil.h:</div>
 <div class="dyncontent">
@@ -98,14 +99,18 @@ Functions</h2></td></tr>
  Example: shape{2,3,4} =&gt; output 2*3*4 = 24  <a href="namespacendarray_1_1arrayutil.html#ae1dd7a1ec215ae77901af7ca3153480c">More...</a><br /></td></tr>
 <tr class="separator:ae1dd7a1ec215ae77901af7ca3153480c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aadd8fa20667d089f1a12a156957ad934"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacendarray.html#aef5c9fe78996f611e027267c47359be2">ndarray::Shape</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacendarray_1_1arrayutil.html#aadd8fa20667d089f1a12a156957ad934">ndarray::arrayutil::getCumulativeMultiShape</a> (const <a class="el" href="namespacendarray.html#aef5c9fe78996f611e027267c47359be2">ndarray::Shape</a> &amp;shape, const int offset=0)</td></tr>
-<tr class="memdesc:aadd8fa20667d089f1a12a156957ad934"><td class="mdescLeft">&#160;</td><td class="mdescRight">get cumulative multyping shape. output size should be shape_size-1.<br  />
- Example 1: shape{2,3,4} =&gt; cum_shape{12,4} <br  />
- Example 2: shape{2,3,4,5}, offset = 2 =&gt; cun_shape{3}<br  />
- Example 3: Shape{2,3}, offset=1 =&gt; cum_shape{}  <a href="namespacendarray_1_1arrayutil.html#aadd8fa20667d089f1a12a156957ad934">More...</a><br /></td></tr>
+<tr class="memdesc:aadd8fa20667d089f1a12a156957ad934"><td class="mdescLeft">&#160;</td><td class="mdescRight">get cumulative multyping shape. output size should be same as shape_size.<br  />
+ Example 1: shape{2,3,4} =&gt; cum_shape{12,4,1} <br  />
+ Example 2: shape{2,3,4,5}, offset = 2 =&gt; cun_shape{3,1}<br  />
+ Example 3: Shape{2,3}, offset=1 =&gt; cum_shape{1}  <a href="namespacendarray_1_1arrayutil.html#aadd8fa20667d089f1a12a156957ad934">More...</a><br /></td></tr>
 <tr class="separator:aadd8fa20667d089f1a12a156957ad934"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d1c0bc39be4aebce0ed79581c10a68a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacendarray.html#aef5c9fe78996f611e027267c47359be2">ndarray::Shape</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacendarray_1_1arrayutil.html#a9d1c0bc39be4aebce0ed79581c10a68a">ndarray::arrayutil::getMatmulOutShape</a> (const <a class="el" href="namespacendarray.html#aef5c9fe78996f611e027267c47359be2">ndarray::Shape</a> &amp;l_shape, const <a class="el" href="namespacendarray.html#aef5c9fe78996f611e027267c47359be2">ndarray::Shape</a> &amp;r_shape)</td></tr>
 <tr class="memdesc:a9d1c0bc39be4aebce0ed79581c10a68a"><td class="mdescLeft">&#160;</td><td class="mdescRight">get matmul expected output shape from two array shape. Also support broad castring. Example: l_shape{4,1,3,4}, r_shape{1,3,4,5} =&gt; out_shape{4,3,3,5}  <a href="namespacendarray_1_1arrayutil.html#a9d1c0bc39be4aebce0ed79581c10a68a">More...</a><br /></td></tr>
 <tr class="separator:a9d1c0bc39be4aebce0ed79581c10a68a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc6520fbe27b483de47633f4ecaa3136"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacendarray.html#ab5b29a8c08b4e45379e51283c5407f67">ndarray::LL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacendarray_1_1arrayutil.html#abc6520fbe27b483de47633f4ecaa3136">ndarray::arrayutil::getIndexFromIndices</a> (const <a class="el" href="namespacendarray.html#affe2778b55baa56d1817263fc8ffa565">ndarray::Indices</a> &amp;indices, const <a class="el" href="classndarray_1_1Array.html">ndarray::Array</a> &amp;A)</td></tr>
+<tr class="memdesc:abc6520fbe27b483de47633f4ecaa3136"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculate actula location of the given indices<br  />
+ Example: indices{0,1} of a 2D array. output will be that row and column actual location in 1D array.  <a href="namespacendarray_1_1arrayutil.html#abc6520fbe27b483de47633f4ecaa3136">More...</a><br /></td></tr>
+<tr class="separator:abc6520fbe27b483de47633f4ecaa3136"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
