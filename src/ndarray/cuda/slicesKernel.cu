@@ -4,6 +4,7 @@
 #include "ndarray/core/slices.h"
 #include "ndarray/core/dataType.h"
 #include <iostream>
+#include <vector>
 
 __global__ void slice_(
                      double *A,
@@ -12,14 +13,15 @@ __global__ void slice_(
                      int *stride,
                      int *cum_shape,
                      int cum_shape_N,
-                     int start_index
+                     int start_index,
+                     int *step
                 )
 {
     int tid = (blockIdx.x * blockDim.x) + threadIdx.x;
 
     // printf("tid: %d\n", tid);
     
-    int index = getIndex(tid, cum_shape, stride, cum_shape_N, start_index);
+    int index = getIndex(tid, cum_shape, stride, cum_shape_N, start_index,step);
       
     // Boundary check
     if (tid < N) {
@@ -43,6 +45,8 @@ ndarray::Array cudaSlices(const ndarray::Array &A, const ndarray::Slices &slices
     ndarray::LL num_of_element = ndarray::arrayutil::getNumOfElementByShape(out_shape);
 
 
+    std::vector<int> step_;
+    for(auto slice : filled_slices) step_.push_back(slice[2]);
 
     double *B;
     cudaMalloc(&B, num_of_element*sizeof(double));
@@ -54,6 +58,10 @@ ndarray::Array cudaSlices(const ndarray::Array &A, const ndarray::Slices &slices
     int *cum_shape;
     cudaMalloc(&cum_shape, cum_mul_shape.size()*sizeof(int));
     cudaMemcpy(cum_shape, &cum_mul_shape[0], cum_mul_shape.size()*sizeof(int), cudaMemcpyHostToDevice);
+
+    int *step;
+    cudaMalloc(&step, step_.size()*sizeof(int));
+    cudaMemcpy(step, &step_[0], step_.size()*sizeof(int), cudaMemcpyHostToDevice);
 
 
     int NUM_THREADS = 1 << 10;
@@ -75,7 +83,8 @@ ndarray::Array cudaSlices(const ndarray::Array &A, const ndarray::Slices &slices
                                     stride,
                                     cum_shape,
                                     cum_mul_shape.size(),
-                                    start_index
+                                    start_index,
+                                    step
                                       );
     
     cudaFree(stride);

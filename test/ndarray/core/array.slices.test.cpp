@@ -2,6 +2,7 @@
 #include "array.h"
 #include <vector>
 #include "testUtil.h"
+#include "constants.h"
 
 TEST(Slices, basicSlices)
 {
@@ -61,4 +62,50 @@ TEST(Slices, withStep)
     double expected[] = {5};
     VectorEQ(B.shape(), {1,1,1});
     DoubleArrayEQ(actual, expected, 1); 
+}
+
+TEST(Slices, NoneTest)
+{
+    ndarray::Shape a_shape = {3,3,2};
+
+    double a_data[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18};
+    ndarray::Array A(a_shape, a_data);
+
+    ndarray::Array B = A[{{none, none}, {none, none ,none},{none, none}}];
+
+    double *actual = B.hostData();
+    double expected[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18};
+    VectorEQ(B.shape(), {3,3,2});
+    DoubleArrayEQ(actual, expected, 18);
+}
+
+TEST(Slices, NoneReverse)
+{
+    ndarray::Shape a_shape = {5};
+
+    double a_data[] = {1,2,3,4,5};
+    ndarray::Array A(a_shape, a_data);
+
+    ndarray::Array B = A[{{none, none,-1}}];
+
+    double *actual = B.hostData();
+    double expected[] = {5,4,3,2,1};
+    VectorEQ(B.shape(), {5});
+    DoubleArrayEQ(actual, expected, 5);
+}
+
+
+TEST(Slices, NoneMixedTest)
+{
+    ndarray::Shape a_shape = {3,3,2};
+
+    double a_data[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18};
+    ndarray::Array A(a_shape, a_data);
+
+    ndarray::Array B = A[{{2, none}, {none, -2 ,-1},{none, none}}];
+
+    double *actual = B.hostData();
+    double expected[] = {17,18};
+    VectorEQ(B.shape(), {1,1,2});
+    DoubleArrayEQ(actual, expected, 2);
 }

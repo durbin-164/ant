@@ -3,10 +3,11 @@
 #include <cmath> 
 #include <sstream>
 #include <iostream>
+#include "constants.h"
 
 namespace ndarray
 {
-void varifyStartAndEndValue(int &start, int &end, int shape);
+void varifyStartAndEndValue(int &start, int &end,int &step, int shape);
 ndarray::Slices ndarray::slices::filledSlices(const ndarray::Shape &in_shape, const ndarray::Slices &slices){
    
     if(in_shape.size()<slices.size()){
@@ -26,6 +27,7 @@ ndarray::Slices ndarray::slices::filledSlices(const ndarray::Shape &in_shape, co
 
         int start;
         int end;
+        int step;
         std::stringstream ss;
 
         switch (slices[i].size())
@@ -42,15 +44,18 @@ ndarray::Slices ndarray::slices::filledSlices(const ndarray::Shape &in_shape, co
             case 2:
                 start =slices[i][0];
                 end = slices[i][1];
-                ndarray::varifyStartAndEndValue(start, end, in_shape[i]);
+                step = 1;
+                ndarray::varifyStartAndEndValue(start, end, step,in_shape[i]);
                 ret_slices.push_back({start, end, 1});
                 
                 break;
             case 3:
                 start =slices[i][0];
                 end = slices[i][1];
-                ndarray::varifyStartAndEndValue(start, end, in_shape[i]);
-                ret_slices.push_back({start, end, slices[i][2]});
+                step = slices[i][2];
+                ndarray::varifyStartAndEndValue(start, end, step, in_shape[i]);
+                ret_slices.push_back({start, end, step});
+                std::cout<<start<<end<<step<<std::endl;
                 break;
             
             default:
@@ -70,7 +75,6 @@ ndarray::Shape ndarray::slices::getSliceOutShape(const ndarray::Slices &slices){
         int dif = std::max( (int)ceil( float( slice[1]-slice[0] ) / float(slice[2])), 0);
         out_shape.push_back(dif);
     }
-
     return out_shape;
 }
 
@@ -83,15 +87,26 @@ ndarray::LL ndarray::slices::getSliceStartIndex(const ndarray::Slices &slices, c
     return start_index;
 }
 
-void varifyStartAndEndValue(int &start, int &end, int shape){
-    
-    if(start < 0) start = shape+start;
-    if(end < 0) end = shape + end;
+void varifyStartAndEndValue(int &start, int &end, int &step, int shape){
+    if(step == none) step =1;
 
-    if(start<0) start =0;
-    else if(start>shape)start = shape;
-    
-    if(end<0) end = 0;
-    else if(end>shape) end = shape;
+    if(step<0)
+    {
+        if(start == none) start = shape -1;
+        else if(start< 0) start = std::max(0, shape+start);
+        
+        if(end == none) end = -1;
+        else if(end < 0) end = std::max(-1, shape+end);
+        
+    }else{
+        if(start == none) start = 0;
+        else if(start < 0) start = std::max(0, shape+start);
+
+        if(end == none) end = shape;
+        else if(end < 0) end = std::max(0, shape+end);
+    }
+
+    start = std::min(start, shape);
+    end = std::min(end, shape);
 }
 }
