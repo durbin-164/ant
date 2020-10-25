@@ -55,7 +55,6 @@ ndarray::Slices ndarray::slices::filledSlices(const ndarray::Shape &in_shape, co
                 step = slices[i][2];
                 ndarray::varifyStartAndEndValue(start, end, step, in_shape[i]);
                 ret_slices.push_back({start, end, step});
-                std::cout<<start<<end<<step<<std::endl;
                 break;
             
             default:
