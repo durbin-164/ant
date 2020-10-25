@@ -6,7 +6,9 @@ namespace ndarray::slices
 {
 /**
  * \brief return proper format 2D slices vector<br/>
- * Example: in_shape{3,4,2}, slices{{0,2}, {1,-1,2}} => out_slices{{0,2,1},{1,3,2},{0,2,1}}
+ * Example: <br/>
+ * in_shape{3,4,2}, slices{{0,2}, {1,-1,2}} => out_slices{{0,2,1},{1,3,2},{0,2,1}}<br/>
+ * in_shape{3,4,2}, slices{{0,none}, {none,-1,2}, {none,none,-1}} => out_slices{{0,4,1},{0,3,2},{1,-1,-1}}<br/>
  * 
  * @param in_shape actual shape of the Slices ndarray.
  * @param slices 2D vector with slices value. all inner vector must be size less than or equal one.

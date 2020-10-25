@@ -109,3 +109,18 @@ TEST(Slices, NoneMixedTest)
     VectorEQ(B.shape(), {1,1,2});
     DoubleArrayEQ(actual, expected, 2);
 }
+
+TEST(Slices, NoneMixedReversed)
+{
+    ndarray::Shape a_shape = {3,3,2};
+
+    double a_data[] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18};
+    ndarray::Array A(a_shape, a_data);
+
+    ndarray::Array B = A[{{none, none,-1}, {none, none ,-2},{none, none,-1}}];
+
+    double *actual = B.hostData();
+    double expected[] = {18,17,14,13, 12,11,8,7, 6,5,2,1};
+    VectorEQ(B.shape(), {3,2,2});
+    DoubleArrayEQ(actual, expected, 12);
+}
